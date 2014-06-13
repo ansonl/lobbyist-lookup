@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type='text/xsl' href='../../ld1.xsl'?>
+<LOBBYINGDISCLOSURE1>
+   <imported>N</imported>
+   <pages>2</pages>
+   <regType>2</regType>
+   <organizationName>Sabiston Consultants, LLC</organizationName>
+   <prefix></prefix>
+   <firstName></firstName>
+   <lastName></lastName>
+   <address1>501 Basin Street Suite F</address1>
+   <address2></address2>
+   <city>New Orleans</city>
+   <state>LA</state>
+   <zip>70112</zip>
+   <zipext></zipext>
+   <country>USA</country>
+   <principal_city></principal_city>
+   <principal_state></principal_state>
+   <principal_zip></principal_zip>
+   <principal_zipext></principal_zipext>
+   <principal_country></principal_country>
+   <registrantGeneralDescription>Public Affairs and Political Consulting</registrantGeneralDescription>
+   <selfSelect>N</selfSelect>
+   <clientName>Brown-Taylor Development</clientName>
+   <clientAddress>101 Milam Street Suite 200</clientAddress>
+   <clientCity>Shreveport</clientCity>
+   <clientState>LA</clientState>
+   <clientZip>71101</clientZip>
+   <clientZipExt></clientZipExt>
+   <clientCountry>USA</clientCountry>
+   <prinClientCity></prinClientCity>
+   <prinClientState></prinClientState>
+   <prinClientZip></prinClientZip>
+   <prinClientZipExt></prinClientZipExt>
+   <prinClientCountry></prinClientCountry>
+   <clientGeneralDescription>Real estate development firm specializing in multifamily residential properties</clientGeneralDescription>
+   <senateID>323557</senateID>
+   <houseID>397000038</houseID>
+   <lobbyists>
+      <lobbyist>
+         <lobbyistFirstName>Norma Jane</lobbyistFirstName>
+         <lobbyistLastName>Sabiston</lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition>US Senator Mary Landrieu (LA) - Chief of Staff</coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName>Sabiston Positions</lobbyistFirstName>
+         <lobbyistLastName>Continued</lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition>US Senator John Breaux (LA) - State Director</coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName>Sabiston Positions</lobbyistFirstName>
+         <lobbyistLastName>Continued</lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition>US Senator John Breaux (LA) - Director of Scheduling</coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName>Lauren </lobbyistFirstName>
+         <lobbyistLastName>Jardell</lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition>US Senator Mary Landrieu (LA) - Projects Coordinator</coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName></lobbyistFirstName>
+         <lobbyistLastName></lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition></coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+   </lobbyists>
+   <alis>
+      <ali_Code>TAX</ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+   </alis>
+   <specific_issues>Educate appropriate members of Congress and the National Park Service as to the appropriate renovations for historic tax credit qualification.</specific_issues>
+   <affiliatedUrl></affiliatedUrl>
+   <affiliatedOrgs>
+      <affiliatedOrg>
+         <affiliatedOrgName></affiliatedOrgName>
+         <affiliatedOrgAddress></affiliatedOrgAddress>
+         <affiliatedOrgCity></affiliatedOrgCity>
+         <affiliatedOrgState></affiliatedOrgState>
+         <affiliatedOrgZip></affiliatedOrgZip>
+         <affiliatedOrgCountry></affiliatedOrgCountry>
+         <affiliatedPrinOrgCity></affiliatedPrinOrgCity>
+         <affiliatedPrinOrgState></affiliatedPrinOrgState>
+         <affiliatedPrinOrgCountry></affiliatedPrinOrgCountry>
+      </affiliatedOrg>
+      <affiliatedOrg>
+         <affiliatedOrgName></affiliatedOrgName>
+         <affiliatedOrgAddress></affiliatedOrgAddress>
+         <affiliatedOrgCity></affiliatedOrgCity>
+         <affiliatedOrgState></affiliatedOrgState>
+         <affiliatedOrgZip></affiliatedOrgZip>
+         <affiliatedOrgCountry></affiliatedOrgCountry>
+         <affiliatedPrinOrgCity></affiliatedPrinOrgCity>
+         <affiliatedPrinOrgState></affiliatedPrinOrgState>
+         <affiliatedPrinOrgCountry></affiliatedPrinOrgCountry>
+      </affiliatedOrg>
+      <affiliatedOrg>
+         <affiliatedOrgName></affiliatedOrgName>
+         <affiliatedOrgAddress></affiliatedOrgAddress>
+         <affiliatedOrgCity></affiliatedOrgCity>
+         <affiliatedOrgState></affiliatedOrgState>
+         <affiliatedOrgZip></affiliatedOrgZip>
+         <affiliatedOrgCountry></affiliatedOrgCountry>
+         <affiliatedPrinOrgCity></affiliatedPrinOrgCity>
+         <affiliatedPrinOrgState></affiliatedPrinOrgState>
+         <affiliatedPrinOrgCountry></affiliatedPrinOrgCountry>
+      </affiliatedOrg>
+   </affiliatedOrgs>
+   <foreignEntities>
+      <foreignEntity>
+         <name></name>
+         <address></address>
+         <city></city>
+         <state></state>
+         <country></country>
+         <prinCity></prinCity>
+         <prinState></prinState>
+         <prinCountry></prinCountry>
+         <contribution></contribution>
+         <ownership_Percentage></ownership_Percentage>
+      </foreignEntity>
+      <foreignEntity>
+         <name></name>
+         <address></address>
+         <city></city>
+         <state></state>
+         <country></country>
+         <prinCity></prinCity>
+         <prinState></prinState>
+         <prinCountry></prinCountry>
+         <contribution></contribution>
+         <ownership_Percentage></ownership_Percentage>
+      </foreignEntity>
+   </foreignEntities>
+   <reportYear>2014</reportYear>
+   <reportType>RR</reportType>
+   <effectiveDate>01/01/2014</effectiveDate>
+   <printedName>Norma Jane Sabiston, Principal</printedName>
+   <signedDate>02/12/2014</signedDate>
+</LOBBYINGDISCLOSURE1>

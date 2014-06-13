@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type='text/xsl' href='../../ld1.xsl'?>
+<LOBBYINGDISCLOSURE1>
+   <imported>N</imported>
+   <pages>2</pages>
+   <regType>2</regType>
+   <organizationName>The Raben Group</organizationName>
+   <prefix></prefix>
+   <firstName></firstName>
+   <lastName></lastName>
+   <address1>1640 RHODE ISLAND AVENUE, NW</address1>
+   <address2>SUITE 600</address2>
+   <city>WASHINGTON</city>
+   <state>DC</state>
+   <zip>20036</zip>
+   <zipext>3229</zipext>
+   <country>USA</country>
+   <principal_city></principal_city>
+   <principal_state></principal_state>
+   <principal_zip></principal_zip>
+   <principal_zipext></principal_zipext>
+   <principal_country></principal_country>
+   <registrantGeneralDescription>Legislative Law Firm</registrantGeneralDescription>
+   <selfSelect>N</selfSelect>
+   <clientName>New Venture Fund</clientName>
+   <clientAddress>734 15th Street NW</clientAddress>
+   <clientCity>Washington</clientCity>
+   <clientState>DC</clientState>
+   <clientZip>20005</clientZip>
+   <clientZipExt></clientZipExt>
+   <clientCountry>USA</clientCountry>
+   <prinClientCity></prinClientCity>
+   <prinClientState></prinClientState>
+   <prinClientZip></prinClientZip>
+   <prinClientZipExt></prinClientZipExt>
+   <prinClientCountry></prinClientCountry>
+   <clientGeneralDescription>The NVF is a 501(c)(3) public charity offering domestic and Int'l grant-making services</clientGeneralDescription>
+   <senateID>61458</senateID>
+   <houseID>353940135</houseID>
+   <lobbyists>
+      <lobbyist>
+         <lobbyistFirstName>Robert</lobbyistFirstName>
+         <lobbyistLastName>Raben</lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition>Asst.. Attorney Gen DOJ; Counsel , House Judiciary</coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName>Haley</lobbyistFirstName>
+         <lobbyistLastName>Griffin</lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition></coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName>Joseph</lobbyistFirstName>
+         <lobbyistLastName>Onek</lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition>Sr. Counsel, Speaker Pelosi</coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName></lobbyistFirstName>
+         <lobbyistLastName></lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition></coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName></lobbyistFirstName>
+         <lobbyistLastName></lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition></coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+   </lobbyists>
+   <alis>
+      <ali_Code>CIV</ali_Code>
+      <ali_Code>HCR</ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+   </alis>
+   <specific_issues>Implementation of the Accordable Care Act
+
+</specific_issues>
+   <affiliatedUrl></affiliatedUrl>
+   <affiliatedOrgs>
+      <affiliatedOrg>
+         <affiliatedOrgName></affiliatedOrgName>
+         <affiliatedOrgAddress></affiliatedOrgAddress>
+         <affiliatedOrgCity></affiliatedOrgCity>
+         <affiliatedOrgState></affiliatedOrgState>
+         <affiliatedOrgZip></affiliatedOrgZip>
+         <affiliatedOrgCountry></affiliatedOrgCountry>
+         <affiliatedPrinOrgCity></affiliatedPrinOrgCity>
+         <affiliatedPrinOrgState></affiliatedPrinOrgState>
+         <affiliatedPrinOrgCountry></affiliatedPrinOrgCountry>
+      </affiliatedOrg>
+      <affiliatedOrg>
+         <affiliatedOrgName></affiliatedOrgName>
+         <affiliatedOrgAddress></affiliatedOrgAddress>
+         <affiliatedOrgCity></affiliatedOrgCity>
+         <affiliatedOrgState></affiliatedOrgState>
+         <affiliatedOrgZip></affiliatedOrgZip>
+         <affiliatedOrgCountry></affiliatedOrgCountry>
+         <affiliatedPrinOrgCity></affiliatedPrinOrgCity>
+         <affiliatedPrinOrgState></affiliatedPrinOrgState>
+         <affiliatedPrinOrgCountry></affiliatedPrinOrgCountry>
+      </affiliatedOrg>
+      <affiliatedOrg>
+         <affiliatedOrgName></affiliatedOrgName>
+         <affiliatedOrgAddress></affiliatedOrgAddress>
+         <affiliatedOrgCity></affiliatedOrgCity>
+         <affiliatedOrgState></affiliatedOrgState>
+         <affiliatedOrgZip></affiliatedOrgZip>
+         <affiliatedOrgCountry></affiliatedOrgCountry>
+         <affiliatedPrinOrgCity></affiliatedPrinOrgCity>
+         <affiliatedPrinOrgState></affiliatedPrinOrgState>
+         <affiliatedPrinOrgCountry></affiliatedPrinOrgCountry>
+      </affiliatedOrg>
+   </affiliatedOrgs>
+   <foreignEntities>
+      <foreignEntity>
+         <name></name>
+         <address></address>
+         <city></city>
+         <state></state>
+         <country></country>
+         <prinCity></prinCity>
+         <prinState></prinState>
+         <prinCountry></prinCountry>
+         <contribution></contribution>
+         <ownership_Percentage></ownership_Percentage>
+      </foreignEntity>
+      <foreignEntity>
+         <name></name>
+         <address></address>
+         <city></city>
+         <state></state>
+         <country></country>
+         <prinCity></prinCity>
+         <prinState></prinState>
+         <prinCountry></prinCountry>
+         <contribution></contribution>
+         <ownership_Percentage></ownership_Percentage>
+      </foreignEntity>
+   </foreignEntities>
+   <reportYear>2014</reportYear>
+   <reportType>RR</reportType>
+   <effectiveDate>01/03/2014</effectiveDate>
+   <printedName>Robert Raben, President</printedName>
+   <signedDate>01/20/2014</signedDate>
+</LOBBYINGDISCLOSURE1>

@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type='text/xsl' href='../../ld1.xsl'?>
+<LOBBYINGDISCLOSURE1>
+   <imported>N</imported>
+   <pages>2</pages>
+   <regType>2</regType>
+   <organizationName>ALCALDE &amp; FAY</organizationName>
+   <prefix></prefix>
+   <firstName></firstName>
+   <lastName></lastName>
+   <address1>2111 WILSON BOULEVARD 8TH FLOOR</address1>
+   <address2></address2>
+   <city>ARLINGTON</city>
+   <state>VA</state>
+   <zip>22201</zip>
+   <zipext></zipext>
+   <country>USA</country>
+   <principal_city></principal_city>
+   <principal_state></principal_state>
+   <principal_zip></principal_zip>
+   <principal_zipext></principal_zipext>
+   <principal_country></principal_country>
+   <registrantGeneralDescription>Lobbying &amp; Consulting</registrantGeneralDescription>
+   <selfSelect>N</selfSelect>
+   <clientName>Clark College</clientName>
+   <clientAddress>1933 Fort Vancouver Way</clientAddress>
+   <clientCity>Vancouver</clientCity>
+   <clientState>WA</clientState>
+   <clientZip>98663</clientZip>
+   <clientZipExt></clientZipExt>
+   <clientCountry>USA</clientCountry>
+   <prinClientCity></prinClientCity>
+   <prinClientState></prinClientState>
+   <prinClientZip></prinClientZip>
+   <prinClientZipExt></prinClientZipExt>
+   <prinClientCountry></prinClientCountry>
+   <clientGeneralDescription>Community College</clientGeneralDescription>
+   <senateID>818</senateID>
+   <houseID>317710390</houseID>
+   <lobbyists>
+      <lobbyist>
+         <lobbyistFirstName>Nancy</lobbyistFirstName>
+         <lobbyistLastName>Prowitt</lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition>Managing Partner</coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName>Andrew</lobbyistFirstName>
+         <lobbyistLastName>McCormack</lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition>Executive Assistant/Senator Max Baucus</coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName>Trace</lobbyistFirstName>
+         <lobbyistLastName>Roller</lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition>Intern/Congressman Pete Sessions </coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName>James</lobbyistFirstName>
+         <lobbyistLastName>Davenport</lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition>LC,LA/Congressman Gerald Solomon</coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName></lobbyistFirstName>
+         <lobbyistLastName></lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition></coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+   </lobbyists>
+   <alis>
+      <ali_Code>EDU</ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+   </alis>
+   <specific_issues>Seeking federal funding in the FY 2014 Labor, Health and Human Services, and Education Appropriations bill to support workforce development and training programs; Monitoring FY14 appropriations bills for grant program funding levels; Seeking federal grant opportunities to expand workforce development and training services</specific_issues>
+   <affiliatedUrl></affiliatedUrl>
+   <affiliatedOrgs>
+      <affiliatedOrg>
+         <affiliatedOrgName></affiliatedOrgName>
+         <affiliatedOrgAddress></affiliatedOrgAddress>
+         <affiliatedOrgCity></affiliatedOrgCity>
+         <affiliatedOrgState></affiliatedOrgState>
+         <affiliatedOrgZip></affiliatedOrgZip>
+         <affiliatedOrgCountry></affiliatedOrgCountry>
+         <affiliatedPrinOrgCity></affiliatedPrinOrgCity>
+         <affiliatedPrinOrgState></affiliatedPrinOrgState>
+         <affiliatedPrinOrgCountry></affiliatedPrinOrgCountry>
+      </affiliatedOrg>
+      <affiliatedOrg>
+         <affiliatedOrgName></affiliatedOrgName>
+         <affiliatedOrgAddress></affiliatedOrgAddress>
+         <affiliatedOrgCity></affiliatedOrgCity>
+         <affiliatedOrgState></affiliatedOrgState>
+         <affiliatedOrgZip></affiliatedOrgZip>
+         <affiliatedOrgCountry></affiliatedOrgCountry>
+         <affiliatedPrinOrgCity></affiliatedPrinOrgCity>
+         <affiliatedPrinOrgState></affiliatedPrinOrgState>
+         <affiliatedPrinOrgCountry></affiliatedPrinOrgCountry>
+      </affiliatedOrg>
+      <affiliatedOrg>
+         <affiliatedOrgName></affiliatedOrgName>
+         <affiliatedOrgAddress></affiliatedOrgAddress>
+         <affiliatedOrgCity></affiliatedOrgCity>
+         <affiliatedOrgState></affiliatedOrgState>
+         <affiliatedOrgZip></affiliatedOrgZip>
+         <affiliatedOrgCountry></affiliatedOrgCountry>
+         <affiliatedPrinOrgCity></affiliatedPrinOrgCity>
+         <affiliatedPrinOrgState></affiliatedPrinOrgState>
+         <affiliatedPrinOrgCountry></affiliatedPrinOrgCountry>
+      </affiliatedOrg>
+   </affiliatedOrgs>
+   <foreignEntities>
+      <foreignEntity>
+         <name></name>
+         <address></address>
+         <city></city>
+         <state></state>
+         <country></country>
+         <prinCity></prinCity>
+         <prinState></prinState>
+         <prinCountry></prinCountry>
+         <contribution></contribution>
+         <ownership_Percentage></ownership_Percentage>
+      </foreignEntity>
+      <foreignEntity>
+         <name></name>
+         <address></address>
+         <city></city>
+         <state></state>
+         <country></country>
+         <prinCity></prinCity>
+         <prinState></prinState>
+         <prinCountry></prinCountry>
+         <contribution></contribution>
+         <ownership_Percentage></ownership_Percentage>
+      </foreignEntity>
+   </foreignEntities>
+   <reportYear>2014</reportYear>
+   <reportType>RR</reportType>
+   <effectiveDate>02/03/2014</effectiveDate>
+   <printedName>Nancy Prowitt - Managing Partner</printedName>
+   <signedDate>04/03/2014</signedDate>
+</LOBBYINGDISCLOSURE1>

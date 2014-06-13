@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type='text/xsl' href='../../ld1.xsl'?>
+<LOBBYINGDISCLOSURE1>
+   <imported>N</imported>
+   <pages>2</pages>
+   <regType>2</regType>
+   <organizationName>Hannegan Landau Poersch Advocacy, LLC</organizationName>
+   <prefix></prefix>
+   <firstName></firstName>
+   <lastName></lastName>
+   <address1>101 Constitution Avenue, NW</address1>
+   <address2>Suite L110</address2>
+   <city>Washington</city>
+   <state>DC</state>
+   <zip>20001</zip>
+   <zipext></zipext>
+   <country>USA</country>
+   <principal_city></principal_city>
+   <principal_state></principal_state>
+   <principal_zip></principal_zip>
+   <principal_zipext></principal_zipext>
+   <principal_country></principal_country>
+   <registrantGeneralDescription>Public Affairs </registrantGeneralDescription>
+   <selfSelect>N</selfSelect>
+   <clientName>Enbridge Energy Company, Inc.</clientName>
+   <clientAddress>1100 Louisiana Street</clientAddress>
+   <clientCity>Houston</clientCity>
+   <clientState>TX</clientState>
+   <clientZip>77002</clientZip>
+   <clientZipExt></clientZipExt>
+   <clientCountry>USA</clientCountry>
+   <prinClientCity></prinClientCity>
+   <prinClientState></prinClientState>
+   <prinClientZip></prinClientZip>
+   <prinClientZipExt></prinClientZipExt>
+   <prinClientCountry></prinClientCountry>
+   <clientGeneralDescription>Energy Delivery</clientGeneralDescription>
+   <senateID>400918672</senateID>
+   <houseID>420260030</houseID>
+   <lobbyists>
+      <lobbyist>
+         <lobbyistFirstName>Daniella </lobbyistFirstName>
+         <lobbyistLastName>Landau</lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition></coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName>Timothy</lobbyistFirstName>
+         <lobbyistLastName>Hannegan</lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition>U.S. General Accounting Office</coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName>Jennifer</lobbyistFirstName>
+         <lobbyistLastName>Poersch</lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition></coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName></lobbyistFirstName>
+         <lobbyistLastName></lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition></coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName></lobbyistFirstName>
+         <lobbyistLastName></lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition></coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+   </lobbyists>
+   <alis>
+      <ali_Code>ENG</ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+   </alis>
+   <specific_issues>Energy, Legislative, and Regulatory Issues.</specific_issues>
+   <affiliatedUrl></affiliatedUrl>
+   <affiliatedOrgs>
+      <affiliatedOrg>
+         <affiliatedOrgName></affiliatedOrgName>
+         <affiliatedOrgAddress></affiliatedOrgAddress>
+         <affiliatedOrgCity></affiliatedOrgCity>
+         <affiliatedOrgState></affiliatedOrgState>
+         <affiliatedOrgZip></affiliatedOrgZip>
+         <affiliatedOrgCountry></affiliatedOrgCountry>
+         <affiliatedPrinOrgCity></affiliatedPrinOrgCity>
+         <affiliatedPrinOrgState></affiliatedPrinOrgState>
+         <affiliatedPrinOrgCountry></affiliatedPrinOrgCountry>
+      </affiliatedOrg>
+      <affiliatedOrg>
+         <affiliatedOrgName></affiliatedOrgName>
+         <affiliatedOrgAddress></affiliatedOrgAddress>
+         <affiliatedOrgCity></affiliatedOrgCity>
+         <affiliatedOrgState></affiliatedOrgState>
+         <affiliatedOrgZip></affiliatedOrgZip>
+         <affiliatedOrgCountry></affiliatedOrgCountry>
+         <affiliatedPrinOrgCity></affiliatedPrinOrgCity>
+         <affiliatedPrinOrgState></affiliatedPrinOrgState>
+         <affiliatedPrinOrgCountry></affiliatedPrinOrgCountry>
+      </affiliatedOrg>
+      <affiliatedOrg>
+         <affiliatedOrgName></affiliatedOrgName>
+         <affiliatedOrgAddress></affiliatedOrgAddress>
+         <affiliatedOrgCity></affiliatedOrgCity>
+         <affiliatedOrgState></affiliatedOrgState>
+         <affiliatedOrgZip></affiliatedOrgZip>
+         <affiliatedOrgCountry></affiliatedOrgCountry>
+         <affiliatedPrinOrgCity></affiliatedPrinOrgCity>
+         <affiliatedPrinOrgState></affiliatedPrinOrgState>
+         <affiliatedPrinOrgCountry></affiliatedPrinOrgCountry>
+      </affiliatedOrg>
+   </affiliatedOrgs>
+   <foreignEntities>
+      <foreignEntity>
+         <name> Enbridge, Inc.</name>
+         <address>3000 Fifth Avenue Place, 425-1st St SW</address>
+         <city> T2P 3L8</city>
+         <state>AB</state>
+         <country>CAN</country>
+         <prinCity>Calgary</prinCity>
+         <prinState>AB</prinState>
+         <prinCountry>CAN</prinCountry>
+         <contribution>0.00</contribution>
+         <ownership_Percentage>100</ownership_Percentage>
+      </foreignEntity>
+      <foreignEntity>
+         <name></name>
+         <address></address>
+         <city></city>
+         <state></state>
+         <country></country>
+         <prinCity></prinCity>
+         <prinState></prinState>
+         <prinCountry></prinCountry>
+         <contribution></contribution>
+         <ownership_Percentage></ownership_Percentage>
+      </foreignEntity>
+   </foreignEntities>
+   <reportYear>2014</reportYear>
+   <reportType>RR</reportType>
+   <effectiveDate>02/01/2014</effectiveDate>
+   <printedName>Daniella Landau - Principal</printedName>
+   <signedDate>02/07/2014</signedDate>
+</LOBBYINGDISCLOSURE1>

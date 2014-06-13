@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type='text/xsl' href='../../ld1.xsl'?>
+<LOBBYINGDISCLOSURE1>
+   <imported>N</imported>
+   <pages>2</pages>
+   <regType>3</regType>
+   <organizationName>THE FERGUSON GROUP, LLC</organizationName>
+   <prefix></prefix>
+   <firstName></firstName>
+   <lastName></lastName>
+   <address1>1130 CONNECTICUT AVENUE NW</address1>
+   <address2>SUITE 300</address2>
+   <city>WASHINGTON</city>
+   <state>DC</state>
+   <zip>20036</zip>
+   <zipext></zipext>
+   <country>USA</country>
+   <principal_city></principal_city>
+   <principal_state></principal_state>
+   <principal_zip></principal_zip>
+   <principal_zipext></principal_zipext>
+   <principal_country></principal_country>
+   <registrantGeneralDescription>Federal Lobbyist</registrantGeneralDescription>
+   <selfSelect>N</selfSelect>
+   <clientName>MADISON COUNTY, IN</clientName>
+   <clientAddress>116 East 9th Street</clientAddress>
+   <clientCity>Anderson</clientCity>
+   <clientState>IN</clientState>
+   <clientZip>46016</clientZip>
+   <clientZipExt></clientZipExt>
+   <clientCountry>USA</clientCountry>
+   <prinClientCity></prinClientCity>
+   <prinClientState></prinClientState>
+   <prinClientZip></prinClientZip>
+   <prinClientZipExt></prinClientZipExt>
+   <prinClientCountry></prinClientCountry>
+   <clientGeneralDescription>County Government</clientGeneralDescription>
+   <senateID>14451-1005041</senateID>
+   <houseID>325890308</houseID>
+   <lobbyists>
+      <lobbyist>
+         <lobbyistFirstName>William</lobbyistFirstName>
+         <lobbyistLastName>Hanka</lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition>Rep. Nethercutt, Leg Director, 1995-1997</coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName>William</lobbyistFirstName>
+         <lobbyistLastName>Hanka</lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition>House Cmte on Gov't Reform and Oversight - Investigative</coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName>William</lobbyistFirstName>
+         <lobbyistLastName>Hanka</lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition>Counsel, 1997-1998</coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName></lobbyistFirstName>
+         <lobbyistLastName></lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition></coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName></lobbyistFirstName>
+         <lobbyistLastName></lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition></coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+   </lobbyists>
+   <alis>
+      <ali_Code>TRA</ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+   </alis>
+   <specific_issues>TIGER Grant Program - US DOT</specific_issues>
+   <affiliatedUrl></affiliatedUrl>
+   <affiliatedOrgs>
+      <affiliatedOrg>
+         <affiliatedOrgName></affiliatedOrgName>
+         <affiliatedOrgAddress></affiliatedOrgAddress>
+         <affiliatedOrgCity></affiliatedOrgCity>
+         <affiliatedOrgState></affiliatedOrgState>
+         <affiliatedOrgZip></affiliatedOrgZip>
+         <affiliatedOrgCountry></affiliatedOrgCountry>
+         <affiliatedPrinOrgCity></affiliatedPrinOrgCity>
+         <affiliatedPrinOrgState></affiliatedPrinOrgState>
+         <affiliatedPrinOrgCountry></affiliatedPrinOrgCountry>
+      </affiliatedOrg>
+      <affiliatedOrg>
+         <affiliatedOrgName></affiliatedOrgName>
+         <affiliatedOrgAddress></affiliatedOrgAddress>
+         <affiliatedOrgCity></affiliatedOrgCity>
+         <affiliatedOrgState></affiliatedOrgState>
+         <affiliatedOrgZip></affiliatedOrgZip>
+         <affiliatedOrgCountry></affiliatedOrgCountry>
+         <affiliatedPrinOrgCity></affiliatedPrinOrgCity>
+         <affiliatedPrinOrgState></affiliatedPrinOrgState>
+         <affiliatedPrinOrgCountry></affiliatedPrinOrgCountry>
+      </affiliatedOrg>
+      <affiliatedOrg>
+         <affiliatedOrgName></affiliatedOrgName>
+         <affiliatedOrgAddress></affiliatedOrgAddress>
+         <affiliatedOrgCity></affiliatedOrgCity>
+         <affiliatedOrgState></affiliatedOrgState>
+         <affiliatedOrgZip></affiliatedOrgZip>
+         <affiliatedOrgCountry></affiliatedOrgCountry>
+         <affiliatedPrinOrgCity></affiliatedPrinOrgCity>
+         <affiliatedPrinOrgState></affiliatedPrinOrgState>
+         <affiliatedPrinOrgCountry></affiliatedPrinOrgCountry>
+      </affiliatedOrg>
+   </affiliatedOrgs>
+   <foreignEntities>
+      <foreignEntity>
+         <name></name>
+         <address></address>
+         <city></city>
+         <state></state>
+         <country></country>
+         <prinCity></prinCity>
+         <prinState></prinState>
+         <prinCountry></prinCountry>
+         <contribution></contribution>
+         <ownership_Percentage></ownership_Percentage>
+      </foreignEntity>
+      <foreignEntity>
+         <name></name>
+         <address></address>
+         <city></city>
+         <state></state>
+         <country></country>
+         <prinCity></prinCity>
+         <prinState></prinState>
+         <prinCountry></prinCountry>
+         <contribution></contribution>
+         <ownership_Percentage></ownership_Percentage>
+      </foreignEntity>
+   </foreignEntities>
+   <reportYear>2014</reportYear>
+   <reportType>RA</reportType>
+   <effectiveDate>03/03/2014</effectiveDate>
+   <printedName>William Hanka, Partner</printedName>
+   <signedDate>03/10/2014</signedDate>
+</LOBBYINGDISCLOSURE1>

@@ -8,13 +8,10 @@ import (
 	"strings"
 	"path/filepath"
 	"net/http"
-	//"html/template"
-	"time"
 	"os"
 	"strconv"
+	"time"
 )
-
-var directory = "filings"
 
 type Lobbyist struct {
 	FirstName string `xml:"lobbyistFirstName"`
@@ -134,14 +131,13 @@ func readDirectory(recordDir string) {
 
     fmt.Println("Reading " + strconv.Itoa(len(files)) + " files from " + recordDir + "...")
 
+    rArray = nil
 	rArray = make([]Registration, len(files))
 
 	a := 0 //counter for number of files successfully read
 
 	for _, f := range files {
-		
-		func() {
-            data, err := ioutil.ReadFile("./" + recordDir + "/" + f.Name())
+            data, err := ioutil.ReadFile(recordDir + "/" + f.Name())
             if err != nil {
     			fmt.Println("error reading %v", err)
     			return
@@ -158,30 +154,38 @@ func readDirectory(recordDir string) {
     				a++ //increment number of files successfully parsed
     			}
     		}
-		}()
-		
+
 		if (a % 1000 == 0) {
 		    fmt.Println(strconv.Itoa(a) + " files read");
 		}
     }
 
     fmt.Println("Successfully read " , a , " / " , len(files) , " files.")
+    
+    fmt.Println("Removing record directory " + recordDir + "...")
+    err = os.RemoveAll(recordDir)
+    if err != nil {
+      panic(err)
+    }  
+    fmt.Println("Removed record directory " + recordDir)
 }
 
 func main() {
+    go server()
+    
     scrape()
     
-	readDirectory(directory)
+	readDirectory(savePath)
+
+    ticker := time.NewTicker(60 * 60 * 24 * time.Second)
     
-    //getTokens()
-
-    server()
-
-    t := time.NewTicker(60 * time.Second)
-
-	for now := range t.C {
-		now = now
-	}
+    for {
+        select {
+            case <- ticker.C: 
+                scrape()
+                readDirectory(savePath)
+        }
+    }
 
 	fmt.Println("server end")
 }

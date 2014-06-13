@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type='text/xsl' href='../../ld1.xsl'?>
+<LOBBYINGDISCLOSURE1>
+   <imported>N</imported>
+   <pages>2</pages>
+   <regType>1</regType>
+   <organizationName>Greater New Orleans, Inc. </organizationName>
+   <prefix></prefix>
+   <firstName></firstName>
+   <lastName></lastName>
+   <address1>365 Canal Street</address1>
+   <address2>Suite 2300</address2>
+   <city>New Orleans</city>
+   <state>LA</state>
+   <zip>70130</zip>
+   <zipext></zipext>
+   <country>USA</country>
+   <principal_city></principal_city>
+   <principal_state></principal_state>
+   <principal_zip></principal_zip>
+   <principal_zipext></principal_zipext>
+   <principal_country></principal_country>
+   <registrantGeneralDescription>GNO, Inc. is the ten parish economic development organization for Southeast Louisiana. </registrantGeneralDescription>
+   <selfSelect>Y</selfSelect>
+   <clientName>Greater New Orleans, Inc. </clientName>
+   <clientAddress></clientAddress>
+   <clientCity></clientCity>
+   <clientState></clientState>
+   <clientZip></clientZip>
+   <clientZipExt></clientZipExt>
+   <clientCountry></clientCountry>
+   <prinClientCity></prinClientCity>
+   <prinClientState></prinClientState>
+   <prinClientZip></prinClientZip>
+   <prinClientZipExt></prinClientZipExt>
+   <prinClientCountry></prinClientCountry>
+   <clientGeneralDescription></clientGeneralDescription>
+   <senateID>401103215</senateID>
+   <houseID>425160000</houseID>
+   <lobbyists>
+      <lobbyist>
+         <lobbyistFirstName>Caitlin</lobbyistFirstName>
+         <lobbyistLastName>Berni</lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition>House Ways &amp; Means Staff Asst, Nov 07-Jun 08</coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName>Caitlin </lobbyistFirstName>
+         <lobbyistLastName>Berni</lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition>Congressman Steve Scalise, Scheduler, June 2008 - Oct 2009</coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName>Caitlin </lobbyistFirstName>
+         <lobbyistLastName>Berni</lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition>Cong. Steve Scalise, Legislative Asst., Oct 2009 - Oct 2010</coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName></lobbyistFirstName>
+         <lobbyistLastName></lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition></coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName></lobbyistFirstName>
+         <lobbyistLastName></lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition></coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+   </lobbyists>
+   <alis>
+      <ali_Code>INS</ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+   </alis>
+   <specific_issues>Support legislation to delay implementation of, and amend, the Biggert-Waters Flood Insurance Modernization Act of 2012.</specific_issues>
+   <affiliatedUrl>http://www.stcharlesgov.net/; http://www.sjbparish.com/</affiliatedUrl>
+   <affiliatedOrgs>
+      <affiliatedOrg>
+         <affiliatedOrgName>St. Charles Parish, Louisiana</affiliatedOrgName>
+         <affiliatedOrgAddress>15045 River Road</affiliatedOrgAddress>
+         <affiliatedOrgCity>Hahnville</affiliatedOrgCity>
+         <affiliatedOrgState>LA</affiliatedOrgState>
+         <affiliatedOrgZip>70057</affiliatedOrgZip>
+         <affiliatedOrgCountry>USA</affiliatedOrgCountry>
+         <affiliatedPrinOrgCity>Hahnville</affiliatedPrinOrgCity>
+         <affiliatedPrinOrgState>LA</affiliatedPrinOrgState>
+         <affiliatedPrinOrgCountry>USA</affiliatedPrinOrgCountry>
+      </affiliatedOrg>
+      <affiliatedOrg>
+         <affiliatedOrgName>St. John the Baptist Parish, Louisiana</affiliatedOrgName>
+         <affiliatedOrgAddress>1801 West Airline Highway</affiliatedOrgAddress>
+         <affiliatedOrgCity>LaPlace</affiliatedOrgCity>
+         <affiliatedOrgState>LA</affiliatedOrgState>
+         <affiliatedOrgZip>70068</affiliatedOrgZip>
+         <affiliatedOrgCountry>USA</affiliatedOrgCountry>
+         <affiliatedPrinOrgCity>LaPlace</affiliatedPrinOrgCity>
+         <affiliatedPrinOrgState>LA</affiliatedPrinOrgState>
+         <affiliatedPrinOrgCountry>USA</affiliatedPrinOrgCountry>
+      </affiliatedOrg>
+      <affiliatedOrg>
+         <affiliatedOrgName></affiliatedOrgName>
+         <affiliatedOrgAddress></affiliatedOrgAddress>
+         <affiliatedOrgCity></affiliatedOrgCity>
+         <affiliatedOrgState></affiliatedOrgState>
+         <affiliatedOrgZip></affiliatedOrgZip>
+         <affiliatedOrgCountry></affiliatedOrgCountry>
+         <affiliatedPrinOrgCity></affiliatedPrinOrgCity>
+         <affiliatedPrinOrgState></affiliatedPrinOrgState>
+         <affiliatedPrinOrgCountry></affiliatedPrinOrgCountry>
+      </affiliatedOrg>
+   </affiliatedOrgs>
+   <foreignEntities>
+      <foreignEntity>
+         <name></name>
+         <address></address>
+         <city></city>
+         <state></state>
+         <country></country>
+         <prinCity></prinCity>
+         <prinState></prinState>
+         <prinCountry></prinCountry>
+         <contribution></contribution>
+         <ownership_Percentage></ownership_Percentage>
+      </foreignEntity>
+      <foreignEntity>
+         <name></name>
+         <address></address>
+         <city></city>
+         <state></state>
+         <country></country>
+         <prinCity></prinCity>
+         <prinState></prinState>
+         <prinCountry></prinCountry>
+         <contribution></contribution>
+         <ownership_Percentage></ownership_Percentage>
+      </foreignEntity>
+   </foreignEntities>
+   <reportYear>2014</reportYear>
+   <reportType>RR</reportType>
+   <effectiveDate>01/01/2014</effectiveDate>
+   <printedName>Caitlin S. Berni, Director of External Affairs</printedName>
+   <signedDate>02/19/2014</signedDate>
+</LOBBYINGDISCLOSURE1>

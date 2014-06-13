@@ -101,6 +101,7 @@ func download(t Tokens, i int, wg *sync.WaitGroup) {
 }
 
 func scrape() {
+    
     fmt.Println("Sending GET request to " + link + "...");
     
     res, err := http.Get(link)
@@ -165,7 +166,7 @@ func scrape() {
         }
     }
     
-    fmt.Println(savePath + " directory made")
+    fmt.Println(savePath + " records directory made")
     
     var wg sync.WaitGroup
     for fileNumber, file := range token.FileNames {

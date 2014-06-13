@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='../../ld1webpage.xsl'?>
+<LOBBYINGDISCLOSURE1>
+  <imported>N</imported>
+  <pages>2</pages>
+  <regType>2</regType>
+  <organizationName>Greenberg Traurig, LLP</organizationName>
+  <prefix>
+  </prefix>
+  <firstName>
+  </firstName>
+  <lastName>
+  </lastName>
+  <address1>2101 L Street, NW</address1>
+  <address2>Suite 1000</address2>
+  <city>Washington</city>
+  <state>DC</state>
+  <zip>20037</zip>
+  <zipext>
+  </zipext>
+  <country>USA</country>
+  <principal_city>
+  </principal_city>
+  <principal_state>
+  </principal_state>
+  <principal_zip>
+  </principal_zip>
+  <principal_zipext>
+  </principal_zipext>
+  <principal_country>
+  </principal_country>
+  <contactIntlPhone>
+  </contactIntlPhone>
+  <registrantGeneralDescription>Law firm</registrantGeneralDescription>
+  <selfSelect>N</selfSelect>
+  <clientName>Poker Players Alliance (PPA)</clientName>
+  <clientAddress>705 8th Street, SE, Suite 300</clientAddress>
+  <clientCity>Washington</clientCity>
+  <clientState>DC</clientState>
+  <clientZip>20003</clientZip>
+  <clientZipExt>
+  </clientZipExt>
+  <clientCountry>USA</clientCountry>
+  <prinClientCity>
+  </prinClientCity>
+  <prinClientState>
+  </prinClientState>
+  <prinClientZip>
+  </prinClientZip>
+  <prinClientZipExt>
+  </prinClientZipExt>
+  <prinClientCountry>
+  </prinClientCountry>
+  <clientGeneralDescription>Non-profit organization to promote the game &amp; protect the right to play poker in all forms</clientGeneralDescription>
+  <senateID>16896</senateID>
+  <houseID>315950470</houseID>
+  <lobbyists>
+    <lobbyist>
+      <lobbyistFirstName>J. Daniel</lobbyistFirstName>
+      <lobbyistLastName>Walsh</lobbyistLastName>
+      <lobbyistSuffix>
+      </lobbyistSuffix>
+      <coveredPosition>Leg. Dir., Rep. Gilchrest; Leg. Asst., Rep. Buechner</coveredPosition>
+      <lobbyistNew>Y</lobbyistNew>
+    </lobbyist>
+    <lobbyist>
+      <lobbyistFirstName>Edward</lobbyistFirstName>
+      <lobbyistLastName>Barron</lobbyistLastName>
+      <lobbyistSuffix>
+      </lobbyistSuffix>
+      <coveredPosition>Deputy Chief Counsel, Sen. Judiciary Cmte; Deputy Chief of </coveredPosition>
+      <lobbyistNew>Y</lobbyistNew>
+    </lobbyist>
+    <lobbyist>
+      <lobbyistFirstName>Edward</lobbyistFirstName>
+      <lobbyistLastName>Barron (continued)</lobbyistLastName>
+      <lobbyistSuffix>
+      </lobbyistSuffix>
+      <coveredPosition>Staff, Sen. Environment &amp; Public Works Cmte.; Deputy Chief </coveredPosition>
+      <lobbyistNew>Y</lobbyistNew>
+    </lobbyist>
+    <lobbyist>
+      <lobbyistFirstName>Edward</lobbyistFirstName>
+      <lobbyistLastName>Barron (continued)</lobbyistLastName>
+      <lobbyistSuffix>
+      </lobbyistSuffix>
+      <coveredPosition>Counsel, Sen. Agriculture Cmte; Chief of Staff, Sen. </coveredPosition>
+      <lobbyistNew>Y</lobbyistNew>
+    </lobbyist>
+    <lobbyist>
+      <lobbyistFirstName>Edward</lobbyistFirstName>
+      <lobbyistLastName>Barron (continued)</lobbyistLastName>
+      <lobbyistSuffix>
+      </lobbyistSuffix>
+      <coveredPosition>Agriculture Cmte.</coveredPosition>
+      <lobbyistNew>Y</lobbyistNew>
+    </lobbyist>
+  </lobbyists>
+  <alis>
+    <ali_Code>TAX</ali_Code>
+    <ali_Code>BAN</ali_Code>
+    <ali_Code>GAM</ali_Code>
+    <ali_Code>
+    </ali_Code>
+    <ali_Code>
+    </ali_Code>
+    <ali_Code>
+    </ali_Code>
+    <ali_Code>
+    </ali_Code>
+    <ali_Code>
+    </ali_Code>
+    <ali_Code>
+    </ali_Code>
+  </alis>
+  <specific_issues>S2159; HR4301; HR3491; HR266; HR2282</specific_issues>
+  <affiliatedUrl>
+  </affiliatedUrl>
+  <affiliatedOrgs>
+    <affiliatedOrg>
+      <affiliatedOrgName>
+      </affiliatedOrgName>
+      <affiliatedOrgAddress>
+      </affiliatedOrgAddress>
+      <affiliatedOrgCity>
+      </affiliatedOrgCity>
+      <affiliatedOrgState>
+      </affiliatedOrgState>
+      <affiliatedOrgZip>
+      </affiliatedOrgZip>
+      <affiliatedOrgCountry>
+      </affiliatedOrgCountry>
+      <affiliatedPrinOrgCity>
+      </affiliatedPrinOrgCity>
+      <affiliatedPrinOrgState>
+      </affiliatedPrinOrgState>
+      <affiliatedPrinOrgCountry>
+      </affiliatedPrinOrgCountry>
+    </affiliatedOrg>
+    <affiliatedOrg>
+      <affiliatedOrgName>
+      </affiliatedOrgName>
+      <affiliatedOrgAddress>
+      </affiliatedOrgAddress>
+      <affiliatedOrgCity>
+      </affiliatedOrgCity>
+      <affiliatedOrgState>
+      </affiliatedOrgState>
+      <affiliatedOrgZip>
+      </affiliatedOrgZip>
+      <affiliatedOrgCountry>
+      </affiliatedOrgCountry>
+      <affiliatedPrinOrgCity>
+      </affiliatedPrinOrgCity>
+      <affiliatedPrinOrgState>
+      </affiliatedPrinOrgState>
+      <affiliatedPrinOrgCountry>
+      </affiliatedPrinOrgCountry>
+    </affiliatedOrg>
+    <affiliatedOrg>
+      <affiliatedOrgName>
+      </affiliatedOrgName>
+      <affiliatedOrgAddress>
+      </affiliatedOrgAddress>
+      <affiliatedOrgCity>
+      </affiliatedOrgCity>
+      <affiliatedOrgState>
+      </affiliatedOrgState>
+      <affiliatedOrgZip>
+      </affiliatedOrgZip>
+      <affiliatedOrgCountry>
+      </affiliatedOrgCountry>
+      <affiliatedPrinOrgCity>
+      </affiliatedPrinOrgCity>
+      <affiliatedPrinOrgState>
+      </affiliatedPrinOrgState>
+      <affiliatedPrinOrgCountry>
+      </affiliatedPrinOrgCountry>
+    </affiliatedOrg>
+  </affiliatedOrgs>
+  <foreignEntities>
+    <foreignEntity>
+      <name>
+      </name>
+      <address>
+      </address>
+      <city>
+      </city>
+      <state>
+      </state>
+      <country>
+      </country>
+      <prinCity>
+      </prinCity>
+      <prinState>
+      </prinState>
+      <prinCountry>
+      </prinCountry>
+      <contribution>
+      </contribution>
+      <ownership_Percentage>
+      </ownership_Percentage>
+    </foreignEntity>
+    <foreignEntity>
+      <name>
+      </name>
+      <address>
+      </address>
+      <city>
+      </city>
+      <state>
+      </state>
+      <country>
+      </country>
+      <prinCity>
+      </prinCity>
+      <prinState>
+      </prinState>
+      <prinCountry>
+      </prinCountry>
+      <contribution>
+      </contribution>
+      <ownership_Percentage>
+      </ownership_Percentage>
+    </foreignEntity>
+  </foreignEntities>
+  <reportYear>2014</reportYear>
+  <reportType>RR</reportType>
+  <effectiveDate>5/1/2014</effectiveDate>
+  <printedName>CHRISTINE SCHAUT</printedName>
+  <signedDate>5/29/2014 3:35:28 PM</signedDate>
+</LOBBYINGDISCLOSURE1>

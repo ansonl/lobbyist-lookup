@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='../../ld1webpage.xsl'?>
+<LOBBYINGDISCLOSURE1>
+  <imported>N</imported>
+  <pages>2</pages>
+  <regType>2</regType>
+  <organizationName>Elmendorf Ryan</organizationName>
+  <prefix>
+  </prefix>
+  <firstName>
+  </firstName>
+  <lastName>
+  </lastName>
+  <address1>900 7th Street NW</address1>
+  <address2>Suite 750</address2>
+  <city>Washington</city>
+  <state>DC</state>
+  <zip>20001</zip>
+  <zipext>
+  </zipext>
+  <country>USA</country>
+  <principal_city>
+  </principal_city>
+  <principal_state>
+  </principal_state>
+  <principal_zip>
+  </principal_zip>
+  <principal_zipext>
+  </principal_zipext>
+  <principal_country>
+  </principal_country>
+  <contactIntlPhone>
+  </contactIntlPhone>
+  <registrantGeneralDescription>Government relations</registrantGeneralDescription>
+  <selfSelect>N</selfSelect>
+  <clientName>Connecticut Corner Coalition</clientName>
+  <clientAddress>1259 I Street NW, Suite 250</clientAddress>
+  <clientCity>Washington</clientCity>
+  <clientState>DC</clientState>
+  <clientZip>20005</clientZip>
+  <clientZipExt>
+  </clientZipExt>
+  <clientCountry>USA</clientCountry>
+  <prinClientCity>
+  </prinClientCity>
+  <prinClientState>
+  </prinClientState>
+  <prinClientZip>
+  </prinClientZip>
+  <prinClientZipExt>
+  </prinClientZipExt>
+  <prinClientCountry>
+  </prinClientCountry>
+  <clientGeneralDescription>Issues related to tribal recognition</clientGeneralDescription>
+  <senateID>313271</senateID>
+  <houseID>391280076</houseID>
+  <lobbyists>
+    <lobbyist>
+      <lobbyistFirstName>Steven</lobbyistFirstName>
+      <lobbyistLastName>Elmendorf</lobbyistLastName>
+      <lobbyistSuffix>
+      </lobbyistSuffix>
+      <coveredPosition>Exec. Asst., Sen. Adams; Admin. Asst., Rep. Eckart</coveredPosition>
+      <lobbyistNew>Y</lobbyistNew>
+    </lobbyist>
+    <lobbyist>
+      <lobbyistFirstName>Steven</lobbyistFirstName>
+      <lobbyistLastName>Elmendorf</lobbyistLastName>
+      <lobbyistSuffix>
+      </lobbyistSuffix>
+      <coveredPosition>Admin., Asst., House Majority Leader</coveredPosition>
+      <lobbyistNew>Y</lobbyistNew>
+    </lobbyist>
+    <lobbyist>
+      <lobbyistFirstName>Steven</lobbyistFirstName>
+      <lobbyistLastName>Elmendorf</lobbyistLastName>
+      <lobbyistSuffix>
+      </lobbyistSuffix>
+      <coveredPosition>Deputy COS and COS, House Minority Leader</coveredPosition>
+      <lobbyistNew>Y</lobbyistNew>
+    </lobbyist>
+    <lobbyist>
+      <lobbyistFirstName>Robert</lobbyistFirstName>
+      <lobbyistLastName>Cogorno</lobbyistLastName>
+      <lobbyistSuffix>
+      </lobbyistSuffix>
+      <coveredPosition>Flr Dir., Majority Leader; Flr Dir., Minority Whip</coveredPosition>
+      <lobbyistNew>Y</lobbyistNew>
+    </lobbyist>
+    <lobbyist>
+      <lobbyistFirstName>Robert</lobbyistFirstName>
+      <lobbyistLastName>Cogorno</lobbyistLastName>
+      <lobbyistSuffix>
+      </lobbyistSuffix>
+      <coveredPosition>Appropriates/Research Dir., Minority Leader</coveredPosition>
+      <lobbyistNew>Y</lobbyistNew>
+    </lobbyist>
+    <lobbyist>
+      <lobbyistFirstName>Robert</lobbyistFirstName>
+      <lobbyistLastName>Cogorno</lobbyistLastName>
+      <lobbyistSuffix>
+      </lobbyistSuffix>
+      <coveredPosition>Approp., Rep. DeLauro; Leg Dir., Rep. Visclosky</coveredPosition>
+      <lobbyistNew>Y</lobbyistNew>
+    </lobbyist>
+    <lobbyist>
+      <lobbyistFirstName>Robert</lobbyistFirstName>
+      <lobbyistLastName>Cogorno</lobbyistLastName>
+      <lobbyistSuffix>
+      </lobbyistSuffix>
+      <coveredPosition>Communications., Sen. Adams</coveredPosition>
+      <lobbyistNew>Y</lobbyistNew>
+    </lobbyist>
+    <lobbyist>
+      <lobbyistFirstName>Kristina</lobbyistFirstName>
+      <lobbyistLastName>Kennedy</lobbyistLastName>
+      <lobbyistSuffix>
+      </lobbyistSuffix>
+      <coveredPosition>Leg Counsel, Counsel, Leg Dir., Sen. Sarbanes</coveredPosition>
+      <lobbyistNew>Y</lobbyistNew>
+    </lobbyist>
+    <lobbyist>
+      <lobbyistFirstName>Shanti</lobbyistFirstName>
+      <lobbyistLastName>Stanton</lobbyistLastName>
+      <lobbyistSuffix>
+      </lobbyistSuffix>
+      <coveredPosition>Staff Asst., Spec Asst., Fl Asst., Dem Leader's Ofc</coveredPosition>
+      <lobbyistNew>Y</lobbyistNew>
+    </lobbyist>
+    <lobbyist>
+      <lobbyistFirstName>Barry</lobbyistFirstName>
+      <lobbyistLastName>LaSala</lobbyistLastName>
+      <lobbyistSuffix>
+      </lobbyistSuffix>
+      <coveredPosition>Counsel, Senate Small Business Committee</coveredPosition>
+      <lobbyistNew>Y</lobbyistNew>
+    </lobbyist>
+    <lobbyist>
+      <lobbyistFirstName>James</lobbyistFirstName>
+      <lobbyistLastName>Ryan</lobbyistLastName>
+      <lobbyistSuffix>
+      </lobbyistSuffix>
+      <coveredPosition>LaFollette Law Fellow, S. Jud Cmte, S/C on Juv Jus</coveredPosition>
+      <lobbyistNew>Y</lobbyistNew>
+    </lobbyist>
+    <lobbyist>
+      <lobbyistFirstName>James</lobbyistFirstName>
+      <lobbyistLastName>Ryan</lobbyistLastName>
+      <lobbyistSuffix>
+      </lobbyistSuffix>
+      <coveredPosition>Legal Extern, H. Jud Cmte, Subcmte Crime/Crim Jus</coveredPosition>
+      <lobbyistNew>Y</lobbyistNew>
+    </lobbyist>
+    <lobbyist>
+      <lobbyistFirstName>James</lobbyistFirstName>
+      <lobbyistLastName>Ryan</lobbyistLastName>
+      <lobbyistSuffix>
+      </lobbyistSuffix>
+      <coveredPosition>Legal Counsel, Sen. Reid</coveredPosition>
+      <lobbyistNew>Y</lobbyistNew>
+    </lobbyist>
+    <lobbyist>
+      <lobbyistFirstName>James</lobbyistFirstName>
+      <lobbyistLastName>Ryan</lobbyistLastName>
+      <lobbyistSuffix>
+      </lobbyistSuffix>
+      <coveredPosition>Leg Dir. &amp; General Counsel, Sen. Reid</coveredPosition>
+      <lobbyistNew>Y</lobbyistNew>
+    </lobbyist>
+    <lobbyist>
+      <lobbyistFirstName>James</lobbyistFirstName>
+      <lobbyistLastName>Ryan</lobbyistLastName>
+      <lobbyistSuffix>
+      </lobbyistSuffix>
+      <coveredPosition>Chief Counsel, Flr Pol. Dir., Asst. Dem Ldr/Whip</coveredPosition>
+      <lobbyistNew>Y</lobbyistNew>
+    </lobbyist>
+    <lobbyist>
+      <lobbyistFirstName>Stacey</lobbyistFirstName>
+      <lobbyistLastName>Alexander</lobbyistLastName>
+      <lobbyistSuffix>
+      </lobbyistSuffix>
+      <coveredPosition>Chief of Staff, Rep. Matheson</coveredPosition>
+      <lobbyistNew>Y</lobbyistNew>
+    </lobbyist>
+    <lobbyist>
+      <lobbyistFirstName>Pat</lobbyistFirstName>
+      <lobbyistLastName>Bousliman</lobbyistLastName>
+      <lobbyistSuffix>
+      </lobbyistSuffix>
+      <coveredPosition>Professional Staff, Senate Finance</coveredPosition>
+      <lobbyistNew>Y</lobbyistNew>
+    </lobbyist>
+    <lobbyist>
+      <lobbyistFirstName>Pat</lobbyistFirstName>
+      <lobbyistLastName>Bousliman</lobbyistLastName>
+      <lobbyistSuffix>
+      </lobbyistSuffix>
+      <coveredPosition>Acting Chief, Healthcare, Senate Finance</coveredPosition>
+      <lobbyistNew>Y</lobbyistNew>
+    </lobbyist>
+    <lobbyist>
+      <lobbyistFirstName>Pat</lobbyistFirstName>
+      <lobbyistLastName>Bousliman</lobbyistLastName>
+      <lobbyistSuffix>
+      </lobbyistSuffix>
+      <coveredPosition>Professional Staff, Health Senate Finance</coveredPosition>
+      <lobbyistNew>Y</lobbyistNew>
+    </lobbyist>
+    <lobbyist>
+      <lobbyistFirstName>Pat</lobbyistFirstName>
+      <lobbyistLastName>Bousliman</lobbyistLastName>
+      <lobbyistSuffix>
+      </lobbyistSuffix>
+      <coveredPosition>Leg Asst., Senator Baucus</coveredPosition>
+      <lobbyistNew>Y</lobbyistNew>
+    </lobbyist>
+  </lobbyists>
+  <alis>
+    <ali_Code>IND</ali_Code>
+    <ali_Code>
+    </ali_Code>
+    <ali_Code>
+    </ali_Code>
+    <ali_Code>
+    </ali_Code>
+    <ali_Code>
+    </ali_Code>
+    <ali_Code>
+    </ali_Code>
+    <ali_Code>
+    </ali_Code>
+    <ali_Code>
+    </ali_Code>
+    <ali_Code>
+    </ali_Code>
+  </alis>
+  <specific_issues>Issues related to tribal recognition</specific_issues>
+  <affiliatedUrl>
+  </affiliatedUrl>
+  <affiliatedOrgs>
+    <affiliatedOrg>
+      <affiliatedOrgName>
+      </affiliatedOrgName>
+      <affiliatedOrgAddress>
+      </affiliatedOrgAddress>
+      <affiliatedOrgCity>
+      </affiliatedOrgCity>
+      <affiliatedOrgState>
+      </affiliatedOrgState>
+      <affiliatedOrgZip>
+      </affiliatedOrgZip>
+      <affiliatedOrgCountry>
+      </affiliatedOrgCountry>
+      <affiliatedPrinOrgCity>
+      </affiliatedPrinOrgCity>
+      <affiliatedPrinOrgState>
+      </affiliatedPrinOrgState>
+      <affiliatedPrinOrgCountry>
+      </affiliatedPrinOrgCountry>
+    </affiliatedOrg>
+    <affiliatedOrg>
+      <affiliatedOrgName>
+      </affiliatedOrgName>
+      <affiliatedOrgAddress>
+      </affiliatedOrgAddress>
+      <affiliatedOrgCity>
+      </affiliatedOrgCity>
+      <affiliatedOrgState>
+      </affiliatedOrgState>
+      <affiliatedOrgZip>
+      </affiliatedOrgZip>
+      <affiliatedOrgCountry>
+      </affiliatedOrgCountry>
+      <affiliatedPrinOrgCity>
+      </affiliatedPrinOrgCity>
+      <affiliatedPrinOrgState>
+      </affiliatedPrinOrgState>
+      <affiliatedPrinOrgCountry>
+      </affiliatedPrinOrgCountry>
+    </affiliatedOrg>
+    <affiliatedOrg>
+      <affiliatedOrgName>
+      </affiliatedOrgName>
+      <affiliatedOrgAddress>
+      </affiliatedOrgAddress>
+      <affiliatedOrgCity>
+      </affiliatedOrgCity>
+      <affiliatedOrgState>
+      </affiliatedOrgState>
+      <affiliatedOrgZip>
+      </affiliatedOrgZip>
+      <affiliatedOrgCountry>
+      </affiliatedOrgCountry>
+      <affiliatedPrinOrgCity>
+      </affiliatedPrinOrgCity>
+      <affiliatedPrinOrgState>
+      </affiliatedPrinOrgState>
+      <affiliatedPrinOrgCountry>
+      </affiliatedPrinOrgCountry>
+    </affiliatedOrg>
+  </affiliatedOrgs>
+  <foreignEntities>
+    <foreignEntity>
+      <name>
+      </name>
+      <address>
+      </address>
+      <city>
+      </city>
+      <state>
+      </state>
+      <country>
+      </country>
+      <prinCity>
+      </prinCity>
+      <prinState>
+      </prinState>
+      <prinCountry>
+      </prinCountry>
+      <contribution>
+      </contribution>
+      <ownership_Percentage>
+      </ownership_Percentage>
+    </foreignEntity>
+    <foreignEntity>
+      <name>
+      </name>
+      <address>
+      </address>
+      <city>
+      </city>
+      <state>
+      </state>
+      <country>
+      </country>
+      <prinCity>
+      </prinCity>
+      <prinState>
+      </prinState>
+      <prinCountry>
+      </prinCountry>
+      <contribution>
+      </contribution>
+      <ownership_Percentage>
+      </ownership_Percentage>
+    </foreignEntity>
+  </foreignEntities>
+  <reportYear>2014</reportYear>
+  <reportType>RR</reportType>
+  <effectiveDate>03/01/2014</effectiveDate>
+  <printedName>Steven Elmendorf</printedName>
+  <signedDate>4/21/2014 7:28:42 PM</signedDate>
+</LOBBYINGDISCLOSURE1>

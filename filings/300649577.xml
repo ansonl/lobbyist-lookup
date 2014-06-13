@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type='text/xsl' href='../../ld1.xsl'?>
+<LOBBYINGDISCLOSURE1>
+   <imported>N</imported>
+   <pages>2</pages>
+   <regType>2</regType>
+   <organizationName>LOCKE LORD STRATEGIES, LP</organizationName>
+   <prefix></prefix>
+   <firstName></firstName>
+   <lastName></lastName>
+   <address1>701 8th ST. NW</address1>
+   <address2>SUITE 700</address2>
+   <city>WASHINGTON</city>
+   <state>DC</state>
+   <zip>20001</zip>
+   <zipext></zipext>
+   <country>USA</country>
+   <principal_city></principal_city>
+   <principal_state></principal_state>
+   <principal_zip></principal_zip>
+   <principal_zipext></principal_zipext>
+   <principal_country></principal_country>
+   <registrantGeneralDescription>Government relations</registrantGeneralDescription>
+   <selfSelect>N</selfSelect>
+   <clientName>The Friedkin Group</clientName>
+   <clientAddress>1375 Enclave Parkway</clientAddress>
+   <clientCity>Houston</clientCity>
+   <clientState>TX</clientState>
+   <clientZip>77077</clientZip>
+   <clientZipExt></clientZipExt>
+   <clientCountry>USA</clientCountry>
+   <prinClientCity></prinClientCity>
+   <prinClientState></prinClientState>
+   <prinClientZip></prinClientZip>
+   <prinClientZipExt></prinClientZipExt>
+   <prinClientCountry></prinClientCountry>
+   <clientGeneralDescription>Automotive and conservation issues</clientGeneralDescription>
+   <senateID>300971</senateID>
+   <houseID>350030073</houseID>
+   <lobbyists>
+      <lobbyist>
+         <lobbyistFirstName>Shane</lobbyistFirstName>
+         <lobbyistLastName>Doucet</lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition></coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName>Walt</lobbyistFirstName>
+         <lobbyistLastName>Smith</lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition></coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName>Charles</lobbyistFirstName>
+         <lobbyistLastName>Heflin</lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition></coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName></lobbyistFirstName>
+         <lobbyistLastName></lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition></coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName></lobbyistFirstName>
+         <lobbyistLastName></lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition></coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+   </lobbyists>
+   <alis>
+      <ali_Code>AUT</ali_Code>
+      <ali_Code>ENV</ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+   </alis>
+   <specific_issues>Legislation related to and affecting the automotive industry, anti-poaching and conservation issues</specific_issues>
+   <affiliatedUrl>www.gulfstates.buyatoyota.com, www.friedkinfund.org</affiliatedUrl>
+   <affiliatedOrgs>
+      <affiliatedOrg>
+         <affiliatedOrgName>Gulf States Toyota</affiliatedOrgName>
+         <affiliatedOrgAddress>1375 Enclave Parkway</affiliatedOrgAddress>
+         <affiliatedOrgCity>Houston</affiliatedOrgCity>
+         <affiliatedOrgState>TX</affiliatedOrgState>
+         <affiliatedOrgZip>77077</affiliatedOrgZip>
+         <affiliatedOrgCountry>USA</affiliatedOrgCountry>
+         <affiliatedPrinOrgCity>Houston</affiliatedPrinOrgCity>
+         <affiliatedPrinOrgState>TX</affiliatedPrinOrgState>
+         <affiliatedPrinOrgCountry>USA</affiliatedPrinOrgCountry>
+      </affiliatedOrg>
+      <affiliatedOrg>
+         <affiliatedOrgName>Friedkin Conservation Fund</affiliatedOrgName>
+         <affiliatedOrgAddress>1375 Enclave Parkway</affiliatedOrgAddress>
+         <affiliatedOrgCity>Houston</affiliatedOrgCity>
+         <affiliatedOrgState>TX</affiliatedOrgState>
+         <affiliatedOrgZip>77077</affiliatedOrgZip>
+         <affiliatedOrgCountry>USA</affiliatedOrgCountry>
+         <affiliatedPrinOrgCity>Lake Natron</affiliatedPrinOrgCity>
+         <affiliatedPrinOrgState></affiliatedPrinOrgState>
+         <affiliatedPrinOrgCountry>TAN</affiliatedPrinOrgCountry>
+      </affiliatedOrg>
+      <affiliatedOrg>
+         <affiliatedOrgName></affiliatedOrgName>
+         <affiliatedOrgAddress></affiliatedOrgAddress>
+         <affiliatedOrgCity></affiliatedOrgCity>
+         <affiliatedOrgState></affiliatedOrgState>
+         <affiliatedOrgZip></affiliatedOrgZip>
+         <affiliatedOrgCountry></affiliatedOrgCountry>
+         <affiliatedPrinOrgCity></affiliatedPrinOrgCity>
+         <affiliatedPrinOrgState></affiliatedPrinOrgState>
+         <affiliatedPrinOrgCountry></affiliatedPrinOrgCountry>
+      </affiliatedOrg>
+   </affiliatedOrgs>
+   <foreignEntities>
+      <foreignEntity>
+         <name></name>
+         <address></address>
+         <city></city>
+         <state></state>
+         <country></country>
+         <prinCity></prinCity>
+         <prinState></prinState>
+         <prinCountry></prinCountry>
+         <contribution></contribution>
+         <ownership_Percentage></ownership_Percentage>
+      </foreignEntity>
+      <foreignEntity>
+         <name></name>
+         <address></address>
+         <city></city>
+         <state></state>
+         <country></country>
+         <prinCity></prinCity>
+         <prinState></prinState>
+         <prinCountry></prinCountry>
+         <contribution></contribution>
+         <ownership_Percentage></ownership_Percentage>
+      </foreignEntity>
+   </foreignEntities>
+   <reportYear>2014</reportYear>
+   <reportType>RR</reportType>
+   <effectiveDate>02/01/2014</effectiveDate>
+   <printedName>Shane Doucet, Partner</printedName>
+   <signedDate>04/22/2014</signedDate>
+</LOBBYINGDISCLOSURE1>

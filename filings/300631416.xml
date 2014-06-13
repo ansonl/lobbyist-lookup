@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type='text/xsl' href='../../ld1.xsl'?>
+<LOBBYINGDISCLOSURE1>
+   <imported>N</imported>
+   <pages>2</pages>
+   <regType>2</regType>
+   <organizationName>The Simmons &amp; Russell Group, LLC</organizationName>
+   <prefix></prefix>
+   <firstName></firstName>
+   <lastName></lastName>
+   <address1>601 Pennsylvania Avenue, NW</address1>
+   <address2>South Building, Suite 900</address2>
+   <city>Washington</city>
+   <state>DC</state>
+   <zip>20004</zip>
+   <zipext></zipext>
+   <country>USA</country>
+   <principal_city></principal_city>
+   <principal_state></principal_state>
+   <principal_zip></principal_zip>
+   <principal_zipext></principal_zipext>
+   <principal_country></principal_country>
+   <registrantGeneralDescription>strategic public affairs firm</registrantGeneralDescription>
+   <selfSelect>N</selfSelect>
+   <clientName>Anheuser-Busch Companies, Inc. </clientName>
+   <clientAddress>1401 I Street, NW, #200</clientAddress>
+   <clientCity>Washington</clientCity>
+   <clientState>DC</clientState>
+   <clientZip>20005</clientZip>
+   <clientZipExt></clientZipExt>
+   <clientCountry>USA</clientCountry>
+   <prinClientCity>St. Louis</prinClientCity>
+   <prinClientState>MO</prinClientState>
+   <prinClientZip>63118</prinClientZip>
+   <prinClientZipExt></prinClientZipExt>
+   <prinClientCountry>USA</prinClientCountry>
+   <clientGeneralDescription>alcohol beverage production, marketing and sales</clientGeneralDescription>
+   <senateID>401103235</senateID>
+   <houseID>425230006</houseID>
+   <lobbyists>
+      <lobbyist>
+         <lobbyistFirstName>Robert A. </lobbyistFirstName>
+         <lobbyistLastName>Russell</lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition>Chief of Staff, Senator Mark Pryor</coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName>Kyle</lobbyistFirstName>
+         <lobbyistLastName>Simmons</lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition>Chief of Staff, Senator Mitch McConnell</coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName></lobbyistFirstName>
+         <lobbyistLastName></lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition></coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName></lobbyistFirstName>
+         <lobbyistLastName></lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition></coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+      <lobbyist>
+         <lobbyistFirstName></lobbyistFirstName>
+         <lobbyistLastName></lobbyistLastName>
+         <lobbyistSuffix></lobbyistSuffix>
+         <coveredPosition></coveredPosition>
+         <lobbyistNew>Y</lobbyistNew>
+      </lobbyist>
+   </lobbyists>
+   <alis>
+      <ali_Code>BEV</ali_Code>
+      <ali_Code>TAX</ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+      <ali_Code></ali_Code>
+   </alis>
+   <specific_issues>Issues related to the malt beverage industry, and federal tax reform. 
+
+
+</specific_issues>
+   <affiliatedUrl></affiliatedUrl>
+   <affiliatedOrgs>
+      <affiliatedOrg>
+         <affiliatedOrgName></affiliatedOrgName>
+         <affiliatedOrgAddress></affiliatedOrgAddress>
+         <affiliatedOrgCity></affiliatedOrgCity>
+         <affiliatedOrgState></affiliatedOrgState>
+         <affiliatedOrgZip></affiliatedOrgZip>
+         <affiliatedOrgCountry></affiliatedOrgCountry>
+         <affiliatedPrinOrgCity></affiliatedPrinOrgCity>
+         <affiliatedPrinOrgState></affiliatedPrinOrgState>
+         <affiliatedPrinOrgCountry></affiliatedPrinOrgCountry>
+      </affiliatedOrg>
+      <affiliatedOrg>
+         <affiliatedOrgName></affiliatedOrgName>
+         <affiliatedOrgAddress></affiliatedOrgAddress>
+         <affiliatedOrgCity></affiliatedOrgCity>
+         <affiliatedOrgState></affiliatedOrgState>
+         <affiliatedOrgZip></affiliatedOrgZip>
+         <affiliatedOrgCountry></affiliatedOrgCountry>
+         <affiliatedPrinOrgCity></affiliatedPrinOrgCity>
+         <affiliatedPrinOrgState></affiliatedPrinOrgState>
+         <affiliatedPrinOrgCountry></affiliatedPrinOrgCountry>
+      </affiliatedOrg>
+      <affiliatedOrg>
+         <affiliatedOrgName></affiliatedOrgName>
+         <affiliatedOrgAddress></affiliatedOrgAddress>
+         <affiliatedOrgCity></affiliatedOrgCity>
+         <affiliatedOrgState></affiliatedOrgState>
+         <affiliatedOrgZip></affiliatedOrgZip>
+         <affiliatedOrgCountry></affiliatedOrgCountry>
+         <affiliatedPrinOrgCity></affiliatedPrinOrgCity>
+         <affiliatedPrinOrgState></affiliatedPrinOrgState>
+         <affiliatedPrinOrgCountry></affiliatedPrinOrgCountry>
+      </affiliatedOrg>
+   </affiliatedOrgs>
+   <foreignEntities>
+      <foreignEntity>
+         <name>Anheuser-Busch InBev</name>
+         <address>Brouwerijplein, 1 </address>
+         <city>3000 Leuven</city>
+         <state></state>
+         <country>BEL</country>
+         <prinCity>Leuven</prinCity>
+         <prinState></prinState>
+         <prinCountry>BEL</prinCountry>
+         <contribution>0.00</contribution>
+         <ownership_Percentage>100</ownership_Percentage>
+      </foreignEntity>
+      <foreignEntity>
+         <name>InBev Services B.V.</name>
+         <address>Ceresstraat 1</address>
+         <city>4811 CA Breda</city>
+         <state></state>
+         <country>NED</country>
+         <prinCity>Breda</prinCity>
+         <prinState></prinState>
+         <prinCountry>NED</prinCountry>
+         <contribution>0.00</contribution>
+         <ownership_Percentage>100</ownership_Percentage>
+      </foreignEntity>
+   </foreignEntities>
+   <reportYear>2014</reportYear>
+   <reportType>RR</reportType>
+   <effectiveDate>02/27/2014</effectiveDate>
+   <printedName>Robert A. Russell, Partner</printedName>
+   <signedDate>03/11/2014</signedDate>
+</LOBBYINGDISCLOSURE1>
