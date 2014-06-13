@@ -1,0 +1,11 @@
+{
+	"ImportPath": "github.com/ansonl/lobbyist-lookup",
+	"GoVersion": "go1.2.2",
+	"Deps": [
+		{
+			"ImportPath": "code.google.com/p/go.net/html",
+			"Comment": "null-134",
+			"Rev": "9c0f9daaa74be0f25ccc12718bcb6b5d17802654"
+		}
+	]
+}
