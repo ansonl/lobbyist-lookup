@@ -1,6 +1,6 @@
-<h2>House.gov Lobbyist Disclosure Scrapper and Lookup</h2>
+<h3>House.gov Lobbyist Disclosure Scrapper and Lookup</h3>
 
-- Record Retrieval
+- <h4>Record Retrieval</h4>
   - Latest current year lobby disclosure filings available on [House.gov](http://disclosures.house.gov/).
     - Using the [webbrowser based search](http://disclosures.house.gov/ld/ldsearch.aspx), you cannot download more than 2000 records at a time. I actually tried calling them to ask about an alternative electronic method of retrieval, but alas that did not work.
     - Using *past filings* download link utimately leads to [here](http://disclosures.house.gov/ld/LDDownload.aspx?KeepThis=true) to download filings in xml format.
@@ -18,15 +18,15 @@
   - Retrieves lobbyist filings every day. 
 
 
-- Record Processing
+- <h4>Record Processing</h4>
   - XML files are then parsed into structs with `encoding/json` and held in memory for lookup.
 
-- Run 
+- <h4>Run</h4> 
   - `go run api.go scrape.go`
 or 
   - `go get` `lobbyist-lookup`
 
-Sources:
+<h4>Reference:</h4>
 
 http://stackoverflow.com/questions/14746750/post-request-using-python-to-asp-net-page/14747275#14747275 *About ASP ViewState*
 https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet#Viewstate_.28ASP.NET.29 *About ASP ViewState*
