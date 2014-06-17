@@ -32,10 +32,9 @@
   - Compile, add to Go $PATH location and run
     - `go get` then `lobbyist-lookup`
 
-<h4>Reference:</h4>
+- <h4>Reference:</h4>
 
-http://stackoverflow.com/questions/14746750/post-request-using-python-to-asp-net-page/14747275#14747275 *About ASP ViewState*
-https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet#Viewstate_.28ASP.NET.29 *About ASP ViewState*
-
-https://godoc.org/code.google.com/p/go.net/html#Attribute *html package that is under development and not included in default install of Go*
-https://gist.github.com/hnaohiro/4572580 *Go unzipping code* *Had to be modified due to not closing file immediately after done copying it http://stackoverflow.com/questions/24197011/go-ioutil-using-too-many-file-descriptors-leak*
+  - http://stackoverflow.com/questions/14746750/post-request-using-python-to-asp-net-page/14747275#14747275 *About ASP ViewState*
+  - https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet#Viewstate_.28ASP.NET.29 *About ASP ViewState*
+  - https://godoc.org/code.google.com/p/go.net/html#Attribute *html package that is under development and not included in default install of Go*
+  - https://gist.github.com/hnaohiro/4572580 *Go unzipping code* *Had to be modified due to not closing file immediately after done copying it http://stackoverflow.com/questions/24197011/go-ioutil-using-too-many-file-descriptors-leak*
