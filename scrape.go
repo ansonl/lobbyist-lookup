@@ -18,7 +18,7 @@ import (
 
 type Tokens struct {
     ViewState, EventValidation string;
-    FileNames [5]string; //max of four quarters and one new registration option a year
+    FileNames []string; //max of four quarters and one new registration option a year
 }
 
 var savePath = "./filings/"
@@ -60,7 +60,7 @@ func Unzip(src, dest string) error {
     return nil
 }
 
-func download(t Tokens, i int, wg *sync.WaitGroup) {
+func download(t Tokens, i int, file string, wg *sync.WaitGroup) {
     //set POST data
     v := url.Values{}
 	v.Set("__VIEWSTATE", t.ViewState)
@@ -68,7 +68,7 @@ func download(t Tokens, i int, wg *sync.WaitGroup) {
 	v.Set("selFilesXML", t.FileNames[i])
 	v.Set("btnDownloadXML", "Download")
     
-    fmt.Println("Downloading " + t.FileNames[i] + " to " + savePath + tmpName + fileExt + "...")
+    fmt.Println("Downloading " + file + " to " + savePath + tmpName + fileExt + "...")
     
     //pres, err := http.PostForm("http://vm-2.ansonl.koding.kd.io/php.php", v)
     pres, err := http.PostForm(link, v)
@@ -84,7 +84,7 @@ func download(t Tokens, i int, wg *sync.WaitGroup) {
 		panic(err)
 	}
 	
-	fmt.Println("Downloaded " + t.FileNames[i] + " to " + savePath + tmpName + strconv.Itoa(i) + fileExt)
+	fmt.Println("Downloaded " + file + " to " + savePath + tmpName + strconv.Itoa(i) + fileExt)
 	
 	//Unzipping
 	fmt.Println("Unzipping " + savePath + tmpName + strconv.Itoa(i) + fileExt + " to " + savePath + "...")
@@ -100,6 +100,20 @@ func download(t Tokens, i int, wg *sync.WaitGroup) {
     wg.Done()
 }
 
+func Extend(slice []string, element string) []string {
+    n := len(slice)
+    if n == cap(slice) {
+        // Slice is full; must grow.
+        // We double its size and add 1, so if the size is zero we still grow.
+        newSlice := make([]string, len(slice), 2*len(slice)+1)
+        copy(newSlice, slice)
+        slice = newSlice
+    }
+    slice = slice[0 : n+1]
+    slice[n] = element
+    return slice
+}
+
 func scrape() {
     
     fmt.Println("Sending GET request to " + link + "...");
@@ -113,7 +127,7 @@ func scrape() {
     doc, err := html.Parse(res.Body)
     
     token := Tokens{}
-    tokenFileNamesCount := 0;
+    token.FileNames = make([]string, 0)
     
     //documentation https://godoc.org/code.google.com/p/go.net/html#Attribute
     var f func(*html.Node)
@@ -125,9 +139,9 @@ func scrape() {
                 
                 //fmt.Println(a)
                 //fmt.Println(a.Namespace, a.Key, a.Val)
-                if (len(a.Val) > 3 && strings.Contains(a.Val[0:4], strconv.Itoa(time.Now().Year())) && tokenFileNamesCount < 5) { //check first four characters of attr value to get year
-                    token.FileNames[tokenFileNamesCount] = a.Val
-                    tokenFileNamesCount++
+                if (len(a.Val) > 3 && strings.Contains(a.Val[0:2], strconv.Itoa(time.Now().Year())[0:2])) { //check first two characters of attr value to get year
+                    token.FileNames = Extend(token.FileNames, a.Val)
+                    //fmt.Println(a.Val)
                 }
                 if (a.Val == "__VIEWSTATE") {
                     //fmt.Println(n.Attr[2].Key, n.Attr[2].Val)
@@ -169,10 +183,10 @@ func scrape() {
     fmt.Println(savePath + " records directory made")
     
     var wg sync.WaitGroup
-    for fileNumber, file := range token.FileNames {
+    for fileNumber, file := range token.FileNames[len(token.FileNames) - 5:len(token.FileNames)] {
         if file != "" {
             wg.Add(1)
-            go download(token, fileNumber, &wg)            
+            go download(token, fileNumber, file, &wg)            
         }
     }
     wg.Wait()
