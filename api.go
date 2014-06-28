@@ -25,11 +25,25 @@ type Registration struct {
 	HouseID string `xml:"houseID"`
 	//ReportYear string `xml:"reportYear"`
 	//ReportType string `xml:"reportType"`
-	//Lobbyist []Lobbyist `xml:"alis>ali_info>lobbyists>lobbyist"` //apparently house changed their xml format on 6/10??
-	Lobbyist []Lobbyist `xml:"lobbyists>lobbyist"`
+	Lobbyist []Lobbyist `xml:"alis>ali_info>lobbyists>lobbyist"` //apparently house changed their xml format on 6/10??
+	//Lobbyist []Lobbyist `xml:"lobbyists>lobbyist"`
 }
 
 var rArray []Registration
+
+func ExtendResultSlice(slice []Registration, element Registration) []Registration {
+    n := len(slice)
+    if n == cap(slice) {
+        // Slice is full; must grow.
+        // We double its size and add 1, so if the size is zero we still grow.
+        newSlice := make([]Registration, len(slice), 2*len(slice)+1)
+        copy(newSlice, slice)
+        slice = newSlice
+    }
+    slice = slice[0 : n+1]
+    slice[n] = element
+    return slice
+}
 
 //return a json formatted string for a day struct
 func (reg Registration) JSONString() []byte {
@@ -60,23 +74,125 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
     	returnString := "{" + `"` + "array" + `"` + ":" + "[ ";
     
     	//firstName := r.Form["first"]
-    	lastName := r.Form["last"]
-    	companyName := r.Form["company"]
+    	lastName := r.Form["surname"]
+    	organizationName := r.Form["organization"]
+    	clientName := r.Form["client"]
     
         limit := 10
         count := 0
     
+        matches := []Registration(nil)
+    
+        //surname search
+        if (lastName != nil) {
+            tmp := make([]Registration, 0)
+            if (matches != nil) {
+                for _, i := range matches {
+                    for _, j := range i.Lobbyist {
+            			if (j.LastName != "") {
+            				for _, l := range lastName {
+            					if (strings.Contains(strings.ToLower(j.LastName), l)) {
+            						tmp = ExtendResultSlice(tmp, i)
+            						count++
+            						break;
+            					}
+            				}
+            			}
+            		}
+                }
+                matches = tmp
+            } else {
+                matches = make([]Registration, 0)
+                for _, i := range rArray {
+                    if (count < limit) {
+                        for _, j := range i.Lobbyist {
+            				if (j.LastName != "") {
+            					for _, l := range lastName {
+            						if (strings.Contains(strings.ToLower(j.LastName), l)) {
+            							matches = ExtendResultSlice(matches, i)
+            							count++
+            							break;
+            						}
+            					}
+            				}
+            			}
+                    }
+                }   
+            }
+        }
+    
+        //organization name search
+        if (organizationName != nil) {
+            tmp := make([]Registration, 0)
+            if (matches != nil) {
+                for _, i := range matches {
+            		for _, l := range organizationName {
+            			if (strings.Contains(strings.ToLower(i.OrganizationName), l)) {
+            				tmp = ExtendResultSlice(tmp, i)
+            				count++
+            			    break;
+            			}
+            		}
+                }
+                matches = tmp
+            } else {
+                matches = make([]Registration, 0)
+                for _, i := range rArray {
+                    if (count < limit) {
+                        for _, l := range organizationName {
+            				if (strings.Contains(strings.ToLower(i.OrganizationName), l)) {
+            					matches = ExtendResultSlice(matches, i)
+            					count++
+            					break;
+            			    }
+            			}
+                    }
+                }   
+            }
+        }
+        
+        //client name search
+        if (clientName != nil) {
+            tmp := make([]Registration, 0)
+            if (matches != nil) {
+                for _, i := range matches {
+            		for _, l := range clientName {
+            			if (strings.Contains(strings.ToLower(i.ClientName), l)) {
+            				tmp = ExtendResultSlice(tmp, i)
+            				count++
+            			    break;
+            			}
+            		}
+                }
+                matches = tmp
+            } else {
+                matches = make([]Registration, 0)
+                for _, i := range rArray {
+                    if (count < limit) {
+                        for _, l := range clientName {
+            				if (strings.Contains(strings.ToLower(i.ClientName), l)) {
+            					matches = ExtendResultSlice(matches, i)
+            					count++
+            					break;
+            			    }
+            			}
+                    }
+                }   
+            }
+        }
+    
+        /*
     	for _, i := range rArray {
     	    if (count < limit) {
-        		if (companyName != nil) {
-        			for _, k := range companyName {
+        		if (organizationName != nil) {
+        			for _, k := range organizationName {
         				if (strings.Contains(strings.ToLower(i.OrganizationName), k)) {
         					if (lastName != nil) {
         						for _, j := range i.Lobbyist {
         							if (j.LastName != "") {
         								for _, l := range lastName {
         									if (strings.Contains(strings.ToLower(j.LastName), l)) {
-        										returnString += string(i.JSONString()) + ","
+        										matches = ExtendResultSlice(matches, i)
         										count++
         									}
         								}
@@ -94,7 +210,7 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
             				if (j.LastName != "") {
             					for _, l := range lastName {
             						if (strings.Contains(strings.ToLower(j.LastName), l)) {
-            							returnString += string(i.JSONString()) + ","
+            							matches = ExtendResultSlice(matches, i)
             							count++
             						}
             					}
@@ -104,6 +220,11 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
         		}
     	    }
     	}
+    	*/
+    	
+        for _, element := range matches {
+            returnString += string(element.JSONString()) + ","
+        }
     
     	returnString = returnString[:len(returnString) - 1]
     	returnString += "]" + "}"

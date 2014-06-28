@@ -183,7 +183,7 @@ func scrape() {
     fmt.Println(savePath + " records directory made")
     
     var wg sync.WaitGroup
-    for fileNumber, file := range token.FileNames[len(token.FileNames) - 5:len(token.FileNames)] {
+    for fileNumber, file := range token.FileNames[len(token.FileNames) - 6:len(token.FileNames)] {
         if file != "" {
             wg.Add(1)
             go download(token, fileNumber, file, &wg)            
