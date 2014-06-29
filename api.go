@@ -62,6 +62,14 @@ func handler(w http.ResponseWriter, r *http.Request) {
     fmt.Fprintf(w, string(data))
 }
 
+func legislationHandler(w http.ResponseWriter, r *http.Request) {
+    data, err := ioutil.ReadFile("./pages/legislation.txt")
+    if (err != nil) {
+		panic(err)
+	}
+    fmt.Fprintf(w, string(data))
+}
+
 func apiHandler(w http.ResponseWriter, r *http.Request) {
 
     	r.ParseForm()
@@ -233,6 +241,7 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
 
 func server() {
 	http.HandleFunc("/api/", apiHandler)
+	http.HandleFunc("/legislation/", legislationHandler)
 	http.HandleFunc("/", handler)
 	//http.ListenAndServe(":8080", nil)
     
