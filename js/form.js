@@ -13,6 +13,8 @@ var loadingText;
 
 var newLookupButton;
 
+var error;
+
 var setupForNewLookup = function() {
     resultDiv.fadeOut(100, function() {
         queryForm.trigger('reset');
@@ -45,6 +47,7 @@ var lookupSuccess = function (data) {
 
 var lookupError = function (data) {
     console.log(data);
+    error=data;
     
     loadingText.fadeOut(100, function() {
         if (resultDiv.attr('display') == 'none') {
@@ -58,7 +61,7 @@ var lookupError = function (data) {
 	
 	var tmp = '';
 	
-	tmp += 'Lookup unsuccessful. System says: <br><blockquote cite="https://github.com/ansonl/lobbyist-lookup">' + data.statusText + '</blockquote>';
+	tmp += 'Lookup unsuccessful. System says: <br><blockquote cite="https://github.com/ansonl/lobbyist-lookup">' + data.responseText + '</blockquote>';
 	tmp += '<br><button type="button" class="btn btn-default" id="newLookupButton">New Lookup</button>';
 	
 	resultDiv.html(tmp);
