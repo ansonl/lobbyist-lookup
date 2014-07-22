@@ -71,7 +71,7 @@ function createTable(filingArray) {
 	}
 	tmp += '</h5>';
 	
-	tmp += '<table class="table table-bordered table-hover table-condensed table-responsive"><colgroup><col width="auto"/><col width="200em"/><col width="200em"/><col width="auto"/><col width="auto"/><col width="auto"/></colgroup>' + formatTableHeader() + '<tbody>';
+	tmp += '<table class="table table-bordered table-hover table-condensed table-responsive" id="resultTable"><colgroup><col width="auto"/><col width="200em"/><col width="200em"/><col width="auto"/><col width="auto"/><col width="auto"/></colgroup>' + formatTableHeader() + '<tbody>';
 
 	if (filingArray.length === 0) {
 		tmp += formatNoResults();

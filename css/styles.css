@@ -22,6 +22,10 @@ body {
 	display: none;
 }
 
+#resultTable {
+    cursor:cell;
+}
+
 #usFlag {
 	height: 36px;
 }
