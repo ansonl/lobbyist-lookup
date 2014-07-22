@@ -1,3 +1,79 @@
-<html>
-<meta http-equiv="refresh" content="0; url=weblookup/" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Lobbyist Lookup</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="table.js"></script>
+<script src="filing.js"></script>
+<script src="form.js"></script>
+<link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+	<div class="row">
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-6" id="titleDiv">
+			<h1>
+				<img id="usFlag" src="us-flag.png" alt="United States of America flag"> Lobbyist Lookup
+			</h1>
+			<h5>
+				Data from House.gov <small>&ndash; Scraped and indexed by <small><a href="https://github.com/ansonl/lobbyist-lookup">ansonl, ltejedor, sherry97</a></small></small>
+			</h5>
+			<br>
+		</div>
+		<div class="col-md-3">
+		</div>
+	</div>
+
+<div class="row">
+
+<div class="col-md-3" id="leftDiv">
+</div>
+
+<div class="col-md-6" id="mainContentDiv">
+
+<!-- Form content -->
+<div id="formDiv">
+	<form role="form" id="queryForm" class="queryForm" action="http://lobbyist.herokuapp.com/api/" method="get">
+		<div class="form-group">
+	    	<label for="surnameInput">Lobbyist Surname</label>
+	    	<input type="text" name="surname" class="form-control" id="surnameInput" placeholder="Surname">
+	  	</div>
+		<div class="form-group">
+	    	<label for="organizationInput">Filing Organization</label>
+	    	<input type="text" name="organization" class="form-control" id="organizationInput" placeholder="Organization">
+	    	<label for="clientInput">Organization Client</label>
+	    	<input type="text" name="client" class="form-control" id="clientInput" placeholder="Client">
+	  	</div>
+		<input type="submit" id="lookupButton" class="btn btn-default" value="Lookup">
+	</form>
+</div>
+
+<!-- Loading content -->
+<div id="loadingDiv">
+	<img src="loading-indicator.gif" alt="Loading...">
+	<br>
+	<span id="loadingText"></span>
+</div>
+
+<!-- Result content -->
+<div id="resultDiv">
+	If you see this, something went wrong. :(
+</div>
+
+</div>
+
+<div class="col-md-3" id="rightDiv">
+</div>
+
+</div>
+</div>
+
+</body>
 </html>
