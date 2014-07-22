@@ -82,7 +82,7 @@ var formChanged = function (data) {
 }
 
 $(document).ready(function() {
-    $('noJavascriptDiv').css('display', 'none');
+    $('#noJavascriptDiv').css('display', 'none');
     
 	$('body').css('display', 'none');
 	$('body').fadeIn(100);
