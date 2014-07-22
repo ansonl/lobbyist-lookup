@@ -22,10 +22,10 @@ var setupForNewLookup = function() {
 
 var lookupSuccess = function (data) {
 	loadingText.fadeOut(100, function() {
-	    if (resultDiv.attr('display') == 'none') {
-		    loadingText.text('Parsing results locally');
-		    loadingText.fadeIn(100);
-	    }
+        if (resultDiv.attr('display') == 'none') {
+            loadingText.text('Parsing results locally');
+            loadingText.fadeIn(100);
+        }
 	});
 
 	//array of filing results returned by parseData() located in filing.js
@@ -82,6 +82,8 @@ var formChanged = function (data) {
 }
 
 $(document).ready(function() {
+    $('noJavascriptDiv').css('display', 'none');
+    
 	$('body').css('display', 'none');
 	$('body').fadeIn(100);
 
