@@ -15,6 +15,7 @@ var newLookupButton;
 
 var setupForNewLookup = function() {
     resultDiv.fadeOut(100, function() {
+        queryForm.trigger('reset');
 		formDiv.fadeIn(100);
 	});
 }
@@ -47,7 +48,7 @@ var lookupError = function (data) {
     
     loadingText.fadeOut(100, function() {
         if (resultDiv.attr('display') == 'none') {
-		    loadingText.text('Parsing results locally');
+		    loadingText.text('Error encountered');
 		    loadingText.fadeIn(100);
         }
 	});

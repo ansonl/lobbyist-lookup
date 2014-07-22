@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" manifest="cache.manifest">
 <head>
 <title>Lobbyist Lookup</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="table.js"></script>
-<script src="filing.js"></script>
-<script src="form.js"></script>
-<link href="styles.css" rel="stylesheet">
+<script src="js/table.js"></script>
+<script src="js/filing.js"></script>
+<script src="js/form.js"></script>
+<link href="css/styles.css" rel="stylesheet">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" href="images/touch-icon-iphone.png">
+<link rel="apple-touch-icon" sizes="120x120" href="images/touch-icon-iphone-retina.png">
+<link rel="apple-touch-startup-image" href="images/startup.png">
 </head>
 <body>
 
@@ -20,7 +24,7 @@
 		</div>
 		<div class="col-md-6" id="titleDiv">
 			<h1>
-				<img id="usFlag" src="us-flag.png" alt="United States of America flag"> Lobbyist Lookup
+				<img id="usFlag" src="images/us-flag.png" alt="United States of America flag"> Lobbyist Lookup
 			</h1>
 			<h5>
 				Data from House.gov <small>&ndash; Scraped and indexed by <small><a href="https://github.com/ansonl/lobbyist-lookup">ansonl, ltejedor, sherry97</a></small></small>
@@ -52,12 +56,13 @@
 	    	<input type="text" name="client" class="form-control" id="clientInput" placeholder="Client">
 	  	</div>
 		<input type="submit" id="lookupButton" class="btn btn-default" value="Lookup">
+		<br>
 	</form>
 </div>
 
 <!-- Loading content -->
 <div id="loadingDiv">
-	<img src="loading-indicator.gif" alt="Loading...">
+	<img src="images/loading-indicator.gif" alt="Loading...">
 	<br>
 	<span id="loadingText"></span>
 </div>
