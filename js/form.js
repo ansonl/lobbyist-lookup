@@ -110,6 +110,7 @@ $(document).ready(function() {
 
 	queryForm.submit(function() {
 
+        document.activeElement.blur();
 		if ($('#surnameInput').val().length > 0 || $('#organizationInput').val().length > 0 || $('#clientInput').val().length > 0) {
 
 			loadingText.text('Looking up filings');
