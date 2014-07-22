@@ -92,7 +92,7 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
         matches := []Registration(nil)
     
         //surname search
-        if (lastName != nil) {
+        if (lastName != nil && len(lastName) > 0) {
             tmp := make([]Registration, 0)
             if (matches != nil) {
                 for _, i := range matches {
@@ -130,7 +130,7 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
         }
     
         //organization name search
-        if (organizationName != nil) {
+        if (organizationName != nil && len(organizationName) > 0) {
             tmp := make([]Registration, 0)
             if (matches != nil) {
                 for _, i := range matches {
@@ -160,7 +160,7 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
         }
         
         //client name search
-        if (clientName != nil) {
+        if (clientName != nil && len(clientName) > 0) {
             tmp := make([]Registration, 0)
             if (matches != nil) {
                 for _, i := range matches {
