@@ -21,8 +21,10 @@ var setupForNewLookup = function() {
 
 var lookupSuccess = function (data) {
 	loadingText.fadeOut(100, function() {
-		loadingText.text('Parsing results locally');
-		loadingText.fadeIn(100);
+	    if (resultDiv.attr('display') == 'none') {
+		    loadingText.text('Parsing results locally');
+		    loadingText.fadeIn(100);
+	    }
 	});
 
 	//array of filing results returned by parseData() located in filing.js
@@ -41,6 +43,15 @@ var lookupSuccess = function (data) {
 };
 
 var lookupError = function (data) {
+    console.log(data);
+    
+    loadingText.fadeOut(100, function() {
+        if (resultDiv.attr('display') == 'none') {
+		    loadingText.text('Parsing results locally');
+		    loadingText.fadeIn(100);
+        }
+	});
+    
 	loadingDiv.css('display', 'none');
 	resultDiv.css('display', 'inline');
 	
@@ -50,7 +61,10 @@ var lookupError = function (data) {
 	
 	tmp += ' <button type="button" class="btn btn-default" id="newLookupButton">New Lookup</button>';
 	
-	resultDiv.html(createTable(filings));
+	resultDiv.html(tmp);
+	
+	newLookupButton = $('#newLookupButton');
+	newLookupButton.click(setupForNewLookup);
 };
 
 var lookupComplete = function (data) {
