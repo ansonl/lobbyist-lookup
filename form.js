@@ -11,6 +11,14 @@ var resultDiv;
 
 var loadingText;
 
+var newLookupButton;
+
+var setupForNewLookup = function() {
+    resultDiv.fadeOut(100, function() {
+		formDiv.fadeIn(100);
+	});
+}
+
 var lookupSuccess = function (data) {
 	loadingText.fadeOut(100, function() {
 		loadingText.text('Parsing filings locally');
@@ -27,6 +35,9 @@ var lookupSuccess = function (data) {
 	leftDiv.attr('class', 'col-lg-1');
 	rightDiv.attr('class', 'col-lg-1');
 	mainContentDiv.attr('class', 'col-lg-10');
+	
+	newLookupButton = $('#newLookupButton');
+	newLookupButton.click(setupForNewLookup);
 };
 
 var lookupError = function (data) {

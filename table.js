@@ -1,11 +1,11 @@
 function formatLobbyist(lobbyist) {
 	var tmp = '';
 
-	if (lobbyist.length == 0) {
+	if (lobbyist.length === 0) {
 		tmp += '<span class="noFilingsRow">' + 'No lobbyists on file' + '</span>';
 	} else {
 		lobbyist.forEach(function(entry) {
-			if ($('#surnameInput').val() != '' && entry.lastName.toLowerCase().indexOf($('#surnameInput').val().toLowerCase()) > -1) {
+			if ($('#surnameInput').val() !== '' && entry.lastName.toLowerCase().indexOf($('#surnameInput').val().toLowerCase()) > -1) {
 				tmp += '<span class="highlightedMatch">' + entry.firstName.toUpperCase() + ' ' + entry.lastName.toUpperCase() + '</span><br>';
 			} else {
 				tmp += entry.firstName.toUpperCase() + ' ' + entry.lastName.toUpperCase() + '<br>';
@@ -18,7 +18,7 @@ function formatLobbyist(lobbyist) {
 
 function formatGenericField(field) {
 	var tmp = '';
-	if (field == '') {
+	if (field === '') {
 		tmp += '<span class="noFilingsRow">' + 'N/A' + '</span>';
 	} else {
 		tmp += field.toUpperCase();
@@ -70,10 +70,12 @@ function createTable(filingArray) {
 		tmp += filingArray.length + ' filings found.';
 	}
 	tmp += '</h5>';
+	
+	tmp += ' <button type="button" class="btn btn-default" id="newLookupButton">New Lookup</button>';
 
 	tmp += '<table class="table table-bordered table-hover table-condensed table-responsive"><colgroup><col width="auto"/><col width="200em"/><col width="200em"/><col width="auto"/><col width="auto"/><col width="auto"/></colgroup>' + formatTableHeader() + '<tbody>';
 
-	if (filingArray.length == 0) {
+	if (filingArray.length === 0) {
 		tmp += formatNoResults();
 	} else {
 		var i = 1;
