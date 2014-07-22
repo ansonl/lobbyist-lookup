@@ -37,9 +37,9 @@ var lookupSuccess = function (data) {
 	loadingDiv.css('display', 'none');
 	resultDiv.css('display', 'inline');
 
-	leftDiv.attr('class', 'col-lg-1');
-	rightDiv.attr('class', 'col-lg-1');
-	mainContentDiv.attr('class', 'col-lg-10');
+	leftDiv.attr('class', 'col-md-1');
+	rightDiv.attr('class', 'col-md-1');
+	mainContentDiv.attr('class', 'col-md-10');
 	
 	newLookupButton = $('#newLookupButton');
 	newLookupButton.click(setupForNewLookup);
