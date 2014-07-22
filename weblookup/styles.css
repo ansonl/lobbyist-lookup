@@ -1,0 +1,30 @@
+body {
+
+}
+
+#formDiv {
+	background-color: none;
+}
+
+#loadingDiv {
+	display: none;
+}
+
+#resultDiv {
+	display: none;
+}
+
+#usFlag {
+	height: 36px;
+	transition: background .25s ease-in-out;
+   	-moz-transition: background .25s ease-in-out;
+   	-webkit-transition: background .25s ease-in-out;
+}
+#usFlag:hover {
+	opacity: 0.8;
+}
+
+#noFilingsRow {
+	text-align: center;
+	font-style: italic;
+}
