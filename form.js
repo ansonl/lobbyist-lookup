@@ -21,7 +21,7 @@ var setupForNewLookup = function() {
 
 var lookupSuccess = function (data) {
 	loadingText.fadeOut(100, function() {
-		loadingText.text('Parsing filings locally');
+		loadingText.text('Parsing results locally');
 		loadingText.fadeIn(100);
 	});
 
@@ -43,6 +43,14 @@ var lookupSuccess = function (data) {
 var lookupError = function (data) {
 	loadingDiv.css('display', 'none');
 	resultDiv.css('display', 'inline');
+	
+	var tmp = '';
+	
+	tmp += 'Lookup unsuccessful. <br><blockquote cite="https://github.com/ansonl/lobbyist-lookup">' + data.error() + '</blockquote><br>';
+	
+	tmp += ' <button type="button" class="btn btn-default" id="newLookupButton">New Lookup</button>';
+	
+	resultDiv.html(createTable(filings));
 };
 
 var lookupComplete = function (data) {
@@ -103,7 +111,7 @@ $(document).ready(function() {
 				complete: lookupComplete
 			});
 		} else {
-			console.log('not pass')
+			console.log('Fields blank')
 		}
 		return false;
 	});

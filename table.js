@@ -71,8 +71,6 @@ function createTable(filingArray) {
 	}
 	tmp += '</h5>';
 	
-	tmp += ' <button type="button" class="btn btn-default" id="newLookupButton">New Lookup</button>';
-
 	tmp += '<table class="table table-bordered table-hover table-condensed table-responsive"><colgroup><col width="auto"/><col width="200em"/><col width="200em"/><col width="auto"/><col width="auto"/><col width="auto"/></colgroup>' + formatTableHeader() + '<tbody>';
 
 	if (filingArray.length === 0) {
@@ -86,6 +84,8 @@ function createTable(filingArray) {
 	}
 
 	tmp += '</tbody></table>';
+	
+	tmp += '<br><button type="button" class="btn btn-default" id="newLookupButton">New Lookup</button>';
 
 	return tmp;
 }
