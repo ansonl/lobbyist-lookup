@@ -85,7 +85,7 @@ function createTable(filingArray) {
 
 	tmp += '</tbody></table>';
 	
-	tmp += '<br><button type="button" class="btn btn-default" id="newLookupButton">New Lookup</button>';
+	tmp += '<button type="button" class="btn btn-default" id="newLookupButton">New Lookup</button>';
 
 	return tmp;
 }
