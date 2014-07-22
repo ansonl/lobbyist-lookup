@@ -83,7 +83,7 @@ function createTable(filingArray) {
 		});
 	}
 
-	tmp += '</tbody></table>';
+	tmp += '</tbody></table>'; 
 	
 	tmp += '<button type="button" class="btn btn-default" id="newLookupButton">New Lookup</button>';
 

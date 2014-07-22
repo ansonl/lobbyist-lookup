@@ -27,7 +27,7 @@ function createFiling(data) {
 	test = data;
 
 	//get rid of duplicates and check if no lobbyists on file
-	if (data.Lobbyist != null) {
+	if (data.Lobbyist !== null) {
 		for (var i = 0; i < data.Lobbyist.length; i++) {
 			var tmp = new Lobbyist(data.Lobbyist[i].FirstName, data.Lobbyist[i].LastName);
 			var duplicateFound = false;
@@ -38,7 +38,7 @@ function createFiling(data) {
 				}
 				
 			}
-			if (duplicateFound == false) {
+			if (duplicateFound === false) {
 				lobbyists.push(tmp);
 			}
 		}
