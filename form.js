@@ -13,6 +13,8 @@ var loadingText;
 
 var newLookupButton;
 
+var error;
+
 var setupForNewLookup = function() {
     resultDiv.fadeOut(100, function() {
 		formDiv.fadeIn(100);
@@ -44,6 +46,7 @@ var lookupSuccess = function (data) {
 
 var lookupError = function (data) {
     console.log(data);
+    error = data;
     
     loadingText.fadeOut(100, function() {
         if (resultDiv.attr('display') == 'none') {
