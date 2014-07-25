@@ -9,6 +9,8 @@ var formDiv;
 var loadingDiv;
 var resultDiv;
 
+var infoDiv;
+
 var loadingText;
 
 var newLookupButton;
@@ -16,7 +18,9 @@ var newLookupButton;
 var setupForNewLookup = function() {
     resultDiv.fadeOut(100, function() {
         queryForm.trigger('reset');
+        mainContentDiv.attr('class', 'col-md-6');
 		formDiv.fadeIn(100);
+        infoDiv.fadeIn(100);
 	});
 }
 
@@ -32,13 +36,14 @@ var lookupSuccess = function (data) {
 	var filings = parseData(JSON.parse(data));
 	resultDiv.html(createTable(filings));
 
-	loadingDiv.css('display', 'none');
-	resultDiv.css('display', 'inline');
+    infoDiv.fadeOut(100);
+	loadingDiv.fadeOut(100);
+    resultDiv.fadeIn(100);
 
 	leftDiv.attr('class', 'col-md-1');
 	rightDiv.attr('class', 'col-md-1');
 	mainContentDiv.attr('class', 'col-md-10');
-	
+
 	newLookupButton = $('#newLookupButton');
 	newLookupButton.click(setupForNewLookup);
 };
@@ -50,17 +55,17 @@ var lookupError = function (data) {
 		    loadingText.fadeIn(100);
         }
 	});
-    
+
 	loadingDiv.css('display', 'none');
 	resultDiv.css('display', 'inline');
-	
+
 	var tmp = '';
-	
+
 	tmp += 'Lookup unsuccessful. System provided error: <br><blockquote cite="https://github.com/ansonl/lobbyist-lookup">' + data.statusText + '</blockquote>';
 	tmp += '<br><button type="button" class="btn btn-default" id="newLookupButton">New Lookup</button>';
-	
+
 	resultDiv.html(tmp);
-	
+
 	newLookupButton = $('#newLookupButton');
 	newLookupButton.click(setupForNewLookup);
 };
@@ -81,7 +86,7 @@ var formChanged = function (data) {
 
 $(document).ready(function() {
     $('#noJavascriptDiv').css('display', 'none');
-    
+
 	$('body').css('display', 'none');
 	$('body').fadeIn(100);
 
@@ -97,6 +102,8 @@ $(document).ready(function() {
 	formDiv = $('#formDiv');
 	loadingDiv = $('#loadingDiv');
 	resultDiv = $('#resultDiv');
+
+    infoDiv = $('#infoDiv');
 
 	loadingText = $('#loadingText');
 
@@ -114,7 +121,7 @@ $(document).ready(function() {
 				if (resultDiv.css('display') == 'none')
 					loadingDiv.fadeIn(100);
 			});
-			
+
 
 			var url = 'http://lobbyist.herokuapp.com/api/';
 			$.ajax({
@@ -131,5 +138,3 @@ $(document).ready(function() {
 		return false;
 	});
 })
-
-
