@@ -36,77 +36,78 @@
 		</div>
 	</div>
 
-<div class="row" id="noJavascriptDiv">
-    <p id="noJavascriptText">JS is required to parse and display results.<br>Results will appear in raw JSON.</p>
-</div>
+	<div class="row" id="noJavascriptDiv">
+	    <p id="noJavascriptText">JS is required to parse and display results.<br>Results will appear in raw JSON.</p>
+	</div>
 
-<div class="row">
+	<div class="row">
 
-<div class="col-md-1" id="leftDiv">
-</div>
+		<div class="col-md-1" id="leftDiv">
+		</div>
 
-<div class="col-md-6" id="mainContentDiv">
+		<div class="col-md-6" id="mainContentDiv">
 
-<!-- Form content -->
-<div id="formDiv">
-	<form role="form" id="queryForm" class="queryForm" action="http://lobbyist.herokuapp.com/api/" method="get">
-		<div class="form-group">
-	    	<label for="surnameInput"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;Lobbyist Surname</label>
-	    	<input type="text" name="surname" class="form-control" id="surnameInput" placeholder="Surname">
-	  	</div>
-		<div class="form-group">
-	    	<label for="organizationInput"><span class="glyphicon glyphicon-bullhorn"></span>&nbsp;&nbsp;&nbsp;Filing Organization</label>
-	    	<input type="text" name="organization" class="form-control" id="organizationInput" placeholder="Organization">
-	    	<label for="clientInput"><span class="glyphicon glyphicon-briefcase"></span>&nbsp;&nbsp;&nbsp;Organization Client</label>
-	    	<input type="text" name="client" class="form-control" id="clientInput" placeholder="Client">
-	  	</div>
-		<input type="submit" id="lookupButton" class="btn btn-default" value="Lookup">
-	</form>
-</div>
+			<!-- Form content -->
+			<div id="formDiv">
+				<form role="form" id="queryForm" class="queryForm" action="http://lobbyist.herokuapp.com/api/" method="get">
+					<div class="form-group">
+				    	<label for="surnameInput"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;Lobbyist Surname</label>
+				    	<input type="text" name="surname" class="form-control" id="surnameInput" placeholder="Surname">
+				  	</div>
+					<div class="form-group">
+				    	<label for="organizationInput"><span class="glyphicon glyphicon-bullhorn"></span>&nbsp;&nbsp;&nbsp;Filing Organization</label>
+				    	<input type="text" name="organization" class="form-control" id="organizationInput" placeholder="Organization">
+				    	<label for="clientInput"><span class="glyphicon glyphicon-briefcase"></span>&nbsp;&nbsp;&nbsp;Organization Client</label>
+				    	<input type="text" name="client" class="form-control" id="clientInput" placeholder="Client">
+				  	</div>
+					<input type="submit" id="lookupButton" class="btn btn-default" value="Lookup">
+				</form>
+			</div>
 
-<!--break so if columns stack, there is space beneath lookup button-->
-<br>
+			<!--break so if columns stack, there is space beneath lookup button-->
+			<br>
 
-<!-- Loading content -->
-<div id="loadingDiv">
-	<img src="images/loading-indicator.gif" alt="Loading...">
-	<br>
-	<span id="loadingText"></span>
-</div>
+			<!-- Loading content -->
+			<div id="loadingDiv">
+				<img src="images/loading-indicator.gif" alt="Loading...">
+				<br>
+				<span id="loadingText"></span>
+			</div>
 
-<!-- Result content -->
-<div id="resultDiv">
-	If you see this, something went wrong. :(
-</div>
+			<!-- Result content -->
+			<div id="resultDiv">
+				If you see this, something went wrong. Maybe JS not enabled?:(
+			</div>
 
-</div>
+		</div>
 
-<div class="col-md-4 well" id="infoDiv">
-	<h4>What is this?</h4>
-<p><strong>Lobbyist Lookup</strong> lets users search filings from House.gov to assist determining gift receiving eligibility.</p>
+		<div class="col-md-4 well" id="infoDiv">
+			<h4>What is this?</h4>
+			<p><strong>Lobbyist Lookup</strong> lets users search filings from House.gov to assist determining gift receiving eligibility.</p>
 
-	Lobbyist Gift Ban Amendment<p><a href="http://www.oge.gov/Laws-and-Regulations/OGE-Regulations/5-C-F-R--Part-2635---Standards-of-ethical-conduct-for-employees-of-the-executive-branch/">5 C.F.R. Part 2635</a> - <a href="http://www.reginfo.gov/public/do/eAgendaViewRule?pubId=201104&RIN=3209-AA04">RIN 3209-AA04</a> - <a href="http://www.oge.gov/Laws-and-Regulations/Federal-Register-Issuances/Proposed-Rules-and-Comments/Comments-on-Proposed-Lobbyist-Gift-Ban-Rule-(Page-1)/">Comments</a></p> proposed by the Office of Government Ethics (OGE) will extend the <i>lobbyist gift ban</i> to all federal employees.
-<br>
-The <i>lobbyist gift ban</i> prevents the acceptance of gifts of over $25 in value from unauthorized sources.
-<br>
-<table class="table table-condensed">
-	<thead><tr><th>Some unauthorized sources</th></tr></thead>
-	<tbody>
-		<tr><td>Registered lobbyists</td></tr>
-		<tr><td>Registered lobbying organizations</td></tr>
-	</tbody>
-</table>
+			Lobbyist Gift Ban Amendment<p><a href="http://www.oge.gov/Laws-and-Regulations/OGE-Regulations/5-C-F-R--Part-2635---Standards-of-ethical-conduct-for-employees-of-the-executive-branch/">5 C.F.R. Part 2635</a> - <a href="http://www.reginfo.gov/public/do/eAgendaViewRule?pubId=201104&RIN=3209-AA04">RIN 3209-AA04</a> - <a href="http://www.oge.gov/Laws-and-Regulations/Federal-Register-Issuances/Proposed-Rules-and-Comments/Comments-on-Proposed-Lobbyist-Gift-Ban-Rule-(Page-1)/">Comments</a></p> proposed by the Office of Government Ethics (OGE) will extend the <i>lobbyist gift ban</i> to all federal employees.
+			<br>
+			The <i>lobbyist gift ban</i> prevents the acceptance of gifts of over $25 in value from unauthorized sources.
+			<br>
+			<table class="table table-condensed">
+				<thead><tr><th>Some unauthorized sources</th></tr></thead>
+				<tbody>
+					<tr><td>Registered lobbyists</td></tr>
+					<tr><td>Registered lobbying organizations</td></tr>
+				</tbody>
+			</table>
+		</div>
 
-</div>
+		<div class="col-md-1" id="rightDiv">
+		</div>
 
-<div class="col-md-1" id="rightDiv">
-</div>
+	</div>
 
-</div>
-
-<div class="row">
-<br>
-</div>
+	<div class="row well">
+		<p>
+			<strong>Lobbyist Lookup</strong> was made during <a href="http://hackforchange.org/events/northern-virginia-national-day-of-civic-hacking/">Northern Virginia National Day of Civic Hacking (NDOCH)</a> at <a href="http://www.nsf.gov">National Science Foundation (NSF)</a> in Arlington, VA to address the NSF Ethics Challenge of creating a way for federal employees to lookup lobbying status of an individual or organization. Constituents and businesses may also find utility in using Lobbyist Lookup to be better informed on lobbyist statuses.
+		</p>
+	</div>
 
 </div>
 
