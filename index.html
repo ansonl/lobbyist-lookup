@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" manifest="cache.manifest">
+<html lang="en">
 <head>
 <title>Lobbyist Lookup</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
@@ -42,7 +42,7 @@
 
 <div class="row">
 
-<div class="col-md-3" id="leftDiv">
+<div class="col-md-1" id="leftDiv">
 </div>
 
 <div class="col-md-6" id="mainContentDiv">
@@ -51,18 +51,21 @@
 <div id="formDiv">
 	<form role="form" id="queryForm" class="queryForm" action="http://lobbyist.herokuapp.com/api/" method="get">
 		<div class="form-group">
-	    	<label for="surnameInput">Lobbyist Surname</label>
+	    	<label for="surnameInput"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;Lobbyist Surname</label>
 	    	<input type="text" name="surname" class="form-control" id="surnameInput" placeholder="Surname">
 	  	</div>
 		<div class="form-group">
-	    	<label for="organizationInput">Filing Organization</label>
+	    	<label for="organizationInput"><span class="glyphicon glyphicon-bullhorn"></span>&nbsp;&nbsp;&nbsp;Filing Organization</label>
 	    	<input type="text" name="organization" class="form-control" id="organizationInput" placeholder="Organization">
-	    	<label for="clientInput">Organization Client</label>
+	    	<label for="clientInput"><span class="glyphicon glyphicon-briefcase"></span>&nbsp;&nbsp;&nbsp;Organization Client</label>
 	    	<input type="text" name="client" class="form-control" id="clientInput" placeholder="Client">
 	  	</div>
 		<input type="submit" id="lookupButton" class="btn btn-default" value="Lookup">
 	</form>
 </div>
+
+<!--break so if columns stack, there is space beneath lookup button -->
+<br>
 
 <!-- Loading content -->
 <div id="loadingDiv">
@@ -78,7 +81,24 @@
 
 </div>
 
-<div class="col-md-3" id="rightDiv">
+<div class="col-md-4 well" id="infoDiv">
+	<h4>What is this?</h4>
+<p><strong>Lobbyist Lookup</strong> lets users search filings from House.gov to assist determining gift receiving eligibility.</p>
+
+	Lobbyist Gift Ban Amendment<p><a href="http://www.oge.gov/Laws-and-Regulations/OGE-Regulations/5-C-F-R--Part-2635---Standards-of-ethical-conduct-for-employees-of-the-executive-branch/">5 C.F.R. Part 2635</a> - <a href="http://www.reginfo.gov/public/do/eAgendaViewRule?pubId=201104&RIN=3209-AA04">RIN 3209-AA04</a> - <a href="http://www.oge.gov/Laws-and-Regulations/Federal-Register-Issuances/Proposed-Rules-and-Comments/Comments-on-Proposed-Lobbyist-Gift-Ban-Rule-(Page-1)/">Comments</a></p> proposed by the Office of Government Ethics (OGE) will extend the <i>lobbyist gift ban</i> to all federal employees.
+<br>
+The <i>lobbyist gift ban</i> prevents the acceptance of gifts of over $25 in value from unauthorized sources.
+<table class="table table-condensed">
+	<thead><tr><th>Some unauthorized sources</th></tr></thead>
+	<tbody>
+		<tr><td>Registered lobbyists</td></tr>
+		<tr><td>Registered lobbying organizations</td></tr>
+	</tbody>
+</table>
+
+</div>
+
+<div class="col-md-1" id="rightDiv">
 </div>
 
 </div>
