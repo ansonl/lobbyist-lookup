@@ -31,6 +31,10 @@ type Registration struct {
 
 var rArray []Registration
 
+var counter = 0
+
+var startTime = time.Now()
+
 func ExtendResultSlice(slice []Registration, element Registration) []Registration {
     n := len(slice)
     if n == cap(slice) {
@@ -62,6 +66,13 @@ func handler(w http.ResponseWriter, r *http.Request) {
     fmt.Fprintf(w, string(data))
 }
 
+func uptimeHandler(w http.ResponseWriter, r *http.Request) {
+	diff := time.Since(startTime)
+
+	fmt.Fprintf(w, "Uptime:\t" + diff.String() + "\nMenus served:\t" + strconv.Itoa(counter) + " ")
+	fmt.Println("Uptime requested")
+}
+
 func legislationHandler(w http.ResponseWriter, r *http.Request) {
     data, err := ioutil.ReadFile("./pages/legislation.txt")
     if (err != nil) {
@@ -74,23 +85,25 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
 
     	r.ParseForm()
     	fmt.Println(r.Form)
-    
+
     	//bypass same origin policy
     	w.Header().Set("Access-Control-Allow-Origin", "*")
-    
+
     	//setup return string
     	returnString := "{" + `"` + "array" + `"` + ":" + "[ ";
-    
+
     	//firstName := r.Form["first"]
     	lastName := r.Form["surname"]
     	organizationName := r.Form["organization"]
     	clientName := r.Form["client"]
-    
+
         limit := 10
         count := 0
-    
+
+		counter++
+
         matches := []Registration(nil)
-    
+
         //surname search
         if (lastName != nil && len(lastName) > 0 && lastName[0] != "") { //check if empty param (surname=) because strings.Contains will flag empty string as match
             tmp := make([]Registration, 0)
@@ -125,10 +138,10 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
             				}
             			}
                     }
-                }   
+                }
             }
         }
-    
+
         //organization name search
         if (organizationName != nil && len(organizationName) > 0 && organizationName[0] != "") {
             tmp := make([]Registration, 0)
@@ -155,10 +168,10 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
             			    }
             			}
                     }
-                }   
+                }
             }
         }
-        
+
         //client name search
         if (clientName != nil && len(clientName) > 0 && clientName[0] != "") {
             tmp := make([]Registration, 0)
@@ -185,10 +198,10 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
             			    }
             			}
                     }
-                }   
+                }
             }
         }
-    
+
         /*
     	for _, i := range rArray {
     	    if (count < limit) {
@@ -229,11 +242,11 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
     	    }
     	}
     	*/
-    	
+
         for _, element := range matches {
             returnString += string(element.JSONString()) + ","
         }
-    
+
     	returnString = returnString[:len(returnString) - 1]
     	returnString += "]" + "}"
     	fmt.Fprintf(w, returnString)
@@ -242,13 +255,14 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
 func server() {
 	http.HandleFunc("/api/", apiHandler)
 	http.HandleFunc("/legislation/", legislationHandler)
+	http.HandleFunc("/uptime", uptimeHandler)
 	http.HandleFunc("/", handler)
 	//http.ListenAndServe(":8080", nil)
-    
-    err := http.ListenAndServe(":"+os.Getenv("PORT"), nil) 
+
+    err := http.ListenAndServe(":"+os.Getenv("PORT"), nil)
     if err != nil {
       panic(err)
-    }  
+    }
 
     fmt.Println("listening on port " + os.Getenv("PORT"))
 }
@@ -273,14 +287,14 @@ func readDirectory(recordDir string) {
     			return
     		} else {
     	        if (strings.Contains(filepath.Ext(f.Name()), "xml")) {
-    
+
     	        	//unmarshal data and put into struct array
     				err = xml.Unmarshal([]byte(data), &rArray[a])
     				if err != nil {
     					fmt.Println("error decoding %v: %v",f.Name(), err)
     					return
     				}
-    
+
     				a++ //increment number of files successfully parsed
     			}
     		}
@@ -291,27 +305,27 @@ func readDirectory(recordDir string) {
     }
 
     fmt.Println("Successfully read " , a , " / " , len(files) , " files.")
-    
+
     fmt.Println("Removing record directory " + recordDir + "...")
     err = os.RemoveAll(recordDir)
     if err != nil {
       panic(err)
-    }  
+    }
     fmt.Println("Removed record directory " + recordDir)
 }
 
 func main() {
     go server()
-    
+
     scrape()
-    
+
 	readDirectory(savePath)
 
     ticker := time.NewTicker(60 * 60 * 24 * time.Second)
-    
+
     for {
         select {
-            case <- ticker.C: 
+            case <- ticker.C:
                 scrape()
                 readDirectory(savePath)
         }
