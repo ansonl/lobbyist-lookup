@@ -1,8 +1,14 @@
 Lobbyist Lookup lets users search filings from House.gov to assist determining gift receiving eligibility.
 
 Lobbyist Gift Ban Amendment
-5 C.F.R. Part 2635 - RIN 3209-AA04
+5 C.F.R. Part 2635
+http://www.oge.gov/Laws-and-Regulations/OGE-Regulations/5-C-F-R--Part-2635---Standards-of-ethical-conduct-for-employees-of-the-executive-branch/
+RIN 3209-AA04
+http://www.reginfo.gov/public/do/eAgendaViewRule?pubId=201104&RIN=3209-AA04
+
 Proposal by the Office of Government Ethics (OGE) to extend the lobbyist gift ban to all federal employees.
 The lobbyist gift ban prevents the acceptance of gifts of over $25 in value from unauthorized sources.
 
 Some unauthorized sources include registered lobbyists and registered lobbying organizations.
+
+This app is meant for reference and is not legal advice. You are responsible for accurately determining gift eligibility through multiple means besides this app. 
