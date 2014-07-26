@@ -69,7 +69,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 func uptimeHandler(w http.ResponseWriter, r *http.Request) {
 	diff := time.Since(startTime)
 
-	fmt.Fprintf(w, "Uptime:\t" + diff.String() + "\nMenus served:\t" + strconv.Itoa(counter) + " ")
+	fmt.Fprintf(w, "Uptime:\t" + diff.String() + "\tLookups served:\t" + strconv.Itoa(counter) + " ")
 	fmt.Println("Uptime requested")
 }
 
