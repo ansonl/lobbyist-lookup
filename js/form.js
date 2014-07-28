@@ -40,9 +40,9 @@ var lookupSuccess = function (data) {
 	loadingDiv.fadeOut(100);
     resultDiv.fadeIn(100);
 
-	leftDiv.attr('class', 'col-md-1');
-	rightDiv.attr('class', 'col-md-1');
-	mainContentDiv.attr('class', 'col-md-10');
+	leftDiv.attr('class', 'col-md-0');
+	rightDiv.attr('class', 'col-md-0');
+	mainContentDiv.attr('class', 'col-md-12');
 
 	newLookupButton = $('#newLookupButton');
 	newLookupButton.click(setupForNewLookup);
