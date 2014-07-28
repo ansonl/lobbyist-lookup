@@ -89,6 +89,7 @@ $(document).ready(function() {
 
 	$('body').css('display', 'none');
 	$('body').fadeIn(100);
+    $('#forkMeDiv').delay(2000).fadeIn(400).fadeOut(400).fadeIn(400).fadeOut(400).fadeIn(400).fadeOut(7000);
 
 	queryForm = $('#queryForm');
 	lookupButton = $('#lookupButton');
