@@ -1,129 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Lobbyist Lookup</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="js/table.js"></script>
-<script src="js/filing.js"></script>
-<script src="js/form.js"></script>
-<link href="css/styles.css" rel="stylesheet">
-<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
-<meta name="apple-mobile-web-app-capable" content="yes">
-<link rel="apple-touch-icon" href="images/touch-icon-iphone.png">
-<link rel="apple-touch-icon" sizes="120x120" href="images/touch-icon-iphone-retina.png">
-<link rel="apple-touch-startup-image" href="images/startup.png">
+	<title>Lobbyist Lookup</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="js/table.js"></script>
+	<script src="js/filing.js"></script>
+	<script src="js/form.js"></script>
+	<link href="css/styles.css" rel="stylesheet">
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<link rel="apple-touch-icon" href="images/touch-icon-iphone.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="images/touch-icon-iphone-retina.png">
+	<link rel="apple-touch-startup-image" href="images/startup.png">
 </head>
 <body>
 
-<!-- Fork me image -->
-<div id="forkMeDiv">
-	<a href="https://github.com/ansonl/lobbyist-lookup"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
-</div>
-
-<div class="container">
-
-	<div class="row">
-		<div class="col-md-3">
-		</div>
-		<div class="col-md-6" id="titleDiv">
-			<h1>
-				<img id="usFlag" src="images/us-flag.png" alt="United States of America flag"> Lobbyist Lookup
-			</h1>
-			<h5>
-				Data from House.gov <small>&ndash; Scraped and indexed by <small><a href="https://github.com/ansonl/lobbyist-lookup">ansonl, ltejedor, sherry97</a></small></small>
-			</h5>
-			<br>
-		</div>
-		<div class="col-md-3">
-		</div>
+	<!-- Fork me image -->
+	<div id="forkMeDiv">
+		<a href="https://github.com/ansonl/lobbyist-lookup"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
 	</div>
 
-	<div class="row" id="noJavascriptDiv">
-	    <p id="noJavascriptText">JS is required to parse and display results.<br>Results will appear in raw JSON.</p>
-	</div>
+	<div class="container">
 
-	<div class="row">
-
-		<div class="col-md-1" id="leftDiv">
-		</div>
-
-		<div class="col-md-6" id="mainContentDiv">
-
-			<!-- Form content -->
-			<div id="formDiv">
-				<form role="form" id="queryForm" class="queryForm" action="http://lobbyist.herokuapp.com/api/" method="get">
-					<div class="form-group">
-				    	<label for="surnameInput"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;Lobbyist Surname</label>
-				    	<input type="text" name="surname" class="form-control" id="surnameInput" placeholder="Surname">
-				  	</div>
-					<div class="form-group">
-				    	<label for="organizationInput"><span class="glyphicon glyphicon-bullhorn"></span>&nbsp;&nbsp;&nbsp;Filing Organization</label>
-				    	<input type="text" name="organization" class="form-control" id="organizationInput" placeholder="Organization">
-				    	<label for="clientInput"><span class="glyphicon glyphicon-briefcase"></span>&nbsp;&nbsp;&nbsp;Organization Client</label>
-				    	<input type="text" name="client" class="form-control" id="clientInput" placeholder="Client">
-				  	</div>
-					<input type="submit" id="lookupButton" class="btn btn-default" value="Lookup">
-				</form>
+		<div class="row">
+			<div class="col-md-3">
 			</div>
-
-
-
-			<!-- Loading content -->
-			<div id="loadingDiv">
-				<img src="images/loading-indicator.gif" alt="Loading...">
+			<div class="col-md-6" id="titleDiv">
+				<h1>
+					<img id="usFlag" src="images/us-flag.png" alt="United States of America flag"> Lobbyist Lookup
+				</h1>
+				<h5>
+					Data from House.gov <small>&ndash; Scraped and indexed by <small><a href="https://github.com/ansonl/lobbyist-lookup">ansonl, ltejedor, sherry97</a></small></small>
+				</h5>
 				<br>
-				<span id="loadingText"></span>
+			</div>
+			<div class="col-md-3">
+			</div>
+		</div>
+
+		<div class="row" id="noJavascriptDiv">
+			<p id="noJavascriptText">JS is required to parse and display results.<br>Results will appear in raw JSON.</p>
+		</div>
+
+		<div class="row">
+
+			<div class="col-md-1" id="leftDiv">
 			</div>
 
-			<!-- Result content -->
-			<div id="resultDiv">
-				If you see this, something went wrong. Maybe JS not enabled?:(
+			<div class="col-md-6" id="mainContentDiv">
+
+				<!-- Form content -->
+				<div id="formDiv">
+					<form role="form" id="queryForm" class="queryForm" action="http://lobbyist.herokuapp.com/api/" method="get">
+						<div class="form-group">
+							<label for="surnameInput"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;Lobbyist Surname</label>
+							<input type="text" name="surname" class="form-control" id="surnameInput" placeholder="Surname">
+						</div>
+						<div class="form-group">
+							<label for="organizationInput"><span class="glyphicon glyphicon-bullhorn"></span>&nbsp;&nbsp;&nbsp;Filing Organization</label>
+							<input type="text" name="organization" class="form-control" id="organizationInput" placeholder="Organization">
+							<label for="clientInput"><span class="glyphicon glyphicon-briefcase"></span>&nbsp;&nbsp;&nbsp;Organization Client</label>
+							<input type="text" name="client" class="form-control" id="clientInput" placeholder="Client">
+						</div>
+						<input type="submit" id="lookupButton" class="btn btn-default" value="Lookup">
+					</form>
+				</div>
+
+
+
+				<!-- Loading content -->
+				<div id="loadingDiv">
+					<img src="images/loading-indicator.gif" alt="Loading...">
+					<br>
+					<span id="loadingText"></span>
+				</div>
+
+				<!-- Result content -->
+				<div id="resultDiv">
+					If you see this, something went wrong. Maybe JS not enabled?:(
+				</div>
+
+				<!--break so if columns stack, there is space beneath lookup button-->
+				<br>
+
 			</div>
 
-			<!--break so if columns stack, there is space beneath lookup button-->
-			<br>
+			<div class="col-md-4 alert alert-info" role="alert" id="infoDiv">
+				<h4><span class="glyphicon glyphicon-question-sign"></span>&nbsp;&nbsp;What is this?</h4>
+				<p><strong>Lobbyist Lookup</strong> lets users search filings from House.gov to assist determining gift receiving eligibility.</p>
+
+				Lobbyist Gift Ban Amendment<p><a href="http://www.oge.gov/Laws-and-Regulations/OGE-Regulations/5-C-F-R--Part-2635---Standards-of-ethical-conduct-for-employees-of-the-executive-branch/">5 C.F.R. Part 2635</a> - <a href="http://www.reginfo.gov/public/do/eAgendaViewRule?pubId=201104&RIN=3209-AA04">RIN 3209-AA04</a> - <a href="http://www.oge.gov/Laws-and-Regulations/Federal-Register-Issuances/Proposed-Rules-and-Comments/Comments-on-Proposed-Lobbyist-Gift-Ban-Rule-(Page-1)/">Comments</a></p> proposed by the Office of Government Ethics (OGE) will extend the <i>lobbyist gift ban</i> to all federal employees.
+				<br>
+				The <i>lobbyist gift ban</i> prevents the acceptance of gifts of over $25 in value from unauthorized sources.
+				<br>
+				<table class="table table-condensed">
+					<thead><tr><th>Some unauthorized sources</th></tr></thead>
+					<tbody>
+						<tr><td>Registered lobbyists</td></tr>
+						<tr><td>Registered lobbying organizations</td></tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="col-md-1" id="rightDiv">
+			</div>
 
 		</div>
 
-		<div class="col-md-4 alert alert-info" role="alert" id="infoDiv">
-			<h4><span class="glyphicon glyphicon-question-sign"></span>&nbsp;&nbsp;What is this?</h4>
-			<p><strong>Lobbyist Lookup</strong> lets users search filings from House.gov to assist determining gift receiving eligibility.</p>
-
-			Lobbyist Gift Ban Amendment<p><a href="http://www.oge.gov/Laws-and-Regulations/OGE-Regulations/5-C-F-R--Part-2635---Standards-of-ethical-conduct-for-employees-of-the-executive-branch/">5 C.F.R. Part 2635</a> - <a href="http://www.reginfo.gov/public/do/eAgendaViewRule?pubId=201104&RIN=3209-AA04">RIN 3209-AA04</a> - <a href="http://www.oge.gov/Laws-and-Regulations/Federal-Register-Issuances/Proposed-Rules-and-Comments/Comments-on-Proposed-Lobbyist-Gift-Ban-Rule-(Page-1)/">Comments</a></p> proposed by the Office of Government Ethics (OGE) will extend the <i>lobbyist gift ban</i> to all federal employees.
-			<br>
-			The <i>lobbyist gift ban</i> prevents the acceptance of gifts of over $25 in value from unauthorized sources.
-			<br>
-			<table class="table table-condensed">
-				<thead><tr><th>Some unauthorized sources</th></tr></thead>
-				<tbody>
-					<tr><td>Registered lobbyists</td></tr>
-					<tr><td>Registered lobbying organizations</td></tr>
-				</tbody>
-			</table>
-		</div>
-
-		<div class="col-md-1" id="rightDiv">
+		<div class="row well">
+			<h5><span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;More</h5>
+			<p>
+				<strong>Lobbyist Lookup</strong> was made during <a href="http://hackforchange.org/events/northern-virginia-national-day-of-civic-hacking/">Northern Virginia National Day of Civic Hacking (NDOCH)</a> at <a href="http://www.nsf.gov">National Science Foundation (NSF)</a> in <a href="http://www.arlingtonva.us">Arlington, VA</a>.
+				<br>
+				It addresses the NSF Ethics Challenge of creating a way for federal employees to lookup lobbying status of an individual or organization.
+				<br>
+				Constituents and businesses may also find utility in using <strong>Lobbyist Lookup</strong> to be better informed on lobbyist statuses.
+				<br>
+				<strong>Lobbyist Lookup</strong>'s source code is freely available on <a href="https://github.com/ansonl/lobbyist-lookup">GitHub</a>. All filing data is available to the public at <a href="http://disclosures.house.gov/">House.gov</a>.
+			</p>
 		</div>
 
 	</div>
-
-	<div class="row well">
-		<h5><span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;More</h5>
-		<p>
-			<strong>Lobbyist Lookup</strong> was made during <a href="http://hackforchange.org/events/northern-virginia-national-day-of-civic-hacking/">Northern Virginia National Day of Civic Hacking (NDOCH)</a> at <a href="http://www.nsf.gov">National Science Foundation (NSF)</a> in <a href="http://www.arlingtonva.us">Arlington, VA</a>.
-			<br>
-			It addresses the NSF Ethics Challenge of creating a way for federal employees to lookup lobbying status of an individual or organization.
-			<br>
-			Constituents and businesses may also find utility in using <strong>Lobbyist Lookup</strong> to be better informed on lobbyist statuses.
-			<br>
-			<strong>Lobbyist Lookup</strong>'s source code is freely available on <a href="https://github.com/ansonl/lobbyist-lookup">GitHub</a>. All filing data is available to the public at <a href="http://disclosures.house.gov/">House.gov</a>.
-		</p>
-	</div>
-
-</div>
 
 </body>
 </html>
