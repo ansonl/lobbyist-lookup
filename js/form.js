@@ -114,6 +114,7 @@ var formEditted = function (data) {
         $( "#surnameInput" ).autocomplete({
             source: "http://lobbyist.herokuapp.com/autosurname/",
             minLength: 1,
+            delay: 100,
             select: function( event, ui ) {
 
             }
