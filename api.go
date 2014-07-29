@@ -105,7 +105,7 @@ func autoSurnameHandler(w http.ResponseWriter, r *http.Request) {
 	//firstName := r.Form["first"]
 	lastName := r.Form["term"]
 
-	limit := 100
+	limit := 20
 	count := 0
 
 	matches := make([]string, 0)
@@ -124,16 +124,16 @@ func autoSurnameHandler(w http.ResponseWriter, r *http.Request) {
 										duplicateFound := false
 										for _, m := range matches {
 
-											if strings.ToLower(strings.Replace(j.LastName, " ", "", -1)) == string(m) {
+											if strings.ToLower(j.LastName) == m {
 												duplicateFound = true
 											}
 										}
 										if duplicateFound == false {
-											matches = ExtendStringSlice(matches, strings.ToLower(strings.Replace(j.LastName, " ", "", -1)))
+											matches = ExtendStringSlice(matches, strings.ToLower(j.LastName))
 											count++
 										}
 									} else {
-										matches = ExtendStringSlice(matches, strings.ToLower(strings.Replace(j.LastName, " ", "", -1)))
+										matches = ExtendStringSlice(matches, strings.ToLower(j.LastName))
 									}
 								}
 							}
@@ -148,7 +148,67 @@ func autoSurnameHandler(w http.ResponseWriter, r *http.Request) {
 	returnString, err := json.Marshal(matches)
 
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
+	}
+
+	fmt.Fprintf(w, string(returnString))
+
+}
+
+func autoOrganizationHandler(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
+	fmt.Println(r.Form)
+
+	//bypass same origin policy
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+
+	//firstName := r.Form["first"]
+	lastName := r.Form["term"]
+
+	limit := 20
+	count := 0
+
+	matches := make([]string, 0)
+
+	//surname search
+	if lastName != nil && len(lastName) > 0 && lastName[0] != "" { //check if empty param (surname=) because strings.Contains will flag empty string as match
+		for _, i := range rArray {
+			if count < limit {
+				for _, j := range i.Lobbyist {
+					if j.LastName != "" {
+
+						for _, l := range lastName {
+							if count < limit {
+								if strings.Contains(strings.ToLower(j.LastName), l) {
+									if len(matches) > 0 {
+										duplicateFound := false
+										for _, m := range matches {
+
+											if strings.ToLower(j.LastName) == m {
+												duplicateFound = true
+											}
+										}
+										if duplicateFound == false {
+											matches = ExtendStringSlice(matches, strings.ToLower(j.LastName))
+											count++
+										}
+									} else {
+										matches = ExtendStringSlice(matches, strings.ToLower(j.LastName))
+									}
+								}
+							}
+						}
+
+					}
+				}
+			}
+		}
+	}
+
+	returnString, err := json.Marshal(matches)
+
+	if err != nil {
+		fmt.Println(err)
 	}
 
 	fmt.Fprintf(w, string(returnString))
@@ -330,7 +390,8 @@ func server() {
 	http.HandleFunc("/legislation/", legislationHandler)
 	http.HandleFunc("/uptime", uptimeHandler)
 	http.HandleFunc("/", handler)
-	http.HandleFunc("/autosurname/", autoSurnameHandler)
+	http.HandleFunc("/auto/surname/", autoSurnameHandler)
+	http.HandleFunc("/auto/organization/", autoOrganizationHandler)
 	//http.ListenAndServe(":8080", nil)
 
 	err := http.ListenAndServe(":"+os.Getenv("PORT"), nil)
