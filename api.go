@@ -25,7 +25,7 @@ type Registration struct {
 	HouseID          string `xml:"houseID"`
 	//ReportYear string `xml:"reportYear"`
 	//ReportType string `xml:"reportType"`
-	Lobbyist []Lobbyist `xml:"alis>ali_info>lobbyists>lobbyist"` //apparently house changed their xml format on 6/10??
+	Lobbyist []Lobbyist `xml:"alis>ali_info>lobbyists>lobbyist"` //different formats for quarterly vs aggregate reports?
 	//Lobbyist []Lobbyist `xml:"lobbyists>lobbyist"`
 }
 
@@ -275,7 +275,7 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
 	organizationName := r.Form["organization"]
 	clientName := r.Form["client"]
 
-	limit := 10
+	limit := 100
 	count := 0
 
 	counter++
@@ -284,8 +284,9 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
 
 	//surname search
 	if lastName != nil && len(lastName) > 0 && lastName[0] != "" { //check if empty param (surname=) because strings.Contains will flag empty string as match
-		tmp := make([]Registration, 0)
+
 		if matches != nil {
+			tmp := make([]Registration, 0)
 			for _, i := range matches {
 				for _, j := range i.Lobbyist {
 					if j.LastName != "" {
@@ -323,8 +324,8 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
 
 	//organization name search
 	if organizationName != nil && len(organizationName) > 0 && organizationName[0] != "" {
-		tmp := make([]Registration, 0)
 		if matches != nil {
+			tmp := make([]Registration, 0)
 			for _, i := range matches {
 				for _, l := range organizationName {
 					if strings.Contains(strings.ToLower(i.OrganizationName), l) {
@@ -352,8 +353,8 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
 
 	//client name search
 	if clientName != nil && len(clientName) > 0 && clientName[0] != "" {
-		tmp := make([]Registration, 0)
 		if matches != nil {
+			tmp := make([]Registration, 0)
 			for _, i := range matches {
 				for _, l := range clientName {
 					if strings.Contains(strings.ToLower(i.ClientName), l) {
