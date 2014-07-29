@@ -129,11 +129,11 @@ func autoSurnameHandler(w http.ResponseWriter, r *http.Request) {
 											}
 										}
 										if duplicateFound == false {
-											matches = ExtendStringSlice(matches, strings.Replace(j.LastName, " ", "", -1))
+											matches = ExtendStringSlice(matches, strings.ToLower(strings.Replace(j.LastName, " ", "", -1)))
 											count++
 										}
 									} else {
-										matches = ExtendStringSlice(matches, strings.Replace(j.LastName, " ", "", -1))
+										matches = ExtendStringSlice(matches, strings.ToLower(strings.Replace(j.LastName, " ", "", -1)))
 									}
 								}
 							}
