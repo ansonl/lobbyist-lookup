@@ -64,12 +64,23 @@ function createTable(filingArray) {
 	var tmp = '';
 
 	tmp += '<h5>';
-	if (filingArray.length > 9) {
+	if (filingArray.length > 100) {
 		tmp += 'First ' + filingArray.length + ' filings shown. There may be more matching filings.';
 	} else {
 		tmp += filingArray.length + ' filings found.';
 	}
 	tmp += '</h5>';
+
+	//display duplicate alert if needed
+	duplicateAlert = '';
+	filingArray.forEach(function(entry) {
+		filingArray.forEach(function(entry2) {
+			if (entry != entry2 && (entry.houseId === entry2.houseId || entry.senateId === entry2.senateId)) {
+				duplicateAlert ='<div class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button><strong>Duplicates?</strong> Attempted to remove duplicate filings, but filings with different registered lobbyists are still displayed.</div>';
+			}
+		});
+	});
+	tmp += duplicateAlert;
 
 	tmp += '<table class="table table-bordered table-hover table-condensed table-responsive" id="resultTable"><colgroup><col width="auto"/><col width="200em"/><col width="200em"/><col width="auto"/><col width="auto"/><col width="auto"/></colgroup>' + formatTableHeader() + '<tbody>';
 

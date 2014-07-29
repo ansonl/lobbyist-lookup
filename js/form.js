@@ -27,6 +27,8 @@ var setupForNewLookup = function() {
         formDiv.fadeIn(100);
         infoDiv.fadeIn(100);
     });
+
+    loadingText.text('Looking up filings');
 }
 
 var lookupSuccess = function (data) {
@@ -140,7 +142,6 @@ var formChanged = function (data) {
 
             document.activeElement.blur();
             if ($('#surnameInput').val().length > 0 || $('#organizationInput').val().length > 0 || $('#clientInput').val().length > 0) {
-
                 loadingText.text('Looking up filings');
                 formDiv.fadeOut(100, function() {
                     //Check if ajax callback has already been called

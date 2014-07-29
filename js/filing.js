@@ -1,6 +1,4 @@
 function Filing(organization, client, houseid, senateid, lobbyistArray) {
-
-
 	this.organization = organization;
 	this.client = client;
 	this.houseId = houseid;
@@ -14,8 +12,9 @@ function Lobbyist(firstName, lastName) {
 }
 
 var test;
+var test2;
 
-function createFiling(data) {
+function createFiling(data, array) {
 	var lobbyists = [];
 
 	//keep duplicates
@@ -26,7 +25,7 @@ function createFiling(data) {
 	*/
 	test = data;
 
-	//get rid of duplicates and check if no lobbyists on file
+	//get rid of duplicate lobbyists and check if no lobbyists on file
 	if (data.Lobbyist !== null) {
 		for (var i = 0; i < data.Lobbyist.length; i++) {
 			var tmp = new Lobbyist(data.Lobbyist[i].FirstName, data.Lobbyist[i].LastName);
@@ -36,7 +35,7 @@ function createFiling(data) {
 					duplicateFound = true;
 					break;
 				}
-				
+
 			}
 			if (duplicateFound === false) {
 				lobbyists.push(tmp);
@@ -46,8 +45,20 @@ function createFiling(data) {
 		//no lobbyists
 	}
 
-	return new Filing(data.OrganizationName, data.ClientName, data.HouseID, data.SenateID, lobbyists);
+	var duplicateFilingFound = false;
+	array.forEach(function(entry) {
+
+		if (entry.organization == data.OrganizationName && entry.client == data.ClientName && entry.houseId == data.HouseID && entry.senateId == data.SenateID && ($(entry.lobbyistArray).not(lobbyists).length == 0 && $(lobbyists).not(entry.lobbyistArray).length == 0 || JSON.stringify(entry.lobbyistArray) == JSON.stringify(lobbyists)) ) { //.not() may not detect some duplicates due to objects, so also OR for json string comparison
+			duplicateFilingFound = true;
+		}
+	});
+
+	if (duplicateFilingFound === false) {
+		array.push(new Filing(data.OrganizationName, data.ClientName, data.HouseID, data.SenateID, lobbyists));
+	}
 }
+
+var test;
 
 function parseData(data) {
 	var array = [];
@@ -56,7 +67,8 @@ function parseData(data) {
 		data = data.array;
 
 		data.forEach(function(entry) {
-			array.push(createFiling(entry));
+			createFiling(entry, array);
+			test = data;
 		});
 	} else {
 		console.log("Error parsing obj:\n" + data);
