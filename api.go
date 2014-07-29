@@ -116,12 +116,14 @@ func autoSurnameHandler(w http.ResponseWriter, r *http.Request) {
 			if count < limit {
 				for _, j := range i.Lobbyist {
 					if j.LastName != "" {
-						if count < limit {
-							for _, l := range lastName {
+
+						for _, l := range lastName {
+							if count < limit {
 								if strings.Contains(strings.ToLower(j.LastName), l) {
 									for _, m := range matches {
-										if j.LastName != m {
-											matches = ExtendStringSlice(matches, j.LastName)
+										if strings.Replace(j.LastName, " ", "", -1) != m {
+
+											matches = ExtendStringSlice(matches, strings.Replace(j.LastName, " ", "", -1))
 											count++
 											break
 										}
@@ -129,6 +131,7 @@ func autoSurnameHandler(w http.ResponseWriter, r *http.Request) {
 								}
 							}
 						}
+
 					}
 				}
 			}
@@ -175,13 +178,10 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
 			for _, i := range matches {
 				for _, j := range i.Lobbyist {
 					if j.LastName != "" {
-						if count < limit {
-							for _, l := range lastName {
-								if strings.Contains(strings.ToLower(j.LastName), l) {
-									tmp = ExtendResultSlice(tmp, i)
-									count++
-									break
-								}
+						for _, l := range lastName {
+							if strings.Contains(strings.ToLower(j.LastName), l) {
+								tmp = ExtendResultSlice(tmp, i)
+								break
 							}
 						}
 					}
@@ -215,13 +215,10 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
 		tmp := make([]Registration, 0)
 		if matches != nil {
 			for _, i := range matches {
-				if count < limit {
-					for _, l := range organizationName {
-						if strings.Contains(strings.ToLower(i.OrganizationName), l) {
-							tmp = ExtendResultSlice(tmp, i)
-							count++
-							break
-						}
+				for _, l := range organizationName {
+					if strings.Contains(strings.ToLower(i.OrganizationName), l) {
+						tmp = ExtendResultSlice(tmp, i)
+						break
 					}
 				}
 			}
@@ -250,7 +247,6 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
 				for _, l := range clientName {
 					if strings.Contains(strings.ToLower(i.ClientName), l) {
 						tmp = ExtendResultSlice(tmp, i)
-						count++
 						break
 					}
 				}
