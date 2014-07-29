@@ -35,6 +35,20 @@ var counter = 0
 
 var startTime = time.Now()
 
+func ExtendStringSlice(slice []string, element string) []string {
+	n := len(slice)
+	if n == cap(slice) {
+		// Slice is full; must grow.
+		// We double its size and add 1, so if the size is zero we still grow.
+		newSlice := make([]string, len(slice), 2*len(slice)+1)
+		copy(newSlice, slice)
+		slice = newSlice
+	}
+	slice = slice[0 : n+1]
+	slice[n] = element
+	return slice
+}
+
 func ExtendResultSlice(slice []Registration, element Registration) []Registration {
 	n := len(slice)
 	if n == cap(slice) {
@@ -81,6 +95,56 @@ func legislationHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, string(data))
 }
 
+func autoSurnameHandler(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
+	fmt.Println(r.Form)
+
+	//bypass same origin policy
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+
+	//firstName := r.Form["first"]
+	lastName := r.Form["surname"]
+
+	limit := 100
+	count := 0
+
+	matches := make([]string, 0)
+
+	//surname search
+	if lastName != nil && len(lastName) > 0 && lastName[0] != "" { //check if empty param (surname=) because strings.Contains will flag empty string as match
+		for _, i := range rArray {
+			if count < limit {
+				for _, j := range i.Lobbyist {
+					if j.LastName != "" {
+						if count < limit {
+							for _, l := range lastName {
+								if strings.Contains(strings.ToLower(j.LastName), l) {
+									for _, m := range matches {
+										if j.LastName != m {
+											matches = ExtendStringSlice(matches, j.LastName)
+											count++
+											break
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	returnString, err := json.Marshal(matches)
+
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Fprintf(w, string(returnString))
+
+}
+
 func apiHandler(w http.ResponseWriter, r *http.Request) {
 
 	r.ParseForm()
@@ -111,11 +175,13 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
 			for _, i := range matches {
 				for _, j := range i.Lobbyist {
 					if j.LastName != "" {
-						for _, l := range lastName {
-							if strings.Contains(strings.ToLower(j.LastName), l) {
-								tmp = ExtendResultSlice(tmp, i)
-								count++
-								break
+						if count < limit {
+							for _, l := range lastName {
+								if strings.Contains(strings.ToLower(j.LastName), l) {
+									tmp = ExtendResultSlice(tmp, i)
+									count++
+									break
+								}
 							}
 						}
 					}
@@ -128,11 +194,13 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
 				if count < limit {
 					for _, j := range i.Lobbyist {
 						if j.LastName != "" {
-							for _, l := range lastName {
-								if strings.Contains(strings.ToLower(j.LastName), l) {
-									matches = ExtendResultSlice(matches, i)
-									count++
-									break
+							if count < limit {
+								for _, l := range lastName {
+									if strings.Contains(strings.ToLower(j.LastName), l) {
+										matches = ExtendResultSlice(matches, i)
+										count++
+										break
+									}
 								}
 							}
 						}
@@ -147,11 +215,13 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
 		tmp := make([]Registration, 0)
 		if matches != nil {
 			for _, i := range matches {
-				for _, l := range organizationName {
-					if strings.Contains(strings.ToLower(i.OrganizationName), l) {
-						tmp = ExtendResultSlice(tmp, i)
-						count++
-						break
+				if count < limit {
+					for _, l := range organizationName {
+						if strings.Contains(strings.ToLower(i.OrganizationName), l) {
+							tmp = ExtendResultSlice(tmp, i)
+							count++
+							break
+						}
 					}
 				}
 			}
@@ -203,44 +273,44 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	/*
-	   	for _, i := range rArray {
-	   	    if (count < limit) {
-	       		if (organizationName != nil) {
-	       			for _, k := range organizationName {
-	       				if (strings.Contains(strings.ToLower(i.OrganizationName), k)) {
-	       					if (lastName != nil) {
-	       						for _, j := range i.Lobbyist {
-	       							if (j.LastName != "") {
-	       								for _, l := range lastName {
-	       									if (strings.Contains(strings.ToLower(j.LastName), l)) {
-	       										matches = ExtendResultSlice(matches, i)
-	       										count++
-	       									}
-	       								}
-	       							}
-	       						}
-	       					} else {
-	       						returnString += string(i.JSONString()) + ","
-	       						count++
-	       					}
-	       				}
-	       			}
-	       		} else {
-	       		    if (lastName != nil) {
-	           			for _, j := range i.Lobbyist {
-	           				if (j.LastName != "") {
-	           					for _, l := range lastName {
-	           						if (strings.Contains(strings.ToLower(j.LastName), l)) {
-	           							matches = ExtendResultSlice(matches, i)
-	           							count++
-	           						}
-	           					}
-	           				}
-	           			}
-	       		    }
-	       		}
-	   	    }
-	   	}
+							for _, i := range rArray {
+							if (count < limit) {
+							if (organizationName != nil) {
+							for _, k := range organizationName {
+							if (strings.Contains(strings.ToLower(i.OrganizationName), k)) {
+							if (lastName != nil) {
+							for _, j := range i.Lobbyist {
+							if (j.LastName != "") {
+							for _, l := range lastName {
+							if (strings.Contains(strings.ToLower(j.LastName), l)) {
+							matches = ExtendResultSlice(matches, i)
+							count++
+						}
+					}
+				}
+			}
+			} else {
+			returnString += string(i.JSONString()) + ","
+			count++
+		}
+		}
+		}
+		} else {
+		if (lastName != nil) {
+		for _, j := range i.Lobbyist {
+		if (j.LastName != "") {
+		for _, l := range lastName {
+		if (strings.Contains(strings.ToLower(j.LastName), l)) {
+		matches = ExtendResultSlice(matches, i)
+		count++
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
 	*/
 
 	for _, element := range matches {
@@ -257,6 +327,7 @@ func server() {
 	http.HandleFunc("/legislation/", legislationHandler)
 	http.HandleFunc("/uptime", uptimeHandler)
 	http.HandleFunc("/", handler)
+	http.HandleFunc("/autosurname/", autoSurnameHandler)
 	//http.ListenAndServe(":8080", nil)
 
 	err := http.ListenAndServe(":"+os.Getenv("PORT"), nil)
