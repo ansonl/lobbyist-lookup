@@ -16,6 +16,11 @@ var loadingText;
 var newLookupButton;
 
 var setupForNewLookup = function() {
+    leftDiv.attr('class', 'col-md-1');
+    rightDiv.attr('class', 'col-md-1');
+    mainContentDiv.attr('class', 'col-md-6');
+    infoDiv.attr('class', 'col-md-4 alert alert-info');
+
     resultDiv.fadeOut(100, function() {
         queryForm.trigger('reset');
         mainContentDiv.attr('class', 'col-md-6');
