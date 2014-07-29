@@ -19,13 +19,13 @@ type Lobbyist struct {
 }
 
 type Registration struct {
-	OrganizationName string `xml:"organizationName"`
-	ClientName       string `xml:"clientName"`
-	SenateID         string `xml:"senateID"`
-	HouseID          string `xml:"houseID"`
-	//ReportYear string `xml:"reportYear"`
-	//ReportType string `xml:"reportType"`
-	Lobbyist []Lobbyist `xml:"alis>ali_info>lobbyists>lobbyist"` //different formats for quarterly vs aggregate reports?
+	OrganizationName string     `xml:"organizationName"`
+	ClientName       string     `xml:"clientName"`
+	SenateID         string     `xml:"senateID"`
+	HouseID          string     `xml:"houseID"`
+	ReportYear       string     `xml:"reportYear"`
+	ReportType       string     `xml:"reportType"`
+	Lobbyist         []Lobbyist `xml:"alis>ali_info>lobbyists>lobbyist"` //different formats for quarterly vs aggregate reports?
 	//Lobbyist []Lobbyist `xml:"lobbyists>lobbyist"`
 }
 
