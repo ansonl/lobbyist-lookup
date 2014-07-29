@@ -115,10 +115,7 @@ $( "#surnameInput" ).autocomplete({
     source: "http://lobbyist.herokuapp.com/autosurname/",
     minLength: 1,
     select: function( event, ui ) {
-        log( ui.item ?
-            "Selected: " + ui.item.value + " aka " + ui.item.id :
-            "Nothing selected, input was " + this.value );
-        }
+
     });
 
         queryForm.submit(function() {
