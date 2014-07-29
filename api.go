@@ -163,42 +163,35 @@ func autoOrganizationHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	//firstName := r.Form["first"]
-	lastName := r.Form["term"]
+	organizationName := r.Form["term"]
 
 	limit := 20
 	count := 0
 
 	matches := make([]string, 0)
 
-	//surname search
-	if lastName != nil && len(lastName) > 0 && lastName[0] != "" { //check if empty param (surname=) because strings.Contains will flag empty string as match
+	//organization name search
+	if organizationName != nil && len(organizationName) > 0 && organizationName[0] != "" {
 		for _, i := range rArray {
 			if count < limit {
-				for _, j := range i.Lobbyist {
-					if j.LastName != "" {
+				for _, l := range organizationName {
+					if strings.Contains(strings.ToLower(i.OrganizationName), l) {
+						if len(matches) > 0 {
+							duplicateFound := false
+							for _, m := range matches {
 
-						for _, l := range lastName {
-							if count < limit {
-								if strings.Contains(strings.ToLower(j.LastName), l) {
-									if len(matches) > 0 {
-										duplicateFound := false
-										for _, m := range matches {
-
-											if strings.ToLower(j.LastName) == m {
-												duplicateFound = true
-											}
-										}
-										if duplicateFound == false {
-											matches = ExtendStringSlice(matches, strings.ToLower(j.LastName))
-											count++
-										}
-									} else {
-										matches = ExtendStringSlice(matches, strings.ToLower(j.LastName))
-									}
+								if strings.ToLower(i.OrganizationName) == m {
+									duplicateFound = true
 								}
 							}
+							if duplicateFound == false {
+								matches = ExtendStringSlice(matches, strings.ToLower(i.OrganizationName))
+								count++
+							}
+						} else {
+							matches = ExtendStringSlice(matches, strings.ToLower(i.OrganizationName))
 						}
-
+						break
 					}
 				}
 			}
