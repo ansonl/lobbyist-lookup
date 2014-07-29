@@ -121,16 +121,19 @@ func autoSurnameHandler(w http.ResponseWriter, r *http.Request) {
 							if count < limit {
 								if strings.Contains(strings.ToLower(j.LastName), l) {
 									if len(matches) > 0 {
+										duplicateFound := false
 										for n, m := range matches {
 
 											if strings.Replace(j.LastName, " ", "", -1) != string(m) {
 												fmt.Println(n)
 												fmt.Println("comparing" + strings.Replace(j.LastName, " ", "", -1) + "|" + string(m) + "|")
 
-												matches = ExtendStringSlice(matches, strings.Replace(j.LastName, " ", "", -1))
-												count++
-												break
+												duplicateFound = true
 											}
+										}
+										if duplicateFound == false {
+											matches = ExtendStringSlice(matches, strings.Replace(j.LastName, " ", "", -1))
+											count++
 										}
 									} else {
 										matches = ExtendStringSlice(matches, strings.Replace(j.LastName, " ", "", -1))
