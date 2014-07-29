@@ -105,7 +105,7 @@ func autoSurnameHandler(w http.ResponseWriter, r *http.Request) {
 	//firstName := r.Form["first"]
 	lastName := r.Form["term"]
 
-	limit := 20
+	limit := 200
 	count := 0
 
 	matches := make([]string, 0)
@@ -165,7 +165,7 @@ func autoOrganizationHandler(w http.ResponseWriter, r *http.Request) {
 	//firstName := r.Form["first"]
 	organizationName := r.Form["term"]
 
-	limit := 20
+	limit := 100
 	count := 0
 
 	matches := make([]string, 0)
@@ -199,7 +199,58 @@ func autoOrganizationHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	returnString, err := json.Marshal(matches)
+	if err != nil {
+		fmt.Println(err)
+	}
 
+	fmt.Fprintf(w, string(returnString))
+
+}
+
+func autoClientHandler(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
+	fmt.Println(r.Form)
+
+	//bypass same origin policy
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+
+	//firstName := r.Form["first"]
+	clientName := r.Form["term"]
+
+	limit := 100
+	count := 0
+
+	matches := make([]string, 0)
+
+	//organization name search
+	if clientName != nil && len(clientName) > 0 && clientName[0] != "" {
+		for _, i := range rArray {
+			if count < limit {
+				for _, l := range clientName {
+					if strings.Contains(strings.ToLower(i.ClientName), l) {
+						if len(matches) > 0 {
+							duplicateFound := false
+							for _, m := range matches {
+
+								if strings.ToLower(i.ClientName) == m {
+									duplicateFound = true
+								}
+							}
+							if duplicateFound == false {
+								matches = ExtendStringSlice(matches, strings.ToLower(i.ClientName))
+								count++
+							}
+						} else {
+							matches = ExtendStringSlice(matches, strings.ToLower(i.ClientName))
+						}
+						break
+					}
+				}
+			}
+		}
+	}
+
+	returnString, err := json.Marshal(matches)
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -385,6 +436,7 @@ func server() {
 	http.HandleFunc("/", handler)
 	http.HandleFunc("/auto/surname/", autoSurnameHandler)
 	http.HandleFunc("/auto/organization/", autoOrganizationHandler)
+	http.HandleFunc("/auto/client/", autoClientHandler)
 	//http.ListenAndServe(":8080", nil)
 
 	err := http.ListenAndServe(":"+os.Getenv("PORT"), nil)
