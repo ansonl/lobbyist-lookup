@@ -75,8 +75,8 @@ function createTable(filingArray) {
 	duplicateAlert = '';
 	filingArray.forEach(function(entry) {
 		filingArray.forEach(function(entry2) {
-			if (entry != entry2 && (entry.houseId === entry2.houseId || entry.senateId === entry2.senateId)) {
-				duplicateAlert ='<div class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button><strong>Duplicates?</strong> Attempted to remove duplicate filings, but filings with different registered lobbyists are still displayed.</div>';
+			if (entry != entry2 && ((entry.houseId === entry2.houseId && entry.houseId.length > 0) || (entry.senateId === entry2.senateId && entry.senateId.length > 0))) {
+				duplicateAlert ='<div class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button><strong>Duplicates?</strong> We attempted to remove redundant filings. Some displayed filings may be reported in different quarters. </div>';
 			}
 		});
 	});
