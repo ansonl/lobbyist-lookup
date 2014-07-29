@@ -124,7 +124,8 @@ func autoSurnameHandler(w http.ResponseWriter, r *http.Request) {
 										for n, m := range matches {
 
 											if strings.Replace(j.LastName, " ", "", -1) != string(m) {
-												fmt.Println("comparing" + strings.Replace(j.LastName, " ", "", -1) + "|" + string(m) + string(n))
+												fmt.Println(n)
+												fmt.Println("comparing" + strings.Replace(j.LastName, " ", "", -1) + "|" + string(m) + "|")
 
 												matches = ExtendStringSlice(matches, strings.Replace(j.LastName, " ", "", -1))
 												count++
