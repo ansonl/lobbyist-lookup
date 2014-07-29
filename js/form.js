@@ -111,6 +111,16 @@ var formEditted = function (data) {
         $('.form-control').on('input', formEditted);
         $('.form-control').change(formChanged);
 
+$( "#surnameInput" ).autocomplete({
+    source: "http://lobbyist.herokuapp.com/autosurname/",
+    minLength: 1,
+    select: function( event, ui ) {
+        log( ui.item ?
+            "Selected: " + ui.item.value + " aka " + ui.item.id :
+            "Nothing selected, input was " + this.value );
+        }
+    });
+
         queryForm.submit(function() {
 
             document.activeElement.blur();
