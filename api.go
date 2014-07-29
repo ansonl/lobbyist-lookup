@@ -129,6 +129,7 @@ func autoSurnameHandler(w http.ResponseWriter, r *http.Request) {
 
 												matches = ExtendStringSlice(matches, strings.Replace(j.LastName, " ", "", -1))
 												count++
+												break
 											}
 										}
 									} else {
