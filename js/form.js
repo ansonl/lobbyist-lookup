@@ -77,12 +77,13 @@ var lookupComplete = function (data) {
 var formEditted = function (data) {
     if (data.target.value.length > 0)
         lookupButton.prop('disabled', false);
-    }
-
-    var formChanged = function (data) {
-        //lowercase input for matching
         data.target.value = data.target.value.toLowerCase();
     }
+
+var formChanged = function (data) {
+    //lowercase input for matching
+    data.target.value = data.target.value.toLowerCase();
+}
 
     $(document).ready(function() {
         $('#noJavascriptDiv').css('display', 'none');
@@ -112,13 +113,23 @@ var formEditted = function (data) {
         $('.form-control').change(formChanged);
 
         $( "#surnameInput" ).autocomplete({
-            source: "http://lobbyist.herokuapp.com/autosurname/",
+            source: "http://lobbyist.herokuapp.com/auto/surname/",
             minLength: 1,
-            delay: 100,
-            select: function( event, ui ) {
-
-            }
+            delay: 300
         });
+
+        $( "#organizationInput" ).autocomplete({
+            source: "http://lobbyist.herokuapp.com/auto/organization/",
+            minLength: 1,
+            delay: 300
+        });
+
+        $( "#clientInput" ).autocomplete({
+            source: "http://lobbyist.herokuapp.com/auto/client/",
+            minLength: 1,
+            delay: 300
+        });
+
 
         queryForm.submit(function() {
 
