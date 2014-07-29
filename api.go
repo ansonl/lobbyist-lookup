@@ -103,7 +103,7 @@ func autoSurnameHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	//firstName := r.Form["first"]
-	lastName := r.Form["surname"]
+	lastName := r.Form["term"]
 
 	limit := 100
 	count := 0
@@ -122,12 +122,9 @@ func autoSurnameHandler(w http.ResponseWriter, r *http.Request) {
 								if strings.Contains(strings.ToLower(j.LastName), l) {
 									if len(matches) > 0 {
 										duplicateFound := false
-										for n, m := range matches {
+										for _, m := range matches {
 
 											if strings.Replace(j.LastName, " ", "", -1) == string(m) {
-												fmt.Println(n)
-												fmt.Println("comparing" + strings.Replace(j.LastName, " ", "", -1) + "|" + string(m) + "|")
-
 												duplicateFound = true
 											}
 										}
