@@ -111,12 +111,13 @@ var formEditted = function (data) {
         $('.form-control').on('input', formEditted);
         $('.form-control').change(formChanged);
 
-$( "#surnameInput" ).autocomplete({
-    source: "http://lobbyist.herokuapp.com/autosurname/",
-    minLength: 1,
-    select: function( event, ui ) {
+        $( "#surnameInput" ).autocomplete({
+            source: "http://lobbyist.herokuapp.com/autosurname/",
+            minLength: 1,
+            select: function( event, ui ) {
 
-    });
+            }
+        });
 
         queryForm.submit(function() {
 
