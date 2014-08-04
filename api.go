@@ -13,10 +13,12 @@ import (
 	"time"
 )
 
+/*
 type Lobbyist struct {
 	FirstName string `xml:"lobbyistFirstName"`
 	LastName  string `xml:"lobbyistLastName"`
 }
+*/
 
 type Registration struct {
 	OrganizationName string     `xml:"organizationName"`
@@ -80,6 +82,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, string(data))
 }
 
+/*
 func uptimeHandler(w http.ResponseWriter, r *http.Request) {
 	diff := time.Since(startTime)
 
@@ -380,47 +383,6 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	/*
-							for _, i := range rArray {
-							if (count < limit) {
-							if (organizationName != nil) {
-							for _, k := range organizationName {
-							if (strings.Contains(strings.ToLower(i.OrganizationName), k)) {
-							if (lastName != nil) {
-							for _, j := range i.Lobbyist {
-							if (j.LastName != "") {
-							for _, l := range lastName {
-							if (strings.Contains(strings.ToLower(j.LastName), l)) {
-							matches = ExtendResultSlice(matches, i)
-							count++
-						}
-					}
-				}
-			}
-			} else {
-			returnString += string(i.JSONString()) + ","
-			count++
-		}
-		}
-		}
-		} else {
-		if (lastName != nil) {
-		for _, j := range i.Lobbyist {
-		if (j.LastName != "") {
-		for _, l := range lastName {
-		if (strings.Contains(strings.ToLower(j.LastName), l)) {
-		matches = ExtendResultSlice(matches, i)
-		count++
-		}
-		}
-		}
-		}
-		}
-		}
-		}
-		}
-	*/
-
 	for _, element := range matches {
 		returnString += string(element.JSONString()) + ","
 	}
@@ -447,7 +409,7 @@ func server() {
 
 	fmt.Println("listening on port " + os.Getenv("PORT"))
 }
-
+*/
 func readDirectory(recordDir string) {
 	files, err := ioutil.ReadDir("./" + recordDir + "/")
 	if err != nil {
@@ -496,19 +458,23 @@ func readDirectory(recordDir string) {
 }
 
 func main() {
-	go server()
+	//go server()
 
-	scrape()
+	spawnDownloads()
 
-	readDirectory(savePath)
+	parseSenateFilings()
+
+	//scrape()
+
+	//readDirectory(savePathHouse)
 
 	ticker := time.NewTicker(60 * 60 * 24 * time.Second)
 
 	for {
 		select {
 		case <-ticker.C:
-			scrape()
-			readDirectory(savePath)
+			//scrape()
+			//readDirectory(savePathHouse)
 		}
 	}
 
