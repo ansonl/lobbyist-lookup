@@ -1,4 +1,7 @@
 $( document ).ready(function() {
+	if ($(window).width() < 620) {
+	  $('#forkMeDiv').hide();
+	}
 
 	$('.js-is-hidden-alert').hide();
 
@@ -13,6 +16,14 @@ $( document ).ready(function() {
 			$('.js-is-hidden-alert').slideUp();
 			$(this).removeClass('js-hide-alert').addClass('js-show-alert');
 		}
+	});
+
+	$(window).resize(function() {
+	    if ($(window).width() < 620) {
+	       $('#forkMeDiv').fadeOut('slow');
+	    } else {
+	       $('#forkMeDiv').fadeIn('slow');
+	    }
 	});
 
 
