@@ -82,7 +82,7 @@ function createTable(filingArray) {
 	});
 	tmp += duplicateAlert;
 
-	tmp += '<table class="table table-striped table-bordered table-hover table-condensed table-responsive" id="resultTable"><colgroup><col width="auto"/><col width="200em"/><col width="200em"/><col width="auto"/><col width="auto"/><col width="auto"/></colgroup>' + formatTableHeader() + '<tbody>';
+	tmp += '<div class="table-responsive"><table class="table table-striped table-bordered table-hover table-condensed" id="resultTable"><colgroup><col width="auto"/><col width="200em"/><col width="200em"/><col width="auto"/><col width="auto"/><col width="auto"/></colgroup>' + formatTableHeader() + '<tbody></div>';
 
 	if (filingArray.length === 0) {
 		tmp += formatNoResults();
