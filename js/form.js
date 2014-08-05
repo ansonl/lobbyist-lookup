@@ -68,7 +68,7 @@ var lookupError = function (data) {
     var tmp = '';
 
     tmp += 'Lookup unsuccessful. System provided error: <br><blockquote cite="https://github.com/ansonl/lobbyist-lookup">' + data.statusText + '</blockquote>';
-    tmp += '<br><button type="button" class="btn btn-default" id="newLookupButton">New Lookup</button>';
+    tmp += '<br><button type="button" class="btn btn-primary" id="newLookupButton">New Lookup</button>';
 
     resultDiv.html(tmp);
 

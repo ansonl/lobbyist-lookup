@@ -23,7 +23,7 @@ h4{font-family: georgia;}
 .topSpace{padding-top: 16px;}
 
 .center-text{text-align: center;}
-.alert-call{color: #31708f!important; font-size: 1em;}
+.alert-call{color: #31708f!important; font-size: 1.1em;}
 .is-alert{margin-top: -16px;}
 
 .js-show-alert, .js-hide-alert{cursor: pointer;}
@@ -57,7 +57,7 @@ h4{font-family: georgia;}
 }
 
 #resultTable {
-    cursor:cell;
+    cursor: default;
 }
 
 #usFlag {
