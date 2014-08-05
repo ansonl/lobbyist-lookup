@@ -16,14 +16,13 @@ var loadingText;
 var newLookupButton;
 
 var setupForNewLookup = function() {
-    leftDiv.attr('class', 'col-md-1');
-    rightDiv.attr('class', 'col-md-1');
-    mainContentDiv.attr('class', 'col-md-6');
-    infoDiv.attr('class', 'col-md-4 alert alert-info');
+    $('.js-is-hidden-alert').hide();
+    mainContentDiv.attr('class', 'col-md-8 col-md-offset-2');
+    infoDiv.attr('class', 'col-md-6 col-md-offset-3 alert is-alert');
 
     resultDiv.fadeOut(100, function() {
         queryForm.trigger('reset');
-        mainContentDiv.attr('class', 'col-md-6');
+        mainContentDiv.attr('class', 'col-md-8 col-md-offset-2');
         formDiv.fadeIn(100);
         infoDiv.fadeIn(100);
     });
@@ -97,7 +96,7 @@ var formChanged = function (data) {
 
         $('body').css('display', 'none');
         $('body').fadeIn(100);
-        $('#forkMeDiv').delay(1500).fadeIn(400).fadeOut(400).fadeIn(400).fadeOut(400).fadeIn(400).fadeOut(7000);
+        //$('#forkMeDiv').delay(1500).fadeIn(400).fadeOut(400).fadeIn(400).fadeOut(400).fadeIn(400).fadeOut(7000);
 
         queryForm = $('#queryForm');
         lookupButton = $('#lookupButton');

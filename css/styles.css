@@ -1,6 +1,11 @@
 body {
+    font-family: 'Open Sans', sans-serif;
     text-decoration: none;
 }
+
+.container{width: 100%;}
+
+h1{font-weight: bold;}
 
 #noJavascriptDiv {
     cursor:not-allowed;
@@ -12,6 +17,13 @@ body {
 #formDiv {
 
 }
+
+.topSpace{padding-top: 16px;}
+
+.center-text{text-align: center;}
+.alert-call{color: #31708f!important; font-size: 1em; margin-top: -35px!important;}
+
+.js-show-alert, .js-hide-alert{cursor: pointer;}
 
 .ui-autocomplete {
     max-height: 150px;
@@ -25,7 +37,11 @@ body {
 }
 
 #forkMeDiv {
-    display:none;
+    /*display:none;*/
+}
+
+#titleDiv{
+    text-align: center;
 }
 
 #loadingDiv {
@@ -61,3 +77,4 @@ body {
 	font-weight: bold;
 	font-size: 125%;
 }
+

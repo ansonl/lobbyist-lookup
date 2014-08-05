@@ -3,6 +3,9 @@
 <head>
 	<title>Lobbyist Lookup</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
@@ -11,6 +14,7 @@
 	<script src="js/table.js"></script>
 	<script src="js/filing.js"></script>
 	<script src="js/form.js"></script>
+	<script src="js/main.js"></script>
 	<link href="css/styles.css" rel="stylesheet">
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
 	<meta name="apple-mobile-web-app-capable" content="yes">
@@ -49,11 +53,30 @@
 		</div>
 
 		<div class="row">
+			<div class="col-md-6 col-md-offset-3 alert is-alert" role="alert" id="infoDiv">
+				<h4 class="js-show-alert js-click-moreInfo center-text alert-call"><span class="glyphicon glyphicon-question-sign"></span>&nbsp;&nbsp;What is this for?</h4>
+				<div class="js-is-hidden-alert">
+					<p><strong>Lobbyist Lookup</strong> lets users search filings from House.gov to assist determining gift receiving eligibility.</p>
 
-			<div class="col-md-1" id="leftDiv">
+					Lobbyist Gift Ban Amendment<p><a href="http://www.oge.gov/Laws-and-Regulations/OGE-Regulations/5-C-F-R--Part-2635---Standards-of-ethical-conduct-for-employees-of-the-executive-branch/">5 C.F.R. Part 2635</a> - <a href="http://www.reginfo.gov/public/do/eAgendaViewRule?pubId=201104&RIN=3209-AA04">RIN 3209-AA04</a> - <a href="http://www.oge.gov/Laws-and-Regulations/Federal-Register-Issuances/Proposed-Rules-and-Comments/Comments-on-Proposed-Lobbyist-Gift-Ban-Rule-(Page-1)/">Comments</a></p> proposed by the Office of Government Ethics (OGE) will extend the <i>lobbyist gift ban</i> to all federal employees.
+					<br>
+					The <i>lobbyist gift ban</i> prevents the acceptance of gifts of over $25 in value from unauthorized sources.
+					<br>
+					<table class="table table-condensed">
+						<thead><tr><th>Some unauthorized sources</th></tr></thead>
+						<tbody>
+							<tr><td>Registered lobbyists</td></tr>
+							<tr><td>Registered lobbying organizations</td></tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
+		</div>
 
-			<div class="col-md-6" id="mainContentDiv">
+		<div class="row">
+
+
+			<div class="col-md-8 col-md-offset-2" id="mainContentDiv">
 
 				<!-- Form content -->
 				<div id="formDiv">
@@ -66,10 +89,10 @@
 						<div class="form-group">
 							<label for="organizationInput"><span class="glyphicon glyphicon-bullhorn"></span>&nbsp;&nbsp;&nbsp;Filing Organization</label>
 							<input type="text" name="organization" class="form-control" id="organizationInput" placeholder="Organization" autocorrect="off" autocapitalize="off" autocomplete="off" >
-							<label for="clientInput"><span class="glyphicon glyphicon-briefcase"></span>&nbsp;&nbsp;&nbsp;Filing Client</label>
+							<label for="clientInput" class="topSpace"><span class="glyphicon glyphicon-briefcase"></span>&nbsp;&nbsp;&nbsp;Filing Client</label>
 							<input type="text" name="client" class="form-control" id="clientInput" placeholder="Client" autocorrect="off" autocapitalize="off" autocomplete="off">
 						</div>
-						<input type="submit" id="lookupButton" class="btn btn-default" value="Lookup">
+						<input type="submit" id="lookupButton" class="btn btn-primary" value="Lookup">
 					</form>
 				</div>
 
@@ -88,28 +111,8 @@
 				</div>
 
 				<!--break so if columns stack, there is space beneath lookup button-->
-				<br>
+				<br />
 
-			</div>
-
-			<div class="col-md-4 alert alert-info" role="alert" id="infoDiv">
-				<h4><span class="glyphicon glyphicon-question-sign"></span>&nbsp;&nbsp;What is this for?</h4>
-				<p><strong>Lobbyist Lookup</strong> lets users search filings from House.gov to assist determining gift receiving eligibility.</p>
-
-				Lobbyist Gift Ban Amendment<p><a href="http://www.oge.gov/Laws-and-Regulations/OGE-Regulations/5-C-F-R--Part-2635---Standards-of-ethical-conduct-for-employees-of-the-executive-branch/">5 C.F.R. Part 2635</a> - <a href="http://www.reginfo.gov/public/do/eAgendaViewRule?pubId=201104&RIN=3209-AA04">RIN 3209-AA04</a> - <a href="http://www.oge.gov/Laws-and-Regulations/Federal-Register-Issuances/Proposed-Rules-and-Comments/Comments-on-Proposed-Lobbyist-Gift-Ban-Rule-(Page-1)/">Comments</a></p> proposed by the Office of Government Ethics (OGE) will extend the <i>lobbyist gift ban</i> to all federal employees.
-				<br>
-				The <i>lobbyist gift ban</i> prevents the acceptance of gifts of over $25 in value from unauthorized sources.
-				<br>
-				<table class="table table-condensed">
-					<thead><tr><th>Some unauthorized sources</th></tr></thead>
-					<tbody>
-						<tr><td>Registered lobbyists</td></tr>
-						<tr><td>Registered lobbying organizations</td></tr>
-					</tbody>
-				</table>
-			</div>
-
-			<div class="col-md-1" id="rightDiv">
 			</div>
 
 		</div>
