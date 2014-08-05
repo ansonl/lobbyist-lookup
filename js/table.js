@@ -82,7 +82,7 @@ function createTable(filingArray) {
 	});
 	tmp += duplicateAlert;
 
-	tmp += '<div class="table-responsive"><table class="table table-striped table-bordered table-hover table-condensed" id="resultTable"><colgroup><col width="auto"/><col width="200em"/><col width="200em"/><col width="auto"/><col width="auto"/><col width="auto"/></colgroup>' + formatTableHeader() + '<tbody></div>';
+	tmp += '<div class="table-responsive"><table class="table table-striped table-bordered table-hover table-condensed" id="resultTable"><colgroup><col width="auto"/><col width="200em"/><col width="200em"/><col width="auto"/><col width="auto"/><col width="auto"/></colgroup>' + formatTableHeader() + '<tbody>';
 
 	if (filingArray.length === 0) {
 		tmp += formatNoResults();
@@ -94,9 +94,9 @@ function createTable(filingArray) {
 		});
 	}
 
-	tmp += '</tbody></table>';
+	tmp += '</tbody></table></div>';
 
-	tmp += '<button type="button" class="btn btn-primary" id="newLookupButton">New Lookup</button>';
+	tmp += '<button type="button" class="btn btn-primary full-w-btn" id="newLookupButton">New Lookup</button>';
 
 	return tmp;
 }
