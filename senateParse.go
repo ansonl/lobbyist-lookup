@@ -15,29 +15,31 @@ import (
 	"strings"
 )
 
-type Registrant struct {
+type SenateRegistrant struct {
 	RegistrantName    string `xml:",attr"`
 	RegistrantID      string `xml:",attr"`
 	RegistrantCountry string `xml:",attr"`
 }
-type Client struct {
+type SenateClient struct {
 	ClientName        string `xml:",attr"`
 	ClientID          string `xml:",attr"`
 	ContactFullname   string `xml:",attr"`
 	IsStateOrLocalGov bool   `xml:",attr"`
 	ClientCountry     string `xml:",attr"`
 }
-type Lobbyist struct {
+type SenateLobbyist struct {
 	LobbyistName string `xml:",attr"`
+	FirstName string
+	LastName string
 }
-type Filing struct {
+type SenateFiling struct {
 	ID         string     `xml:"ID,attr"`
-	Client     Client     `xml:Client"`
-	Registrant Registrant `xml:"Registrant"`
-	Lobbyists  []Lobbyist `xml:"Lobbyists>Lobbyist"`
+	Client     SenateClient     `xml:Client"`
+	Registrant SenateRegistrant `xml:"Registrant"`
+	Lobbyists  []SenateLobbyist `xml:"Lobbyists>Lobbyist"`
 }
-type PublicFilings struct {
-	Filings []Filing `xml:"Filing"`
+type SenateFile struct {
+	Filings []SenateFiling `xml:"Filing"`
 }
 
 func convertEncoding(input []byte) []byte {
@@ -53,14 +55,14 @@ func convertEncoding(input []byte) []byte {
 	return output
 }
 
-func parseSenateFilings() []Filing {
+func parseSenateFilings() []SenateFiling {
 
 	files, err := ioutil.ReadDir(savePathSenate)
 	if err != nil {
 		panic(err)
 	}
 
-	allSenateFilings := make([]Filing, len(files))
+	allSenateFilings := make([]SenateFiling, len(files))
 
 	fmt.Println("Reading " + strconv.Itoa(len(files)) + " files from " + savePathSenate + "...")
 
@@ -68,27 +70,29 @@ func parseSenateFilings() []Filing {
 
 	for _, f := range files {
 
-		oneFile := PublicFilings{}
+		if strings.Contains(filepath.Ext(f.Name()), "xml") {
 
-		data, err := ioutil.ReadFile(savePathSenate + f.Name())
-		if err != nil {
-			fmt.Println("error reading", f.Name(), err)
-			continue
-		} else {
-			if strings.Contains(filepath.Ext(f.Name()), "xml") {
+			oneFile := SenateFile{}
+
+			data, err := ioutil.ReadFile(savePathSenate + f.Name())
+			if err != nil {
+				fmt.Println("error reading", f.Name(), err)
+				continue
+			} else {
 				data = convertEncoding(data)
 
 				data = []byte(strings.Replace(string(data), "UTF-16", "UTF-8", -1))
 
-				if err := xml.Unmarshal([]byte(data), &oneFile); err != nil {
+				if err := xml.Unmarshal(data, &oneFile); err != nil {
 					fmt.Println(f.Name(), err)
-				}
+				} else {
 
-				for _, t := range oneFile.Filings {
-					allSenateFilings = append(allSenateFilings, t)
-					a++
-					if a%1000 == 0 {
-						fmt.Println(strconv.Itoa(a), "Senate filings read")
+					for _, t := range oneFile.Filings {
+						allSenateFilings = append(allSenateFilings, t)
+						a++
+						if a%1000 == 0 {
+							fmt.Println(strconv.Itoa(a), "Senate filings read")
+						}
 					}
 				}
 			}

@@ -13,12 +13,12 @@ import (
 	"time"
 )
 
-/*
+
 type Lobbyist struct {
 	FirstName string `xml:"lobbyistFirstName"`
 	LastName  string `xml:"lobbyistLastName"`
 }
-*/
+
 
 type Registration struct {
 	OrganizationName string     `xml:"organizationName"`
