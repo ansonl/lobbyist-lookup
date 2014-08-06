@@ -26,6 +26,21 @@ $( document ).ready(function() {
 	    }
 	});
 
+	$('#formDiv').find('input, textarea').on('keyup blur focus', function(e){
+
+    // Cache our selectors
+    var $this = $(this);
+    var $label = $this.prev();
+
+    if (e.type == 'keyup') {
+        if( $this.val() == '' ) {
+				  $label.addClass('js-hide-label');
+				} else {
+				  $label.removeClass('js-hide-label');
+				}
+    }
+	});
+
 
 
 });

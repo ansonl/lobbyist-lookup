@@ -17,15 +17,17 @@ var newLookupButton;
 
 var setupForNewLookup = function() {
     $('.js-is-hidden-alert').hide();
-    mainContentDiv.attr('class', 'col-md-8 col-md-offset-2');
+    mainContentDiv.attr('class', 'col-md-6 col-md-offset-3');
     infoDiv.attr('class', 'col-md-6 col-md-offset-3 alert is-alert');
 
     resultDiv.fadeOut(100, function() {
         queryForm.trigger('reset');
-        mainContentDiv.attr('class', 'col-md-8 col-md-offset-2');
+        mainContentDiv.attr('class', 'col-md-6 col-md-offset-3');
         formDiv.fadeIn(100);
         infoDiv.fadeIn(100);
     });
+
+    $('label').addClass('js-hide-label');
 
     loadingText.text('Looking up filings');
 }
