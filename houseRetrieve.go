@@ -1,15 +1,12 @@
 package main
 
 import (
-	"archive/zip"
 	"code.google.com/p/go.net/html"
 	"fmt"
-	"io"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"os"
-	"path/filepath"
 	"strconv"
 	"strings"
 	"sync"
@@ -26,40 +23,6 @@ var tmpNameHouse = "tmp"
 var fileExtHouse = ".zip"
 var linkHouse = "http://disclosures.house.gov/ld/LDDownload.aspx?KeepThis=true"
 
-func Unzip(src, dest string) error {
-	r, err := zip.OpenReader(src)
-	if err != nil {
-		return err
-	}
-
-	for _, f := range r.File {
-		rc, err := f.Open()
-		if err != nil {
-			panic(err)
-		}
-
-		path := filepath.Join(dest, f.Name)
-		if f.FileInfo().IsDir() {
-			os.MkdirAll(path, f.Mode())
-		} else {
-			f, err := os.OpenFile(
-				path, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, f.Mode())
-			if err != nil {
-				panic(err)
-			}
-
-			_, err = io.Copy(f, rc)
-			if err != nil {
-				panic(err)
-			}
-			f.Close()
-		}
-		rc.Close()
-	}
-	r.Close()
-	return nil
-}
-
 func download(t Tokens, i int, file string, wg *sync.WaitGroup) {
 	//set POST data
 	v := url.Values{}
@@ -68,7 +31,7 @@ func download(t Tokens, i int, file string, wg *sync.WaitGroup) {
 	v.Set("selFilesXML", t.FileNames[i])
 	v.Set("btnDownloadXML", "Download")
 
-	fmt.Println("Downloading " + file + " to " + savePathHouse + tmpNameHouse + fileExtHouse + "...")
+	fmt.Println("Downloading " + file + " to " + savePathHouse + tmpNameHouse + strconv.Itoa(i) + fileExtHouse + "...")
 
 	//pres, err := http.PostForm("http://vm-2.ansonl.koding.kd.io/php.php", v)
 	pres, err := http.PostForm(linkHouse, v)
@@ -114,7 +77,7 @@ func Extend(slice []string, element string) []string {
 	return slice
 }
 
-func scrape() {
+func scrape() string{
 
 	fmt.Println("Sending GET request to " + linkHouse + "...")
 
@@ -190,4 +153,10 @@ func scrape() {
 	}
 	wg.Wait()
 	fmt.Println("All files downloaded.")
+
+	return savePathHouse //return saved path
+}
+
+func downloadHouseData() string{
+	return scrape()
 }

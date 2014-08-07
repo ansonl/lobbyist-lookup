@@ -1,42 +1,19 @@
 package main
 
 import (
-	"encoding/json"
-	"encoding/xml"
+	//"encoding/json"
 	"fmt"
-	"io/ioutil"
-	"net/http"
-	"os"
-	"path/filepath"
-	"strconv"
-	"strings"
+	//"io/ioutil"
+	//"net/http"
+	//"strings"
 	"time"
+	"sync"
 )
-
-
-type Lobbyist struct {
-	FirstName string `xml:"lobbyistFirstName"`
-	LastName  string `xml:"lobbyistLastName"`
-}
-
-
-type Registration struct {
-	OrganizationName string     `xml:"organizationName"`
-	ClientName       string     `xml:"clientName"`
-	SenateID         string     `xml:"senateID"`
-	HouseID          string     `xml:"houseID"`
-	ReportYear       string     `xml:"reportYear"`
-	ReportType       string     `xml:"reportType"`
-	Lobbyist         []Lobbyist `xml:"alis>ali_info>lobbyists>lobbyist"` //different formats for quarterly vs aggregate reports?
-	//Lobbyist []Lobbyist `xml:"lobbyists>lobbyist"`
-}
-
-var rArray []Registration
 
 var counter = 0
 
 var startTime = time.Now()
-
+/*
 func ExtendStringSlice(slice []string, element string) []string {
 	n := len(slice)
 	if n == cap(slice) {
@@ -50,6 +27,7 @@ func ExtendStringSlice(slice []string, element string) []string {
 	slice[n] = element
 	return slice
 }
+
 
 func ExtendResultSlice(slice []Registration, element Registration) []Registration {
 	n := len(slice)
@@ -82,7 +60,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, string(data))
 }
 
-/*
+
 func uptimeHandler(w http.ResponseWriter, r *http.Request) {
 	diff := time.Since(startTime)
 
@@ -410,63 +388,29 @@ func server() {
 	fmt.Println("listening on port " + os.Getenv("PORT"))
 }
 */
-func readDirectory(recordDir string) {
-	files, err := ioutil.ReadDir("./" + recordDir + "/")
-	if err != nil {
-		panic(err)
-	}
 
-	fmt.Println("Reading " + strconv.Itoa(len(files)) + " files from " + recordDir + "...")
-
-	rArray = nil
-	rArray = make([]Registration, len(files))
-
-	a := 0 //counter for number of files successfully read
-
-	for _, f := range files {
-		data, err := ioutil.ReadFile(recordDir + "/" + f.Name())
-		if err != nil {
-			fmt.Println("error reading %v", err)
-			return
-		} else {
-			if strings.Contains(filepath.Ext(f.Name()), "xml") {
-
-				//unmarshal data and put into struct array
-				err = xml.Unmarshal([]byte(data), &rArray[a])
-				if err != nil {
-					fmt.Println("error decoding %v: %v", f.Name(), err)
-					return
-				}
-
-				a++ //increment number of files successfully parsed
-			}
-		}
-
-		if a%1000 == 0 {
-			fmt.Println(strconv.Itoa(a) + " files read")
-		}
-	}
-
-	fmt.Println("Successfully read ", a, " / ", len(files), " files.")
-
-	fmt.Println("Removing record directory " + recordDir + "...")
-	err = os.RemoveAll(recordDir)
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println("Removed record directory " + recordDir)
-}
 
 func main() {
 	//go server()
 
-	spawnDownloads()
+	var wg sync.WaitGroup
+	wg.Add(2)
 
-	parseSenateFilings()
+	var senateFilingArray []SenateFiling
+	var houseFilingArray []HouseFiling
 
-	//scrape()
+	go func() {
+		senateFilingArray = parseSenateFilings(downloadSenateData(), &wg)
+	}()
+	go func() {
+		houseFilingArray = parseHouseFilings(downloadHouseData(), &wg)
+	}()
 
-	//readDirectory(savePathHouse)
+	wg.Wait()
+
+	fmt.Println("Both Congress branches downloaded and parsed")
+
+	fmt.Println(senateFilingArray, houseFilingArray)
 
 	ticker := time.NewTicker(60 * 60 * 24 * time.Second)
 

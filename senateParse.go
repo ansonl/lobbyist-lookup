@@ -13,6 +13,7 @@ import (
 	"path/filepath"
 	"strconv"
 	"strings"
+	"sync"
 )
 
 type SenateRegistrant struct {
@@ -55,16 +56,16 @@ func convertEncoding(input []byte) []byte {
 	return output
 }
 
-func parseSenateFilings() []SenateFiling {
+func parseSenateFilings(savePath string, wg *sync.WaitGroup) []SenateFiling {
 
-	files, err := ioutil.ReadDir(savePathSenate)
+	files, err := ioutil.ReadDir(savePath)
 	if err != nil {
 		panic(err)
 	}
 
 	allSenateFilings := make([]SenateFiling, len(files))
 
-	fmt.Println("Reading " + strconv.Itoa(len(files)) + " files from " + savePathSenate + "...")
+	fmt.Println("Reading " + strconv.Itoa(len(files)) + " files from " + savePath + "...")
 
 	a := 0 //counter for number of files successfully read
 
@@ -74,7 +75,7 @@ func parseSenateFilings() []SenateFiling {
 
 			oneFile := SenateFile{}
 
-			data, err := ioutil.ReadFile(savePathSenate + f.Name())
+			data, err := ioutil.ReadFile(savePath + f.Name())
 			if err != nil {
 				fmt.Println("error reading", f.Name(), err)
 				continue
@@ -101,12 +102,15 @@ func parseSenateFilings() []SenateFiling {
 
 	fmt.Println("Successfully read ", a, "Senate filings from", len(files), " files.")
 
-	fmt.Println("Removing record directory " + savePathSenate + "...")
-	err = os.RemoveAll(savePathSenate)
+	fmt.Println("Removing record directory " + savePath + "...")
+	err = os.RemoveAll(savePath)
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println("Removed record directory " + savePathSenate)
+	fmt.Println("Removed record directory " + savePath)
+
+	//Waitgroup done
+	wg.Done()
 
 	return allSenateFilings
 }
