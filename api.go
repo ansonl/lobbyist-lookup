@@ -363,6 +363,8 @@ func server() {
 }
 
 func prepareData() {
+	beginTime := time.Now()
+
 	//download Senate and House filings in separate threads
 	var wg sync.WaitGroup
 	wg.Add(2)
@@ -380,9 +382,11 @@ func prepareData() {
 
 	wg.Wait()
 
-	fmt.Println("Both Congress branches downloaded and parsed")
+	fmt.Println("Both Congress branches downloaded and parsed in", time.Since(beginTime).String())
 
 	rArray = combine(houseFilingArray, senateFilingArray)
+
+	fmt.Println("Time to download, parse, and combine", time.Since(beginTime).String())
 
 }
 
