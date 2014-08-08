@@ -60,7 +60,7 @@ func autoSurnameHandler(w http.ResponseWriter, r *http.Request) {
 	//firstName := r.Form["first"]
 	lastName := r.Form["term"]
 
-	limit := 200
+	limit := 50
 	count := 0
 
 	matches := make([]string, 0)
