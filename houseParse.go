@@ -62,7 +62,7 @@ func parseHouseFilings(recordDir string, wg *sync.WaitGroup) []HouseFiling {
         }
 
         if a%1000 == 0 {
-            fmt.Println(strconv.Itoa(a) + " files read")
+            fmt.Println(strconv.Itoa(a) + " House files read")
         }
     }
 
