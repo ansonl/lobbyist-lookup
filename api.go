@@ -365,14 +365,14 @@ func server() {
 func prepareData() {
 	//download Senate and House filings in separate threads
 	var wg sync.WaitGroup
-	wg.Add(1)
+	wg.Add(2)
 
 	var houseFilingArray []HouseFiling
-	/*
-		go func() {
-			houseFilingArray = parseHouseFilings(downloadHouseData(), &wg)
-		}()
-	*/
+
+	go func() {
+		houseFilingArray = parseHouseFilings(downloadHouseData(), &wg)
+	}()
+
 	var senateFilingArray []SenateFiling
 	go func() {
 		senateFilingArray = parseSenateFilings(downloadSenateData(), &wg)
@@ -398,8 +398,7 @@ func main() {
 	for {
 		select {
 		case <-ticker.C:
-			//scrape()
-			//readDirectory(savePathHouse)
+			prepareData()
 		}
 	}
 
