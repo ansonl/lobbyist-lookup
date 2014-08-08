@@ -1,50 +1,25 @@
 package main
 
 import (
-	//"encoding/json"
+	"encoding/json"
 	"fmt"
-	//"io/ioutil"
-	//"net/http"
-	//"strings"
-	"time"
+	"io/ioutil"
+	"net/http"
+	"os"
+	"strconv"
+	"strings"
 	"sync"
+	"time"
 )
 
 var counter = 0
 
 var startTime = time.Now()
-/*
-func ExtendStringSlice(slice []string, element string) []string {
-	n := len(slice)
-	if n == cap(slice) {
-		// Slice is full; must grow.
-		// We double its size and add 1, so if the size is zero we still grow.
-		newSlice := make([]string, len(slice), 2*len(slice)+1)
-		copy(newSlice, slice)
-		slice = newSlice
-	}
-	slice = slice[0 : n+1]
-	slice[n] = element
-	return slice
-}
 
-
-func ExtendResultSlice(slice []Registration, element Registration) []Registration {
-	n := len(slice)
-	if n == cap(slice) {
-		// Slice is full; must grow.
-		// We double its size and add 1, so if the size is zero we still grow.
-		newSlice := make([]Registration, len(slice), 2*len(slice)+1)
-		copy(newSlice, slice)
-		slice = newSlice
-	}
-	slice = slice[0 : n+1]
-	slice[n] = element
-	return slice
-}
+var rArray []GenericFiling
 
 //return a json formatted string for a day struct
-func (reg Registration) JSONString() []byte {
+func (reg GenericFiling) JSONString() []byte {
 	b, err := json.Marshal(reg)
 	if err != nil {
 		panic(err)
@@ -59,7 +34,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	}
 	fmt.Fprintf(w, string(data))
 }
-
 
 func uptimeHandler(w http.ResponseWriter, r *http.Request) {
 	diff := time.Since(startTime)
@@ -110,11 +84,11 @@ func autoSurnameHandler(w http.ResponseWriter, r *http.Request) {
 											}
 										}
 										if duplicateFound == false {
-											matches = ExtendStringSlice(matches, strings.ToLower(j.LastName))
+											matches = append(matches, strings.ToLower(j.LastName))
 											count++
 										}
 									} else {
-										matches = ExtendStringSlice(matches, strings.ToLower(j.LastName))
+										matches = append(matches, strings.ToLower(j.LastName))
 									}
 								}
 							}
@@ -166,11 +140,11 @@ func autoOrganizationHandler(w http.ResponseWriter, r *http.Request) {
 								}
 							}
 							if duplicateFound == false {
-								matches = ExtendStringSlice(matches, strings.ToLower(i.OrganizationName))
+								matches = append(matches, strings.ToLower(i.OrganizationName))
 								count++
 							}
 						} else {
-							matches = ExtendStringSlice(matches, strings.ToLower(i.OrganizationName))
+							matches = append(matches, strings.ToLower(i.OrganizationName))
 						}
 						break
 					}
@@ -218,11 +192,11 @@ func autoClientHandler(w http.ResponseWriter, r *http.Request) {
 								}
 							}
 							if duplicateFound == false {
-								matches = ExtendStringSlice(matches, strings.ToLower(i.ClientName))
+								matches = append(matches, strings.ToLower(i.ClientName))
 								count++
 							}
 						} else {
-							matches = ExtendStringSlice(matches, strings.ToLower(i.ClientName))
+							matches = append(matches, strings.ToLower(i.ClientName))
 						}
 						break
 					}
@@ -261,19 +235,19 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
 
 	counter++
 
-	matches := []Registration(nil)
+	matches := []GenericFiling(nil)
 
 	//surname search
 	if lastName != nil && len(lastName) > 0 && lastName[0] != "" { //check if empty param (surname=) because strings.Contains will flag empty string as match
 
 		if matches != nil {
-			tmp := make([]Registration, 0)
+			tmp := make([]GenericFiling, 0)
 			for _, i := range matches {
 				for _, j := range i.Lobbyist {
 					if j.LastName != "" {
 						for _, l := range lastName {
 							if strings.Contains(strings.ToLower(j.LastName), l) {
-								tmp = ExtendResultSlice(tmp, i)
+								tmp = append(tmp, i)
 								break
 							}
 						}
@@ -282,7 +256,7 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
 			}
 			matches = tmp
 		} else {
-			matches = make([]Registration, 0)
+			matches = make([]GenericFiling, 0)
 			for _, i := range rArray {
 				if count < limit {
 					for _, j := range i.Lobbyist {
@@ -290,7 +264,7 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
 							if count < limit {
 								for _, l := range lastName {
 									if strings.Contains(strings.ToLower(j.LastName), l) {
-										matches = ExtendResultSlice(matches, i)
+										matches = append(matches, i)
 										count++
 										break
 									}
@@ -306,23 +280,23 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
 	//organization name search
 	if organizationName != nil && len(organizationName) > 0 && organizationName[0] != "" {
 		if matches != nil {
-			tmp := make([]Registration, 0)
+			tmp := make([]GenericFiling, 0)
 			for _, i := range matches {
 				for _, l := range organizationName {
 					if strings.Contains(strings.ToLower(i.OrganizationName), l) {
-						tmp = ExtendResultSlice(tmp, i)
+						tmp = append(tmp, i)
 						break
 					}
 				}
 			}
 			matches = tmp
 		} else {
-			matches = make([]Registration, 0)
+			matches = make([]GenericFiling, 0)
 			for _, i := range rArray {
 				if count < limit {
 					for _, l := range organizationName {
 						if strings.Contains(strings.ToLower(i.OrganizationName), l) {
-							matches = ExtendResultSlice(matches, i)
+							matches = append(matches, i)
 							count++
 							break
 						}
@@ -335,23 +309,23 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
 	//client name search
 	if clientName != nil && len(clientName) > 0 && clientName[0] != "" {
 		if matches != nil {
-			tmp := make([]Registration, 0)
+			tmp := make([]GenericFiling, 0)
 			for _, i := range matches {
 				for _, l := range clientName {
 					if strings.Contains(strings.ToLower(i.ClientName), l) {
-						tmp = ExtendResultSlice(tmp, i)
+						tmp = append(tmp, i)
 						break
 					}
 				}
 			}
 			matches = tmp
 		} else {
-			matches = make([]Registration, 0)
+			matches = make([]GenericFiling, 0)
 			for _, i := range rArray {
 				if count < limit {
 					for _, l := range clientName {
 						if strings.Contains(strings.ToLower(i.ClientName), l) {
-							matches = ExtendResultSlice(matches, i)
+							matches = append(matches, i)
 							count++
 							break
 						}
@@ -387,30 +361,37 @@ func server() {
 
 	fmt.Println("listening on port " + os.Getenv("PORT"))
 }
-*/
 
-
-func main() {
-	//go server()
-
+func prepareData() {
+	//download Senate and House filings in separate threads
 	var wg sync.WaitGroup
-	wg.Add(2)
+	wg.Add(1)
 
-	var senateFilingArray []SenateFiling
 	var houseFilingArray []HouseFiling
-
+	/*
+		go func() {
+			houseFilingArray = parseHouseFilings(downloadHouseData(), &wg)
+		}()
+	*/
+	var senateFilingArray []SenateFiling
 	go func() {
 		senateFilingArray = parseSenateFilings(downloadSenateData(), &wg)
-	}()
-	go func() {
-		houseFilingArray = parseHouseFilings(downloadHouseData(), &wg)
 	}()
 
 	wg.Wait()
 
 	fmt.Println("Both Congress branches downloaded and parsed")
 
-	fmt.Println(senateFilingArray, houseFilingArray)
+	rArray = combine(houseFilingArray, senateFilingArray)
+
+}
+
+func main() {
+	go server()
+
+	prepareData()
+
+	//fmt.Println(senateFilingArray, houseFilingArray)
 
 	ticker := time.NewTicker(60 * 60 * 24 * time.Second)
 

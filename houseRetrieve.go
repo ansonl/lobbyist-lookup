@@ -77,7 +77,7 @@ func Extend(slice []string, element string) []string {
 	return slice
 }
 
-func scrape() string{
+func scrape() string {
 
 	fmt.Println("Sending GET request to " + linkHouse + "...")
 
@@ -157,6 +157,6 @@ func scrape() string{
 	return savePathHouse //return saved path
 }
 
-func downloadHouseData() string{
+func downloadHouseData() string {
 	return scrape()
 }

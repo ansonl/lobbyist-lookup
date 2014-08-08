@@ -14,6 +14,7 @@ import (
 	"strconv"
 	"strings"
 	"sync"
+	"time"
 )
 
 type SenateRegistrant struct {
@@ -30,11 +31,14 @@ type SenateClient struct {
 }
 type SenateLobbyist struct {
 	LobbyistName string `xml:",attr"`
-	FirstName string
-	LastName string
+	FirstName    string
+	LastName     string
 }
 type SenateFiling struct {
-	ID         string     `xml:"ID,attr"`
+	ID         string           `xml:",attr"`
+	Year       string           `xml:",attr"`
+	Type       string           `xml:",attr"`
+	Period     string           `xml:",attr"`
 	Client     SenateClient     `xml:Client"`
 	Registrant SenateRegistrant `xml:"Registrant"`
 	Lobbyists  []SenateLobbyist `xml:"Lobbyists>Lobbyist"`
@@ -57,6 +61,7 @@ func convertEncoding(input []byte) []byte {
 }
 
 func parseSenateFilings(savePath string, wg *sync.WaitGroup) []SenateFiling {
+	beginParseTime := time.Now()
 
 	files, err := ioutil.ReadDir(savePath)
 	if err != nil {
@@ -91,7 +96,7 @@ func parseSenateFilings(savePath string, wg *sync.WaitGroup) []SenateFiling {
 					for _, t := range oneFile.Filings {
 						allSenateFilings = append(allSenateFilings, t)
 						a++
-						if a%1000 == 0 {
+						if a%10000 == 0 {
 							fmt.Println(strconv.Itoa(a), "Senate filings read")
 						}
 					}
@@ -100,7 +105,7 @@ func parseSenateFilings(savePath string, wg *sync.WaitGroup) []SenateFiling {
 		}
 	}
 
-	fmt.Println("Successfully read ", a, "Senate filings from", len(files), " files.")
+	fmt.Println("Successfully read ", a, "Senate filings from", len(files), " files in", time.Since(beginParseTime).String())
 
 	fmt.Println("Removing record directory " + savePath + "...")
 	err = os.RemoveAll(savePath)
