@@ -92,7 +92,7 @@ var formChanged = function (data) {
     //lowercase input for matching
     data.target.value = data.target.value.toLowerCase();
 }
-
+var debug;
     $(document).ready(function() {
         $('#noJavascriptDiv').css('display', 'none');
 
@@ -120,20 +120,22 @@ var formChanged = function (data) {
         $('.form-control').on('input', formEditted);
         $('.form-control').change(formChanged);
 
+        baseURL = "http://anson.cloudapp.net"
+
         $( "#surnameInput" ).autocomplete({
-            source: "http://lobbyist.herokuapp.com/auto/surname/",
+            source: baseURL + "/auto/surname/",
             minLength: 1,
             delay: 300
         });
 
         $( "#organizationInput" ).autocomplete({
-            source: "http://lobbyist.herokuapp.com/auto/organization/",
+            source: baseURL + "/auto/organization/",
             minLength: 1,
             delay: 300
         });
 
         $( "#clientInput" ).autocomplete({
-            source: "http://lobbyist.herokuapp.com/auto/client/",
+            source: baseURL + "/auto/client/",
             minLength: 1,
             delay: 300
         });
@@ -151,7 +153,8 @@ var formChanged = function (data) {
                     });
 
 
-                    var url = 'http://lobbyist.herokuapp.com/api/';
+                    var url = baseURL + '/api/';
+                    debug=url;
                     $.ajax({
                         type: 'GET',
                         url: url,
