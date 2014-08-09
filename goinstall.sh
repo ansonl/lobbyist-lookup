@@ -9,3 +9,8 @@ mkdir $HOME/go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 mkdir -p $GOPATH/src/github.com/ansonl
+export PORT=80
+
+sudo apt-get install git
+sudo apt-get install mercurial
+sudo apt-get install htop

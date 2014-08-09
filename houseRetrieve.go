@@ -152,7 +152,7 @@ func scrape() string {
 		}
 	}
 	wg.Wait()
-	fmt.Println("All files downloaded.")
+	fmt.Println("All House files downloaded.")
 
 	return savePathHouse //return saved path
 }
