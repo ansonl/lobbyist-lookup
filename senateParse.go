@@ -68,8 +68,6 @@ func parseSenateFilings(savePath string, combinedFilings *[]GenericFiling, mutex
 		panic(err)
 	}
 
-	//allSenateFilings := make([]SenateFiling, len(files))
-
 	fmt.Println("Reading " + strconv.Itoa(len(files)) + " files from " + savePath + "...")
 
 	a := 0 //counter for number of files successfully read
@@ -94,8 +92,6 @@ func parseSenateFilings(savePath string, combinedFilings *[]GenericFiling, mutex
 				} else {
 
 					for _, t := range oneFile.Filings {
-						//allSenateFilings = append(allSenateFilings, t)
-
 						mutex.Lock()
 						combineSingleFiling(t, combinedFilings)
 						mutex.Unlock()
@@ -121,6 +117,4 @@ func parseSenateFilings(savePath string, combinedFilings *[]GenericFiling, mutex
 
 	//Waitgroup done
 	wg.Done()
-
-	//return allSenateFilings
 }

@@ -38,8 +38,6 @@ func parseHouseFilings(recordDir string, combinedFilings *[]GenericFiling, mutex
 
 	fmt.Println("Reading " + strconv.Itoa(len(files)) + " files from " + recordDir + "...")
 
-	//allHouseFilings := make([]HouseFiling, len(files))
-
 	a := 0 //counter for number of files successfully read
 
 	for _, f := range files {
@@ -56,7 +54,6 @@ func parseHouseFilings(recordDir string, combinedFilings *[]GenericFiling, mutex
 					fmt.Println("error decoding %v: %v", f.Name(), err)
 					continue
 				} else {
-					//allHouseFilings = append(allHouseFilings, oneFiling)
 					mutex.Lock()
 					combineSingleFiling(oneFiling, combinedFilings)
 					mutex.Unlock()
@@ -82,6 +79,4 @@ func parseHouseFilings(recordDir string, combinedFilings *[]GenericFiling, mutex
 
 	//Waitgroup done
 	wg.Done()
-
-	//return allHouseFilings
 }
