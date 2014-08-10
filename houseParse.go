@@ -28,7 +28,7 @@ type HouseFiling struct {
 	//Lobbyist []Lobbyist `xml:"lobbyists>lobbyist"`
 }
 
-func parseHouseFilings(recordDir string, wg *sync.WaitGroup) []HouseFiling {
+func parseHouseFilings(recordDir string, combinedFilings *[]GenericFiling, mutex *sync.Mutex, wg *sync.WaitGroup) {
 	beginParseTime := time.Now()
 
 	files, err := ioutil.ReadDir("./" + recordDir + "/")
@@ -38,7 +38,7 @@ func parseHouseFilings(recordDir string, wg *sync.WaitGroup) []HouseFiling {
 
 	fmt.Println("Reading " + strconv.Itoa(len(files)) + " files from " + recordDir + "...")
 
-	allHouseFilings := make([]HouseFiling, len(files))
+	//allHouseFilings := make([]HouseFiling, len(files))
 
 	a := 0 //counter for number of files successfully read
 
@@ -56,10 +56,13 @@ func parseHouseFilings(recordDir string, wg *sync.WaitGroup) []HouseFiling {
 					fmt.Println("error decoding %v: %v", f.Name(), err)
 					continue
 				} else {
-					allHouseFilings = append(allHouseFilings, oneFiling)
+					//allHouseFilings = append(allHouseFilings, oneFiling)
+					mutex.Lock()
+					combineSingleFiling(oneFiling, combinedFilings)
+					mutex.Unlock()
+					a++ //increment number of files successfully parsed
 				}
 
-				a++ //increment number of files successfully parsed
 			}
 		}
 
@@ -80,5 +83,5 @@ func parseHouseFilings(recordDir string, wg *sync.WaitGroup) []HouseFiling {
 	//Waitgroup done
 	wg.Done()
 
-	return allHouseFilings
+	//return allHouseFilings
 }

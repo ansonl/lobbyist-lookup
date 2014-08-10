@@ -365,26 +365,18 @@ func server() {
 func prepareData() {
 	beginTime := time.Now()
 
+	rArray = make([]GenericFiling, 0)
+
 	//download Senate and House filings in separate threads
+	var mutex = sync.Mutex{}
 	var wg sync.WaitGroup
 	wg.Add(2)
 
-	var houseFilingArray []HouseFiling
+	go parseHouseFilings(downloadHouseData(), &rArray, &mutex, &wg)
 
-	go func() {
-		houseFilingArray = parseHouseFilings(downloadHouseData(), &wg)
-	}()
-
-	var senateFilingArray []SenateFiling
-	go func() {
-		senateFilingArray = parseSenateFilings(downloadSenateData(), &wg)
-	}()
+	go parseSenateFilings(downloadSenateData(), &rArray, &mutex, &wg)
 
 	wg.Wait()
-
-	fmt.Println("Both Congress branches downloaded and parsed in", time.Since(beginTime).String())
-
-	rArray = combine(houseFilingArray, senateFilingArray)
 
 	fmt.Println("Time to download, parse, and combine", time.Since(beginTime).String())
 

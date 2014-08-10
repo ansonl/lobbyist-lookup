@@ -60,7 +60,7 @@ func convertEncoding(input []byte) []byte {
 	return output
 }
 
-func parseSenateFilings(savePath string, wg *sync.WaitGroup) []SenateFiling {
+func parseSenateFilings(savePath string, combinedFilings *[]GenericFiling, mutex *sync.Mutex, wg *sync.WaitGroup) {
 	beginParseTime := time.Now()
 
 	files, err := ioutil.ReadDir(savePath)
@@ -68,7 +68,7 @@ func parseSenateFilings(savePath string, wg *sync.WaitGroup) []SenateFiling {
 		panic(err)
 	}
 
-	allSenateFilings := make([]SenateFiling, len(files))
+	//allSenateFilings := make([]SenateFiling, len(files))
 
 	fmt.Println("Reading " + strconv.Itoa(len(files)) + " files from " + savePath + "...")
 
@@ -94,8 +94,13 @@ func parseSenateFilings(savePath string, wg *sync.WaitGroup) []SenateFiling {
 				} else {
 
 					for _, t := range oneFile.Filings {
-						allSenateFilings = append(allSenateFilings, t)
+						//allSenateFilings = append(allSenateFilings, t)
+
+						mutex.Lock()
+						combineSingleFiling(t, combinedFilings)
+						mutex.Unlock()
 						a++
+
 						if a%10000 == 0 {
 							fmt.Println(strconv.Itoa(a), "Senate filings read")
 						}
@@ -117,5 +122,5 @@ func parseSenateFilings(savePath string, wg *sync.WaitGroup) []SenateFiling {
 	//Waitgroup done
 	wg.Done()
 
-	return allSenateFilings
+	//return allSenateFilings
 }

@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 	"strings"
 	"time"
 )
@@ -19,6 +20,64 @@ type GenericFiling struct {
 	ReportYear       string
 	ReportType       string
 	Lobbyist         []GenericLobbyist
+}
+
+func convertHouseFiling(houseFiling HouseFiling) GenericFiling {
+	tmpFiling := GenericFiling{}
+	tmpFiling.OrganizationName = houseFiling.OrganizationName
+	tmpFiling.ClientName = houseFiling.ClientName
+	tmpFiling.SenateID = houseFiling.SenateID
+	tmpFiling.HouseID = houseFiling.HouseID
+	tmpFiling.ReportYear = houseFiling.ReportYear
+	tmpFiling.ReportType = houseFiling.ReportType
+
+	tmpLobbyistArray := make([]GenericLobbyist, len(houseFiling.Lobbyist))
+	for _, houseLobbyist := range houseFiling.Lobbyist {
+		tmpLobbyistArray = append(tmpLobbyistArray, GenericLobbyist{houseLobbyist.FirstName, houseLobbyist.LastName})
+	}
+	tmpFiling.Lobbyist = tmpLobbyistArray
+
+	return tmpFiling
+}
+
+func convertSenateFiling(senateFiling SenateFiling) GenericFiling {
+	tmpFiling := GenericFiling{}
+	tmpFiling.OrganizationName = senateFiling.Registrant.RegistrantName
+	tmpFiling.ClientName = senateFiling.Client.ClientName
+	tmpFiling.SenateID = senateFiling.ID
+	//tmpFiling.HouseID = nil //no house ID provided in senate filings; because senate register before house?
+	tmpFiling.ReportYear = senateFiling.Year
+	tmpFiling.ReportType = senateFiling.Type
+
+	tmpLobbyistArray := make([]GenericLobbyist, len(senateFiling.Lobbyists))
+	for _, senateLobbyist := range senateFiling.Lobbyists {
+		//attempt to get first and last name
+		var firstName string
+		var lastName string
+		if strings.Index(senateLobbyist.LobbyistName, ",") < 0 {
+			firstName = senateLobbyist.LobbyistName
+			lastName = senateLobbyist.LobbyistName
+		} else {
+			firstName = senateLobbyist.LobbyistName[strings.Index(senateLobbyist.LobbyistName, ",")+1:]
+			lastName = senateLobbyist.LobbyistName[:strings.Index(senateLobbyist.LobbyistName, ",")]
+		}
+
+		tmpLobbyistArray = append(tmpLobbyistArray, GenericLobbyist{firstName, lastName})
+	}
+	tmpFiling.Lobbyist = tmpLobbyistArray
+
+	return tmpFiling
+}
+
+func combineSingleFiling(unknownFiling interface{}, combinedFilings *[]GenericFiling) {
+	switch unknownFiling.(type) {
+	case HouseFiling:
+		*combinedFilings = append(*combinedFilings, convertHouseFiling(unknownFiling.(HouseFiling)))
+	case SenateFiling:
+		*combinedFilings = append(*combinedFilings, convertSenateFiling(unknownFiling.(SenateFiling)))
+	default:
+		fmt.Println("Unknown object received by combine. Object is of type", reflect.TypeOf(unknownFiling))
+	}
 }
 
 func combine(houseFilingArray []HouseFiling, senateFilingArray []SenateFiling) []GenericFiling {
