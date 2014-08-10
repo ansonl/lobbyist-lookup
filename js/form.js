@@ -120,7 +120,7 @@ var debug;
         $('.form-control').on('input', formEditted);
         $('.form-control').change(formChanged);
 
-        baseURL = "http://anson.cloudapp.net"
+        baseURL = "http://lobbyist.herokuapp.com"
 
         $( "#surnameInput" ).autocomplete({
             source: baseURL + "/auto/surname/",
