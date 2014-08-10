@@ -83,16 +83,16 @@ h4{font-family: georgia;}
 }
 .i-bg{
     background-repeat: no-repeat;
-    background-position: right 10px center;
+    background-position: right 20px center;
 }
 .i-name{
-    background-image: url('../images/name-bg.png');
+    /*background-image: url('../images/name-bg.png');*/
 }
 .i-org{
-    background-image: url('../images/org-bg.png');
+    /*background-image: url('../images/org-bg.png');*/
 }
 .i-biz{
-    background-image: url('../images/biz-bg.png');
+    /*background-image: url('../images/biz-bg.png');*/
 }
 
 .well{margin-top: 35px; margin-bottom: 0px;}
@@ -121,6 +121,3 @@ input[type=text]{
     margin-top:10px;
   }
 }
-
-
-
