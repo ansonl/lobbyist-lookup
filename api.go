@@ -394,6 +394,7 @@ func main() {
 	for {
 		select {
 		case <-ticker.C:
+			rArray = nil
 			prepareData()
 		}
 	}
