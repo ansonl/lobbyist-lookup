@@ -43,13 +43,13 @@ func parseHouseFilings(recordDir string, combinedFilings *[]GenericFiling, mutex
 	for _, f := range files {
 		data, err := ioutil.ReadFile(recordDir + "/" + f.Name())
 		if err != nil {
-			fmt.Println("error reading %v", err)
+			fmt.Println("error reading", err)
 			continue
 		} else {
 			if strings.Contains(filepath.Ext(f.Name()), "xml") {
 				oneFiling := HouseFiling{}
 				//unmarshal data and put into struct array
-				err = xml.Unmarshal([]byte(data), &oneFiling)
+				err = xml.Unmarshal(data, &oneFiling)
 				if err != nil {
 					fmt.Println("error decoding %v: %v", f.Name(), err)
 					continue
