@@ -45,7 +45,7 @@ function formatFiling(filing, i) {
 }
 
 function formatTableHeader() {
-	return '<thead><tr><th>#</th><th>Filing Organization</th><th>Organization Client</th><th>House ID</th><th>Senate ID</th><th>Lobbyists</th></thead>';
+	return '<thead><tr><th>#</th><th>Filing Organization / Registrant</th><th>Organization Client</th><th>House ID</th><th>Senate ID</th><th>Lobbyists</th></thead>';
 }
 
 function formatNoResults() {

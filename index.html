@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Lobbyist Lookup</title>
+	<title>Unified Federal Lobbyist Lookup</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimal-ui">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -40,7 +40,7 @@
 					<img id="usFlag" src="images/us-flag.png" alt="United States of America flag"> Lobbyist Lookup
 				</h1>
 				<h5>
-					Data from House.gov and Senate.gov <small>&ndash; Scraped and indexed by <small><a href="https://apparentetch.com/2014/08/lobbyist-lookup">ansonl, ltejedor, sherry97</a></small></small>
+					Data from House.gov and Senate.gov <small>&ndash; Scraped and indexed by <small><a href="https://apparentetch.com/">ansonl</a>, <a href="https://leandratejedor.com/">ltejedor</a>, sherry97</a></small></small>
 				</h5>
 				<br>
 			</div>
@@ -90,13 +90,13 @@
 					<form role="form" id="queryForm" class="queryForm" action="http://lobbyist.herokuapp.com/api/" method="get">
 						<div class="form-group">
 							<label class="js-hide-label" for="surnameInput">Lobbyist Surname</label>
-							<input type="text" name="surname" class="form-control i-bg i-name" id="surnameInput" placeholder="Lobbyist Surname" autocorrect="off" autocapitalize="off" autocomplete="off" >
+							<input type="text" name="surname" class="form-control i-bg i-name" id="surnameInput" placeholder="Lobbyist Surname" autocorrect="off" autocapitalize="off" autocomplete="off" title="An individual lobbyist's surname.">
 						</div>
 						<div class="form-group">
 							<label class="js-hide-label" for="organizationInput">Filing Organization / Registrant</label>
-							<input type="text" name="organization" class="form-control i-bg i-org" id="organizationInput" placeholder="Filing Organization / Registrant" autocorrect="off" autocapitalize="off" autocomplete="off" >
+							<input type="text" name="organization" class="form-control i-bg i-org" id="organizationInput" placeholder="Filing Organization / Registrant" autocorrect="off" autocapitalize="off" autocomplete="off" title="The entity that has registered the filing. May be a hired lobbying firm. ">
 							<label for="clientInput" class="topSpace js-hide-label">Filing Client</label>
-							<input type="text" name="client" class="form-control i-bg i-biz" id="clientInput" placeholder="Filing Client" autocorrect="off" autocapitalize="off" autocomplete="off">
+							<input type="text" name="client" class="form-control i-bg i-biz" id="clientInput" placeholder="Filing Client" autocorrect="off" autocapitalize="off" autocomplete="off" title="The entity behind the filing. May be a company (client) that has hired a lobbying firm (organization/registrant).">
 						</div>
 						<input type="submit" id="lookupButton" class="btn btn-primary full-w-btn topSpacem" value="Lookup">
 					</form>
@@ -126,7 +126,7 @@
 		<div class="row well">
 			<h4><span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;More about Lobbyist Lookup</h4>
 			<p>
-				<strong>Read about the technical development of Lobbyist Lookup <a herf="https://apparentetch.com/2014/08/lobbyist-lookup">here</a>. </strong>
+				&raquo; <strong>Read about the technical development of Lobbyist Lookup <a herf="https://apparentetch.com/2014/08/lobbyist-lookup">here</a>. </strong>
 			</p>
 			<p>
 				<strong>Lobbyist Lookup</strong> was made during <a href="http://hackforchange.org/events/northern-virginia-national-day-of-civic-hacking/">Northern Virginia National Day of Civic Hacking (NDOCH)</a> at <a href="http://www.nsf.gov">National Science Foundation (NSF)</a> in <a href="http://www.arlingtonva.us">Arlington, VA</a>.
@@ -134,7 +134,8 @@
 				It addresses the NSF Ethics Challenge of creating a way for federal employees to lookup lobbying status of an individual or organization.
 				<br>
 				<br>
-				In addition to filtering by <i>surname</i> and <i>organization</i> <strong>Lobbyist Lookup</strong> allows you to <strong>filter filings by <i>client</i></strong>. More transparency for all.
+				In addition to filtering by <i>surname</i> and <i>organization</i> <strong>Lobbyist Lookup</strong> allows you to <strong>filter filings by <i>client</i></strong>. More transparency for all. <br>
+				Autocomplete also gives you positive feedback on catching spelling errors.
 				<br>
 				<br>
 				Constituents and businesses may also find utility in using <strong>Lobbyist Lookup</strong> to be better informed on lobbyist statuses.

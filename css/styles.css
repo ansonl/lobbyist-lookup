@@ -112,9 +112,6 @@ input[type=text]{
    margin: -18px auto auto auto;
 }
 
-
-
-
 @media (max-width: 530px) {
   .full-w-btn{
     width: 100%;
