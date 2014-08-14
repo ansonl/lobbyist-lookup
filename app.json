@@ -1,0 +1,20 @@
+{
+  "name": "Unified Lobbyist Lookup",
+  "description": "Download, parse, and search House and Senate lobbyist disclosure filings.",
+  "keywords": [
+    "lobbyist lookup",
+    "HTML5",
+    "Golang"
+  ],
+  "website": "http://ansonl.github.io/lobbyist-lookup/",
+  "repository": "https://github.com/ansonl/lobbyist-lookup",
+  "logo": "https://raw.githubusercontent.com/ansonl/lobbyist-lookup/gh-pages/images/us-flag.png",
+  "success_url": "/",
+  "env": {
+    "BUILDPACK_URL": "https://github.com/kr/heroku-buildpack-go.git",
+    "PORT": {
+      "description": "Web server listening port.",
+      "value": "80"
+    }
+  }
+}
