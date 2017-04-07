@@ -11,8 +11,8 @@
     - Using *past filings* download link utimately leads to [here](http://disclosures.house.gov/ld/LDDownload.aspx?KeepThis=true) to download filings in xml format.
       - The house.gov site uses an input element with method of POST to an asp page to serve the archive files. The site also runs on ASP which has ViewState and EventValidation enforced to prevent CSRF. ViewStateand EventValidation makes programmatic POST requests more complicated as we need to have valid ViewState and EventValidation values in order to send a valid POST request.
         - This Go program retrieves a response from the ASP server with a GET request. After parsing the hidden ViewState and EventValidation input values, we are able to construct a valid POST request which the ASP server replies back with a file stream. We write the file stream to a defined file.  
-          - `scrape.go` uses `code.google.com/p/go.net/html` package to parse HTML for tokens.
-          - `scrape.go` contains the archive downloading portion of the code and can be repurposed to send/received requests with other ASP sites using CSRF protection.
+          - `houseRetrieve.go` uses `code.google.com/p/go.net/html` package to parse HTML for tokens.
+          - `houseRetrieve.go` contains the archive downloading portion of the code and can be repurposed to send/received requests with other ASP sites using CSRF protection.
     - `XXXX Registration` archives contain new registrations for that year. `XXXX N Quarter` archives contain filings due for *N* quarter.
       - This program will download all archives for the current year.
   - Use predicted file naming convention for Senate filings on [Senate.gov](http://www.senate.gov/legislative/Public_Disclosure/LDA_reports.htm).
@@ -39,9 +39,9 @@
 - <h4>Record Processing</h4>
   - XML files are then parsed into structs with `encoding/json` and held in memory for lookup.
 
-- <h4>Run</h4>
+- <h4>Running Lobbyist Lookup</h4>
   - Run in project directory
-    - `go run api.go scrape.go`
+    - `go run *.go`
   - Compile, add to Go $PATH location and run
     - `go get` then `lobbyist-lookup`
 
