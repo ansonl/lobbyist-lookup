@@ -4,8 +4,11 @@
 
 - <h4>Record Retrieval</h4>
   - Latest current year House lobby disclosure filings available on [House.gov](http://disclosures.house.gov/).
+    
     - Using the [webbrowser based search](http://disclosures.house.gov/ld/ldsearch.aspx) may result in
+    
       > Cannot download more than 2000 records. Please refine search.
+      
     - Using *past filings* download link utimately leads to [here](http://disclosures.house.gov/ld/LDDownload.aspx?KeepThis=true) to download filings in xml format.
       - The house.gov site uses an input element with method of POST to an asp page to serve the archive files. The site also runs on ASP which has ViewState and EventValidation enforced to prevent CSRF. ViewStateand EventValidation makes programmatic POST requests more complicated as we need to have valid ViewState and EventValidation values in order to send a valid POST request.
         - This Go program retrieves a response from the ASP server with a GET request. After parsing the hidden ViewState and EventValidation input values, we are able to construct a valid POST request which the ASP server replies back with a file stream. We write the file stream to a defined file.  
@@ -18,7 +21,7 @@
       - XML files are in UTF-16 and Go expects UTF-8
         - Used `code.google.com/p/go-charset/charset` to convert UTF-8 to UTF-16.
 
-  - Misc
+  - Interesting Info
     - House has ~90k filings versus Senate's ~130k filings.
     - House filings are in their individual XML file versus Senate filing being 1000 per file
     - Senate filings therefore parse faster funnily enough.
