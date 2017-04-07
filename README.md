@@ -42,8 +42,11 @@
 
 - <h4>Running Lobbyist Lookup</h4>
   - Run in project directory
+  
     - `go run *.go`
+    
   - Compile, add to Go $PATH location and run
+  
     - `go get` then `lobbyist-lookup`
 
 - <h4>Reference:</h4>
